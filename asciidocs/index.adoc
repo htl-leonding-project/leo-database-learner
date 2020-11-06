@@ -24,8 +24,16 @@ Practice tool to learn database commands and to check your level of knowledge.
 
 == Documents
 
-https://primetzvan.github.io/LeoDatabaseLearner/project-proposal[*Projectproposal*,role=black] +
-https://primetzvan.github.io/LeoDatabaseLearner/projektauftrag[*Projektauftrag*,role=black] +
-https://primetzvan.github.io/LeoDatabaseLearner/system-specification[*Systemspecification*,role=black] +
-https://primetzvan.github.io/LeoDatabaseLearner/pflichtenheft[*Pflichtenheft*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/project-proposal[*Projectproposal*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/projektauftrag[*Projektauftrag*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/system-specification[*Systemspecification*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/pflichtenheft[*Pflichtenheft*,role=black] +
 
+
+== External Project Repository
+
+https://github.com/Primetzvan/LeoDatabaseLearner
+
+* Githubpage:
+
+https://primetzvan.github.io/LeoDatabaseLearner/[*Index*,role=black]

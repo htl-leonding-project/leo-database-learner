@@ -1,0 +1,31 @@
+= LeoDatabaseLearner
+19SM, 22TI, 15PV
+1.0.0, 2020-10-09: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+== Project Description
+
+// Short Desciption of your Project
+Practice tool to learn database commands and to check your level of knowledge.
+
+== Team
+
+// <catalog-number><first letter of lastname><first letter of first name>
+// ie
+
+* 15PV
+* 19SM
+* 22TI
+
+== Documents
+
+https://primetzvan.github.io/LeoDatabaseLearner/project-proposal[*Projectproposal*,role=black] +
+https://primetzvan.github.io/LeoDatabaseLearner/projektauftrag[*Projektauftrag*,role=black] +
+https://primetzvan.github.io/LeoDatabaseLearner/system-specification[*Systemspecification*,role=black] +
+https://primetzvan.github.io/LeoDatabaseLearner/pflichtenheft[*Pflichtenheft*,role=black] +
+

@@ -1,0 +1,125 @@
+= LeoDatabaseLearner - Projektauftrag
+19SM, 22TI, 15PV
+1.0.0, 2020-10-02: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// https://fontawesome.com/v4.7.0/icons/
+
+////
+icon:file-text-o[link=https://raw.githubusercontent.com/htl-leonding-college/asciidoctor-docker-template/master/asciidocs/{docname}.adoc] ‏ ‏ ‎
+icon:github-square[link=https://github.com/htl-leonding-college/asciidoctor-docker-template] ‏ ‏ ‎
+icon:home[link=https://htl-leonding.github.io/]
+////
+endif::backend-html5[]
+
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Projektbezeichnung
+LeoDataBaseLearner
+
+== Projektauftraggeber
+HTL Leonding - Professor Stütz
+
+== Problemstellung / Projektauslöser / Vorprojekt
+Schüler verlieren nach der Zeit den Überblick über den gelernten Stoff.
+
+Der Lehrer muss bei einem Test die SQL-Befehle der Schüler einzeln auf
+die Korrektheit überprüfen, da grundsätzlich mehrere Lösungsansätze
+möglich sind.
+
+Schüler bitten Lehrer ständig neue Übungen zur Verfügung zu stellen,
+dies ist jedoch für die Lehrer aus Zeitgründen meist nicht möglich.
+
+Auch das Überprüfen der einzelnen SQL-Statements ist für die Lehrer mit
+hohem Arbeitsaufwand verbunden.
+
+
+== Aufgabenstellung
+Erstellung eines Softwareproduktes für Schüler und Lehrer der HTL Leonding.
+Das System besteht aus 3 Funktionen.
+Schüler können daraus wählen, ob sie coden üben, lernen oder ob sie geprüft werden wollen.
+
+Die Prüfungsaufgaben können von Lehrer/innen mit Hilfe des Systems erstellt werden.
+Anschließend soll eine Auswertung der Aufgaben erfolgen.
+
+Bezüglich des Layouts sollen 3 Module zu sehen sein:
+
+* Text/Angabe
+* Coding
+* Auswertung
+
+Der Lernfortschritt soll über einen Balken dokumentiert werden.
+
+== Anforderungen
+=== Funktionale Anforderungen
+- User können SQL, PL/SQL usw. üben
+- Leistung kann durch Prüfungen festgestellt werden
+- Lehrer können Tests im Unterricht mit Schülern durchführen
+- User können ihren eigenen Lernfortschritt und Wissensstand einsehen
+- Lehrer können den Lernfortschritt und Wissensstand von Ihren Schülern einsehen
+- Lehrer können Übungen hochladen
+
+=== Nichtfunktionale Anforderungen
+- Robustheit der Anwendung gegenüber Benutzerfehler
+( Beispiel: Verweigerung von SQL-Injections des Benutzers)
+- schnelle Rückmeldung des Systems
+- keine Überprüfung für zum Beispiel JDBC also für Projektanbindungen in Java, C++, C#
+
+== Projektziele
+
+Schülern soll der Einstieg in die HTL erleichtert werden,
+indem sie eine solche Übungsplattform zur Verfügung gestellt bekommen.
+
+Auch für Lehrer soll es eine Erleichterung werden, da sie nicht mehr
+jedes Übungsbeispiel selbst erstellen müssen.
+
+Eine Einheitlichkeit des Gelernten besteht ebenso.
+
+== Projektrisiken
+- Datenbank stürzt ab
+- Missverständnisse bei Anforderungen
+- Systemausfälle
+- Kommunikationsschwierigkeiten
+
+== Projektphasen / Meilensteine
+- Technologien kennenlernen
+- Infrastruktur aufbauen
+- Datenmodell erstellen
+- Übungen erstellen/hochladen
+- Übungen bearbeiten/löschen
+- Prüfung anlegen
+- User Interface
+
+== Projektstart
+
+2.10.2020
+
+== Projektende
+
+Dezember 2021/Jänner 2022
+
+== Projektressourcen
+
+=== Personal:
+- 15PV(Projektleiterin)
+v.p@example.at
+- 19SM
+- 22TI
+- (DC)
+
+=== Material:
+- Datenbank
+- Server
+
+=== Sonstige Aufwendungen:
+- viel Zeit ;)

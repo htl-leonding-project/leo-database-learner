@@ -1,0 +1,97 @@
+= LeoDatabaseLearner - Project Proposal
+19SM, 22TI, 15PV
+1.0.0, 2020-10-02: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// print the toc here (not at the default position)
+//toc::[]
+
+==  Project name
+LeoDataBaseLearner
+
+== Problem / project trigger / pre-project
+After the time, students lose track of what they have learned.
+After a test, the teacher has to check the students' SQL commands individually for correctness, as there are basically several possible solutions.
+
+Pupils constantly ask teachers to provide new exercises, but this is usually not possible for teachers due to time constraints.
+
+Checking the individual SQL statements is also associated with a lot of work for the teachers.
+
+== Task
+Creation of a software product for students and teachers at the HTL Leonding.
+The system consists of 3 functions. Students can choose whether they want to practice coding, learn or be tested.
+The exam tasks can be created by teachers using the system. An evaluation of the tasks should then take place.
+
+Regarding the layout, 3 modules should be visible:
+
+*	text / instruction
+*	coding
+*	evaluation
+
+The learning progress should be documented on a bar.
+
+== Requirements
+=== Functional requirements
+- Users can practice SQL, PL / SQL, etc.
+- Student performance can be determined through exams
+- Teachers can conduct tests with students in class
+- Users can see their own learning progress and knowledge level
+- Teachers can see the learning progress and level of knowledge of their students
+- Teachers can upload exercises
+
+=== Non-functional requirements
+- Robustness of the application against user errors (For example: refusal of SQL injections by the user)
+- quick feedback from the system
+- no check for e.g. JDBC, i.e. for project connections in Java, C ++, C #
+
+== Project goals
+The entry into the HTL should be made easier for pupils by being provided with such a practice platform.
+It should also be a relief for teachers, as they no longer have to create each exercise themselves.
+There is also a uniformity of what has been learned.
+
+== Project risks
+- Database crashes
+- Misunderstandings about requirements
+- System failures
+- Communication difficulties
+
+== Project phases / Milestones
+- get to know technologies
+- create a data model
+- create user interface
+- create / upload exercises
+- edit / delete exercises
+- create test
+
+== Project start
+2.10.2020
+
+== Project end
+December 2021/January 2022
+
+== Project resources
+=== Personnel:
+
+- 15PV(Project Manager)
+v.p@example.at
+- 19SM
+- 22TI
+- (DC)
+
+=== Material:
+- Database
+- Server
+
+=== Other expenses:
+- much time ;)
+
+
+

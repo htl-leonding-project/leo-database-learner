@@ -1,0 +1,318 @@
+= LeoDatabaseLearner - System Specification
+19SM, 22TI, 15PV
+1.1.0, 2020-10-23: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Pflichtenheft "Was mache ich"
+
+
+=== Initial situation
+
+The HTL Leonding is an HTL in Upper Austria. Central room with around 1400 students and the specialist departments
+Media technology, IT, electronics and medical technology.In the scope of the IT departments
+and media technology, the subject of databases (DBI / INSY) is taught.
+An essential part of this course is the practical training in the database query language SQL.
+
+
+=== Present situation
+
+At the HTL Leonding an Oracle database is available to the students in order to be able to work with a database.
+The teacher provides exercises for the students to perform.
+There are already various exercise tools that can be found on the Internet.
+However, these are mostly static and you can only learn the existing exercises.
+In addition, the overview of the level of knowledge is not very clear. Also, you often have to pay for these tools to
+use them.
+
+=== Problem
+
+In addition to the tasks provided by the teachers, it is advantageous for the students to be able to prepare for the
+exams with additional tasks.
+The teachers often provide additional examples, but sometimes without solutions.
+
+=== Task
+Creation of a software product for students and teachers at the HTL Leonding.
+The system consists of 4 functions:
+
+* Practice mode
+* Learning mode (according to the learning card system, the incorrect examples are repeated from a set of tasks)
+* Exam mode - student (simulated exam)
+* Exam mode - teacher (assessed performance assessment)
+
+The exam tasks can be created by teachers using the system.
+The tasks are then evaluated.
+
+The GUI is basically divided into 3 areas:
+
+* Text / information (graphic representation of the data model)
+* SQL statement to be entered by the student
+* Feedback
+
+The learning progress should be documented graphically.
+
+==== Functional requirements
+
+[plantuml]
+----
+@startuml
+left to right direction
+actor Student as s
+actor Teacher as t
+
+package LeoDatabaseLearner {
+  usecase "practice SQL" as UC1
+  usecase "take simulated exam" as UC2
+  usecase "view knowledge level" as UC3
+  usecase "execute exam" as UC4
+  usecase "take exam" as UC5
+  usecase "upload exercises/tests" as UC6
+  usecase "view knowledge of students" as UC7
+}
+s --> UC1
+s --> UC2
+s --> UC3
+s --> UC5
+
+t --> UC4
+t --> UC6
+t --> UC7
+@enduml
+----
+- practice SQL
+- take simulated exam
+- take exam
+- view knowledge level
+
+- upload exercises/tests
+- execute exam
+- view knowledge of students
+
+=== Use case 1: practice tasks
+==== Characterizing information Use case 1:
+[cols=2]
+|===
+| Superordinate elementary business process:
+| Practice tasks
+
+| Aim of the use case:
+| The student learns to use database commands through exercises.
+
+| Precondition:
+| Tasks must already have been created. The user needs his own account.
+| Description:
+a|
+* Task is displayed
+* Student enters the command
+* The program checks the correctness of the command
+** If the command is correct -> next task
+
+
+|===
+=== Use case 2: taking a simulated exam
+==== Characterizing information use case 2
+
+[cols = 2]
+|===
+| Superordinate elementary business process:
+| take a simulated exam
+
+| Aim of the use case:
+| The student can check his level of knowledge
+
+| Precondition:
+| The student must have already completed the previous exercises.
+The test must have already been created.
+
+| Description:
+a|
+* Task is displayed
+* Student enters the command
+* The program checks the correctness of the command
+** If the command is correct -> next task
+* He cannot access previous exercises during the exam
+
+
+|===
+
+=== Use case 3: Take the exam
+==== Characterizing information use case 3
+
+[cols = 2]
+|===
+| Superordinate elementary business process:
+| Take the exam
+
+| Aim of the use case:
+| The teacher can check the student's level of knowledge
+
+| Precondition:
+| A test must already have been created
+
+| Description:
+a|
+* Task is displayed
+* Student enters the command
+* The program checks the correctness of the command
+** If the command is correct -> next task
+** If the command is wrong 3 times -> possibility to skip this task (no points)
+* He cannot access previous exercises during the exam
+
+|===
+=== Use case 4: View the state of knowledge
+==== Characterizing information use case 4
+
+[cols = 2]
+|===
+| Superordinate elementary business process:
+| View knowledge level
+
+| Aim of the use case:
+| Students have an overview of the material they have already learned.
+
+
+| Precondition:
+| The student must have created his own account.
+
+| Description:
+a|
+* The current level of knowledge is shown graphically.
+
+
+|===
+=== Use case 5: Upload exercises / tests
+==== Characterizing information use case 5
+
+[cols = 2]
+|===
+| Superordinate elementary business process:
+| Upload exercises / tests
+
+| Aim of the use case:
+| The exercises are made available in the database for students to complete.
+
+| Precondition:
+| The exercises must first have been created locally.
+
+| Description:
+a|
+* The teacher types in the task and the corresponding command.
+* This process is repeated until it has reached the number of tasks that the teacher would like to include in this exercise set.
+
+|===
+
+=== Use Case 6: Approve Exam
+==== Characterizing information use case 6
+
+[cols = 2]
+|===
+| Superordinate elementary business process:
+| Approve examination
+
+| Precondition:
+| The test must already have been created.
+
+| Description:
+a|
+* Exams that have already been created are initially not visible to anyone other than the creator.
+They have to be released separately.
+
+
+|===
+=== Use case 7: View the students' level of knowledge
+==== Characterizing information use case 7
+
+[cols = 2]
+|===
+| Superordinate elementary business process:
+| View the students' level of knowledge
+
+| Aim of the use case:
+| Teachers can call up the respective level of knowledge of the individual students in order to be able to keep an overview
+
+| Precondition:
+| The teacher must be given access to his students.
+
+| Description:
+a|
+* The level of knowledge of the students is shown graphically.
+|===
+
+
+==== Non-functional requirements (NFA)
+- Robustness of the application against user errors
+(Example: Refusal of SQL injections by the user)
+- quick feedback from the system
+- no check for e.g. JDBC so for project connections in Java, C ++, C
+
+=== Goals
+- Improve learning success because the student receives immediate feedback as to whether the example is correct
+- There are many tasks available to students
+** The teachers do not need to prepare extra examples
+** Students do not need to ask teachers for new assignments
+- You can concentrate on learning SQL, bureaucratic tasks are eliminated
+- Practice examples for the test are already known
+
+=== project phases
+- Learn quarkus
+- Learn Angular
+- Program the backend -> build the basic architecture
+- program backend -> save data (tasks / commands)
+- Program the backend -> check commands
+- Program the backend -> save knowledge
+- Program the backend -> call up / evaluate knowledge
+- Implement frontend
+
+=== Quantity structure
+* There are currently around 1400 students attending the HTL Leonding, with around 450 students
+actively learn SQL.
+* To implement this we need one database
+
+=== Framework conditions
+* Everything has to be docker
+* Quarkus as a backend
+* Angular as a front end
+
+== System architecture
+
+=== Team
+- 15PV
+- 19SM
+- 22TI
+
+
+=== GANTT-Diagramm
+
+[plantuml,gantt-protoype,png]
+----
+
+@startgantt
+Project starts 2020-10-02
+[Quarkus lernen] lasts 60 days
+[Angular lernen] lasts 60 days
+[Projektauftrag] lasts 14 days
+[Pflichtenheft] lasts 14 days
+[Backend, grundl. Struktur] lasts 30 days
+[Backend, Daten speichern] lasts 30 days
+[Backend, Befehle überprüfen] lasts 30 days
+[Backend, Wissensstand speichern] lasts 30 days
+[Backend, Wissensstand auswerten] lasts 30 days
+[Frontend] lasts 30 days
+
+[Pflichtenheft] starts at 2020-10-15
+[Backend, grundl. Struktur] starts at 2020-10-29
+[Backend, Daten speichern] starts at [Backend, grundl. Struktur]'s end
+[Backend, Befehle überprüfen] starts at [Backend, Daten speichern]'s end
+[Backend, Wissensstand speichern] starts at [Backend, Befehle überprüfen]'s end
+[Backend, Wissensstand auswerten] starts at [Backend, Wissensstand speichern]'s end
+[Frontend] starts at [Backend, Wissensstand auswerten]'s end
+@endgantt
+----
+
+http://www.plantuml.com/plantuml/svg/XPE_JiD03CRtFCLjB1HTmX-9hLI86SJ0K36On4bAJcvb-uHujsvzCQ98HwLObouPyltyS_HPMOi2QmUaMXIllF_6MjtqJbpbAxyg_SfNnVOj0WzHN40cf4yNG4RYmRi6VgNOFb4N0t0kdiI3GcoLeKjnUPVYDkpgNf5wRDMa6wW7fERQTHof2JVkNJaE6ZcHjtvEFeCYEJdWg4McFBZ15lk0xdJyGZxmwTZY0lsn4q4IKQ3cajtm4EK7MT7oBxmd7GVcmRoOT1VG_zEKzulzs87gSQccCxzWlH8t1XTBj2wpqAXo3HjPPctMQ6vWZ8QrNvdkb1-sYzBmUdnCVzaV[*GANTT-Diagramm*,role=black] +

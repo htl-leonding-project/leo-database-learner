@@ -1,0 +1,337 @@
+= LeoDatabaseLearner - Pflichtenheft
+19SM, 22TI, 15PV
+1.1.0, 2020-10-23: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Pflichtenheft "Was mache ich"
+
+=== Ausgangssituation
+Die HTL Leonding ist eine HTL im oö. Zentralraum mit ca. 1400 Schülern und den Fachabteilungen
+Medientechnik, Informatik, Elektronik und Medizintechnik. Im Stoffumfang der Abteilungen Informatik
+und Medientechnik wird der Gegenstand Datenbanken(DBI/INSY) gelehrt. Ein wesentlicher Bestandteil
+dieses Unterrichts ist die praktische Ausbildung der Datenbankabfragesprache SQL.
+
+=== Istzustand
+An der HTL Leonding steht den Schülern eine Oracle Datenbank zur Verfügung, um mit
+einer Datenbank arbeiten zu können. Der Lehrer stellt Übungen zur Verfügung die die Schüler
+ausführen.
+
+Es gibt schon verschiedene Übungstool die im Internet zu finden sind. Diese sind jedoch meist
+statisch und man kann nur die bestehenden Übungen lernen. Außerdem ist der Überblick
+über den Wissenstand nicht sehr übersichtlich. Außerdem muss man oftmals für diese
+Tools bezahlen um sie nutzen zu können.
+
+
+=== Problemstellung
+Neben den von den Lehrkräften zur Verfügung gestellten Aufgaben ist es für die Schüler
+vorteilhaft sich mit zusätzlichen Aufgaben auf die Leistungsfeststellungen vorbereiten
+zu können.
+
+Die Lehrkräfte stellen oft Zusatzbeispiele zur Verfügung, teilweise jedoch ohne Lösungen.
+
+=== Aufgabenstellung
+Erstellung eines Softwareproduktes für Schüler und Lehrer der HTL Leonding.
+Das System besteht aus 4 Funktionen:
+
+* Übungsmodus
+* Lernmodus(nach Lernkartensystem, aus einer Menge von Aufgaben werden die nicht korrekten Beispiele wiederholt)
+* Prüfungsmodus - Schüler (simulierte Prüfung)
+* Prüfungsmodus - Lehrer (bewertete Leistungsfeststellung)
+
+Die Prüfungsaufgaben können von Lehrer/innen mit Hilfe des Systems erstellt werden.
+Anschließend erfolgt eine Auswertung der Aufgaben.
+
+Die GUI wird grundsätzlich in 3 Bereiche unterteilt:
+
+* Text/Angabe (grafische Darstellung des Datenmodells)
+* Vom Schüler einzugebendes SQL-Statement
+* Feedback
+
+Der Lernfortschritt soll grafisch dokumentiert werden.
+
+==== Funktionale Anforderungen
+
+[plantuml]
+----
+@startuml
+left to right direction
+actor Student as s
+actor Teacher as t
+
+package LeoDatabaseLearner {
+  usecase "Aufgaben üben" as UC1
+  usecase "simulierte Prüfung absolvieren" as UC2
+  usecase "Wissensstand einsehen" as UC3
+  usecase "Prüfung freigeben" as UC4
+  usecase "Prüfung absolvieren" as UC5
+  usecase "Übungen / Tests hochladen" as UC6
+  usecase "Wissensstand der Schüler einsehen" as UC7
+}
+s --> UC1
+s --> UC2
+s --> UC3
+s --> UC5
+
+t --> UC4
+t --> UC6
+t --> UC7
+@enduml
+----
+
+- Aufgaben üben
+- simulierte Prüfung absolvieren
+- Prüfung absolvieren
+- Wissensstand einsehen
+
+
+- Übungen / Tests hochladen
+- Prüfung freigeben
+- Wissensstand der Schüler einsehen
+
+
+
+
+=== Use-Case 1: Aufgaben üben
+
+===== Charakterisierende Informationen Use-Case 1
+
+[cols=2]
+|===
+| Übergeordneter elementarer Geschäftsprozess:
+| Aufgaben üben
+
+| Ziel des Use Cases:
+| Der Schüler lernt durch Übungen mit Datenbankbefehlen umzugehen.
+
+| Vorbedingung:
+| Aufgaben müssen bereits angelegt sein. Der Benutzer benötigt einen eigenen Account.
+
+| Beschreibung:
+a|
+* Aufgabenstellung wird angezeigt
+* Schüler gibt den Befehl ein
+* Programm überprüft auf Richtigkeit des Befehls
+** Wenn der Befehl korrekt ist -> nächste Aufgabe
+|===
+
+=== Use-Case 2: simulierte Prüfung absolvieren
+
+===== Charakterisierende Informationen Use-Case 2
+
+[cols=2]
+|===
+| Übergeordneter elementarer Geschäftsprozess:
+| simulierte Prüfung absolvieren
+
+| Ziel des Use Cases:
+| Der Schüler kann seinen Wissensstand überprüfen
+
+| Vorbedingung:
+| Die vorherigen Übungen müssen bereits vom Schüler absolviert worden sein.
+Die Prüfung muss bereits erstellt worden sein.
+
+| Beschreibung:
+a|
+* Aufgabenstellung wird angezeigt
+* Schüler gibt den Befehl ein
+* Programm überprüft auf Richtigkeit des Befehls
+** Wenn der Befehl korrekt ist -> nächste Aufgabe
+* Während der Prüfung kann er nicht auf vorherige Übungen zugreifen
+
+
+|===
+
+=== Use-Case 3: Prüfung absolvieren
+
+===== Charakterisierende Informationen Use-Case 3
+
+[cols=2]
+|===
+| Übergeordneter elementarer Geschäftsprozess:
+| Prüfung absolvieren
+
+| Ziel des Use Cases:
+| Der Lehrer kann den Wissensstand des Schülers überprüfen
+
+| Vorbedingung:
+| Eine Prüfung muss bereits erstellt worden sein
+
+| Beschreibung:
+a|
+* Aufgabenstellung wird angezeigt
+* Schüler gibt den Befehl ein
+* Programm überprüft auf Richtigkeit des Befehls
+** Wenn der Befehl korrekt ist -> nächste Aufgabe
+** Wenn der Befehl 3mal falsch ist -> Möglichkeit diese Aufgabe zu überspringen (keine Punkte)
+* Während der Prüfung kann er nicht auf vorherige Übungen zugreifen
+
+|===
+
+=== Use-Case 4: Wissensstand einsehen
+
+===== Charakterisierende Informationen Use-Case 4
+
+[cols=2]
+|===
+| Übergeordneter elementarer Geschäftsprozess:
+| Wissensstand einsehen
+
+| Ziel des Use Cases:
+| Schüler haben einen Überblick über den bereits gelernten Stoff.
+
+
+| Vorbedingung:
+| Der Schüler muss seinen eigenen Account angelegt haben.
+
+| Beschreibung:
+a|
+* Der aktuelle Wissensstand wird grafisch dargestellt.
+
+|===
+
+
+=== Use-Case 5: Übungen / Tests hochladen
+
+===== Charakterisierende Informationen Use-Case 5
+
+[cols=2]
+|===
+| Übergeordneter elementarer Geschäftsprozess:
+| Übungen / Tests hochladen
+
+| Ziel des Use Cases:
+| Die Übungen werden in der Datenbank bereitgestellt, damit sie Schüler absolvieren können.
+
+| Vorbedingung:
+| Die Übungen müssen vorerst lokal erstellt worden sein.
+
+| Beschreibung:
+a|
+* Der Lehrer tippt die Aufgabenstellung sowie den dazu passenden Befehl ein.
+* Dieser Vorgang wird solange wiederholt, bis er die Anzahl der Aufgaben erreicht hat, die der Lehrer in diesem
+Übungsset zur Verfügung stellen möchte.
+
+|===
+
+
+=== Use-Case 6: Prüfung freigeben
+
+===== Charakterisierende Informationen Use-Case 6
+
+[cols=2]
+|===
+| Übergeordneter elementarer Geschäftsprozess:
+| Prüfung freigeben
+
+| Vorbedingung:
+| Die Prüfung muss bereits angelegt worden sein.
+
+| Beschreibung:
+a|
+* Bereits angelegte Prüfungen sind vorerst nicht sichbar für andere Personen außer dem Ersteller.
+Sie müssen extra freigegeben werden.
+|===
+
+
+=== Use-Case 7: Wissensstand der Schüler einsehen
+
+===== Charakterisierende Informationen Use-Case 7
+
+[cols=2]
+|===
+| Übergeordneter elementarer Geschäftsprozess:
+| Wissensstand der Schüler einsehen
+
+| Ziel des Use Cases:
+| Lehrer können bei den einzelnen Schülern den jeweiligen Wissensstand abrufen, um den Überblick behalten zu können
+
+| Vorbedingung:
+|Dem Lehrer muss der Zugriff auf seine Schüler zugeteilt werden.
+
+| Beschreibung:
+a|
+* Der Wissensstand der Schüler wird grafisch dargestellt.
+
+|===
+
+
+==== Nichtfunktionale Anforderungen (NFA)
+- Robustheit der Anwendung gegenüber Benutzerfehler
+( Beispiel: Verweigerung von SQL-Injections des Benutzers)
+- schnelle Rückmeldung des Systems
+- keine Überprüfung für zum Beispiel JDBC also für Projektanbindungen in Java, C++, C#
+
+=== Ziele
+- Verbessern des Lernerfolgs, da der Schüler sofort Rückmeldung erhält, ob das Beispiel korrekt ist
+- Den Schülern stehen viele Aufgaben zur Verfügung
+** Die Lehrer brauchen keine extra Beispiele vorbereiten
+** Die Schüler müssen die Lehrer nicht um neue Aufgaben fragen
+- Man kann sich auf das Lernen von SQL konzentrieren, bürokratische Aufgaben fallen weg
+- Übungsbeispiele für den Test sind bereits bekannt
+
+== Projektphasen
+- Quarkus lernen
+- Angular lernen
+- Backend programmieren -> grundlegende Architektur aufbauen
+- Backend programmieren -> Daten speichern(Aufgaben/Befehle)
+- Backend programmieren -> Befehle überprüfen
+- Backend programmieren -> Wissenstand speichern
+- Backend programmieren -> Wissenstand abrufen/auswerten
+- Frontend umsetzen
+
+
+=== Mengengerüst
+* Es besuchen derzeit rund 1400 Schüler die HTL Leonding wobei in etwa 450 Schüler
+aktiv SQL lernen.
+* Um dies umzusetzen brauchen wir eine Datenbank
+
+=== Rahmenbedingungen
+* Alles ist zu dockern
+* Quarkus als Backend
+* Angular als Frontend
+
+== Systemarchitektur
+
+=== Team
+- 15PV
+- 19SM
+- 22TI
+
+=== GANTT-Diagramm
+
+[plantuml,gantt-protoype,png]
+----
+
+@startgantt
+Project starts 2020-10-02
+[Quarkus lernen] lasts 60 days
+[Angular lernen] lasts 60 days
+[Projektauftrag] lasts 14 days
+[Pflichtenheft] lasts 14 days
+[Backend, grundl. Struktur] lasts 30 days
+[Backend, Daten speichern] lasts 30 days
+[Backend, Befehle überprüfen] lasts 30 days
+[Backend, Wissensstand speichern] lasts 30 days
+[Backend, Wissensstand auswerten] lasts 30 days
+[Frontend] lasts 30 days
+
+[Pflichtenheft] starts at 2020-10-15
+[Backend, grundl. Struktur] starts at 2020-10-29
+[Backend, Daten speichern] starts at [Backend, grundl. Struktur]'s end
+[Backend, Befehle überprüfen] starts at [Backend, Daten speichern]'s end
+[Backend, Wissensstand speichern] starts at [Backend, Befehle überprüfen]'s end
+[Backend, Wissensstand auswerten] starts at [Backend, Wissensstand speichern]'s end
+[Frontend] starts at [Backend, Wissensstand auswerten]'s end
+@endgantt
+
+----
+
+http://www.plantuml.com/plantuml/svg/XPE_JiD03CRtFCLjB1HTmX-9hLI86SJ0K36On4bAJcvb-uHujsvzCQ98HwLObouPyltyS_HPMOi2QmUaMXIllF_6MjtqJbpbAxyg_SfNnVOj0WzHN40cf4yNG4RYmRi6VgNOFb4N0t0kdiI3GcoLeKjnUPVYDkpgNf5wRDMa6wW7fERQTHof2JVkNJaE6ZcHjtvEFeCYEJdWg4McFBZ15lk0xdJyGZxmwTZY0lsn4q4IKQ3cajtm4EK7MT7oBxmd7GVcmRoOT1VG_zEKzulzs87gSQccCxzWlH8t1XTBj2wpqAXo3HjPPctMQ6vWZ8QrNvdkb1-sYzBmUdnCVzaV[*GANTT-Diagramm*,role=black] +

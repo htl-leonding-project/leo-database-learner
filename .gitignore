@@ -1,9 +1,11 @@
-gh-pages/
 build-docs-html/
 build-docs-pdf/
 build-docs-revealjs/
 target/
 asciidocs/revealjs/
 revealjs.zip
-.env
+gh-pages/
+.idea/
+*.iml
 .DS_Store
+.env

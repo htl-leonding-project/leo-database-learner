@@ -1,13 +1,13 @@
 # LeoDatabaseLearner
 
+* https://github.com/htl-leonding-project/leo-database-learner
+
 ## Description:
 
 Practice tool to learn database commands and to check your level of knowledge.
 
 ## gh-pages
-
-* https://github.com/htl-leonding-project/leo-database-learner
-* gh-pages  
+ 
    * [index leo-database-learner ](https://htl-leonding-project.github.io/leo-database-learner/)
    * [Project-proposal](https://htl-leonding-project.github.io/leo-database-learner/project-proposal)
    * [System-specification](https://htl-leonding-project.github.io/leo-database-learner/system-specification)

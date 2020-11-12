@@ -10,7 +10,7 @@ Practice tool to learn database commands and to check your level of knowledge.
 * gh-pages  
    * [index leo-database-learner ](https://htl-leonding-project.github.io/leo-database-learner/)
    * [Project-proposal](https://htl-leonding-project.github.io/leo-database-learner/project-proposal)
-   * [system-specification](https://htl-leonding-project.github.io/leo-database-learner/system-specification)
+   * [System-specification](https://htl-leonding-project.github.io/leo-database-learner/system-specification)
 
 
 ## How to create gh-pages

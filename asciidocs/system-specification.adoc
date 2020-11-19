@@ -11,7 +11,7 @@ ifndef::imagesdir[:imagesdir: images]
 // print the toc here (not at the default position)
 //toc::[]
 
-== Pflichtenheft "Was mache ich"
+== Systemspecification
 
 
 === Initial situation

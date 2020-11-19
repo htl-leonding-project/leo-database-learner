@@ -50,15 +50,15 @@
       d_owner : Long
     }
 
-Exam -right-> Teacher
-Exam -left-> Exercise
-ExercisePackage --> Teacher
-ExercisePackage --> Exercise
-Exercise --> Datamodel
-Exercise --> Question
-Exercise --> Statement
-Teacher --> Student
-Student --> Exam
+Exam "*" -right-> "1" Teacher
+Exam "*" -left-> "*" Exercise
+ExercisePackage "*" --> "1" Teacher
+ExercisePackage "*" --> "*" Exercise
+Exercise "*" --> "0..*" Datamodel
+Exercise "*" --> "*" Question
+Exercise "*" --> "1" Statement
+Teacher "*" --> "*" Student
+Student "*" --> "*" Exam
 
 
 @enduml

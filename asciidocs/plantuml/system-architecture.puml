@@ -8,7 +8,6 @@ Backend --> BackendAPI
 GUI ..> BackendAPI : use
 GUI --> GUIAPI
 Browser ..> GUIAPI : use
-
 skinparam node {
 borderColor Black
 }

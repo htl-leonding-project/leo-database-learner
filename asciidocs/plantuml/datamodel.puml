@@ -1,5 +1,4 @@
 @startuml
-
     class Teacher {
       t_id : Long
       t_firstname : String
@@ -10,6 +9,8 @@
       s_id : Long
       s_firstname : String
       s_lastname : String
+      s_exam : List<Exam>
+      's_knowledge:
     }
     class Exercise {
       exc_id : Long
@@ -33,7 +34,7 @@
       e_description : String
       e_date : Date
       e_owner : Long
-      e_exercise : Long
+      e_exercise : List<Exercise>
     }
     class ExercisePackage{
       excp_id : Long
@@ -41,7 +42,7 @@
       excp_description : String
       excp_date : Date
       excp_owner : Long
-      excp_exercise : Long
+      excp_exercise : List<Exercise>
     }
     class Datamodel {
       d_id : Long
@@ -49,6 +50,15 @@
       d_owner : Long
     }
 
+Exam -right-> Teacher
+Exam -left-> Exercise
+ExercisePackage --> Teacher
+ExercisePackage --> Exercise
+Exercise --> Datamodel
+Exercise --> Question
+Exercise --> Statement
+Teacher --> Student
+Student --> Exam
 
 
 @enduml

@@ -1,4 +1,6 @@
-import at.htl;
+package at.htl;
+
+import at.htl.Role;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

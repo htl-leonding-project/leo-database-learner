@@ -67,4 +67,15 @@ public class DataModel {
     public void setErd(Blob erd) {
         this.erd = erd;
     }
+
+    @Override
+    public String toString() {
+        return "DataModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", owner=" + owner +
+                ", comment='" + comment + '\'' +
+                ", erd=" + erd +
+                '}';
+    }
 }

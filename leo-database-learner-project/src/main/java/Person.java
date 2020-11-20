@@ -1,10 +1,15 @@
 import at.htl.Role;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Person {
-    private int id;
+    @Id  //@GeneratedValue(generator = GenerationType.Table)
+    Long id;
+
     private String firstName;
     private String lastName;
     private Role role;
@@ -12,19 +17,10 @@ public class Person {
     public Person() {
     }
 
-    public Person(int id, String firstName, String lastName, Role role) {
-        this.id = id;
+    public Person(String firstName, String lastName, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstName() {

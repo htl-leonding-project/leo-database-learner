@@ -28,4 +28,43 @@ public class SqlScript {
         this.insertScript = insertScript;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public DataModel getDataModel() {
+        return dataModel;
+    }
+
+    public void setDataModel(DataModel dataModel) {
+        this.dataModel = dataModel;
+    }
+
+    public String getCreateScript() {
+        return createScript;
+    }
+
+    public void setCreateScript(String createScript) {
+        this.createScript = createScript;
+    }
+
+    public String getDropScript() {
+        return dropScript;
+    }
+
+    public void setDropScript(String dropScript) {
+        this.dropScript = dropScript;
+    }
+
+    public String getInsertScript() {
+        return insertScript;
+    }
+
+    public void setInsertScript(String insertScript) {
+        this.insertScript = insertScript;
+    }
 }

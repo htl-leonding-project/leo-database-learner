@@ -13,10 +13,18 @@ public class DataModel {
     Long id;
 
     private String name;
-    //private Person owner;
+    private Person owner;
     private String comment;
     private Blob erd;
 
+    public DataModel() {
+    }
 
-
+    public DataModel(Long id, String name, Person owner, String comment, Blob erd) {
+        this.id = id;
+        this.name = name;
+        this.owner = owner;
+        this.comment = comment;
+        this.erd = erd;
+    }
 }

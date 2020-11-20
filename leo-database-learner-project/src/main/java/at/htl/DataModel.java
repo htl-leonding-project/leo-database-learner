@@ -27,4 +27,44 @@ public class DataModel {
         this.comment = comment;
         this.erd = erd;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public Blob getErd() {
+        return erd;
+    }
+
+    public void setErd(Blob erd) {
+        this.erd = erd;
+    }
 }

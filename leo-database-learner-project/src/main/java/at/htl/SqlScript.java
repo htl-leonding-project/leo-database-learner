@@ -67,4 +67,15 @@ public class SqlScript {
     public void setInsertScript(String insertScript) {
         this.insertScript = insertScript;
     }
+
+    @Override
+    public String toString() {
+        return "SqlScript{" +
+                "id=" + id +
+                ", dataModel=" + dataModel +
+                ", createScript='" + createScript + '\'' +
+                ", dropScript='" + dropScript + '\'' +
+                ", insertScript='" + insertScript + '\'' +
+                '}';
+    }
 }

@@ -10,8 +10,9 @@ import java.time.LocalDate;
 @Entity
 public class Question {
 
-    @Id //@GeneratedValue(generator = GenerationType.TABLE)
-    Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
 
     private String text;
     private String sql;

@@ -9,8 +9,9 @@ import java.sql.Blob;
 @Entity
 public class SqlScript {
 
-    @Id //@GeneratedValue(generator = GenerationType.TABLE)
-    Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
 
     private DataModel dataModel;
     private String createScript;

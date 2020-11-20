@@ -9,8 +9,11 @@ import javax.persistence.Id;
 
 @Entity
 public class Person {
-    @Id  //@GeneratedValue(generator = GenerationType.Table)
-    Long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
+
 
     private String firstName;
     private String lastName;

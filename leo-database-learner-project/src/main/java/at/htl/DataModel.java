@@ -9,8 +9,9 @@ import java.sql.Blob;
 @Entity
 public class DataModel {
 
-    @Id //@GeneratedValue(generator = GenerationType.TABLE)
-    Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;;
 
     private String name;
     private Person owner;

@@ -20,5 +20,16 @@ public class Question {
     private DataModel dataModel;
     private Person owner;
 
+    public Question() {
+    }
 
+    public Question(Long id, String text, String sql, int points, LocalDate localDate, DataModel dataModel, Person owner) {
+        this.id = id;
+        this.text = text;
+        this.sql = sql;
+        this.points = points;
+        this.localDate = localDate;
+        this.dataModel = dataModel;
+        this.owner = owner;
+    }
 }

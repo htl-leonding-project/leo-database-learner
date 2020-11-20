@@ -1,0 +1,12 @@
+= User Stories- Geschäftsprozesse
+
+== Instruktor
+- erstellt Datenmodell (mit graf. Darstellung des ERD)
+  damit er dazugehörige Fragen erstellen kann.
+- erstellt SQL-Fragen, die zu einem Datenmodell gehören, damit Studenten diese beantworten können.
+- erstellt SQL-Script-Objekt, um für das Datenmodell Tabellen und Daten für die Beantwortung der SQL-Fragen zur Verfügung stehen.
+
+== Student
+- SQL-Aufgaben üben
+- SQL-Fragen, die vom Lehrer zur Verfügung gestellt wurden, beantworten
+- derzeitigen Wissensstand einsehen

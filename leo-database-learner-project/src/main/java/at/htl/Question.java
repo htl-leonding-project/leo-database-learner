@@ -88,4 +88,17 @@ public class Question {
     public void setOwner(Person owner) {
         this.owner = owner;
     }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", sql='" + sql + '\'' +
+                ", points=" + points +
+                ", localDate=" + localDate +
+                ", dataModel=" + dataModel +
+                ", owner=" + owner +
+                '}';
+    }
 }

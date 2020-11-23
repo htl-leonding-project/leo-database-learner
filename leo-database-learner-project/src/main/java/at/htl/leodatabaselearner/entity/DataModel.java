@@ -14,6 +14,9 @@ public class DataModel {
 
     private String name;
     private String comment;
+
+    @Lob
+    //private byte[] erd;
     private Blob erd;
 
     @ManyToOne

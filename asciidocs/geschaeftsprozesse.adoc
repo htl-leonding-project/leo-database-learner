@@ -5,8 +5,10 @@
   damit er dazugehörige Fragen erstellen kann.
 - erstellt SQL-Fragen, die zu einem Datenmodell gehören, damit Studenten diese beantworten können.
 - erstellt SQL-Script-Objekt, um für das Datenmodell Tabellen und Daten für die Beantwortung der SQL-Fragen zur Verfügung stehen.
+- kann Aufgaben, die er angelegt hat, einsehen/bearbeiten
 
 == Student
 - SQL-Aufgaben üben
 - SQL-Fragen, die vom Lehrer zur Verfügung gestellt wurden, beantworten
 - derzeitigen Wissensstand einsehen
+- Aufgaben ansehen

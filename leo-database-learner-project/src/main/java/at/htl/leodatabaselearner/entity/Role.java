@@ -1,4 +1,4 @@
-package at.htl;
+package at.htl.leodatabaselearner.entity;
 
 public enum Role {
     INSTRUCTOR,

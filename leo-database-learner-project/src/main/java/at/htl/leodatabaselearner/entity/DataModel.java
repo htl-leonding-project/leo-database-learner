@@ -1,9 +1,6 @@
-package at.htl;
+package at.htl.leodatabaselearner.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Blob;
 
 @Entity
@@ -14,15 +11,17 @@ public class DataModel {
     private Long id;;
 
     private String name;
-    private Person owner;
     private String comment;
     private Blob erd;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id")
+    private Person owner;
 
     public DataModel() {
     }
 
-    public DataModel(Long id, String name, Person owner, String comment, Blob erd) {
-        this.id = id;
+    public DataModel(String name, Person owner, String comment, Blob erd) {
         this.name = name;
         this.owner = owner;
         this.comment = comment;

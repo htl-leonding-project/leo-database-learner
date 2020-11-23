@@ -1,10 +1,11 @@
-package at.htl;
+package at.htl.leodatabaselearner.entity;
+
+import at.htl.leodatabaselearner.entity.DataModel;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.sql.Blob;
 
 @Entity
 public class SqlScript {

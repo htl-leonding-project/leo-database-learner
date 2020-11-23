@@ -1,13 +1,10 @@
-package at.htl;
+package at.htl.leodatabaselearner.entity;
 
-import at.htl.Role;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+//@NamedQuery(name = "Person.getByGender", query = "select p from Person p where p.gender = :gender")
 public class Person {
 
     @Id
@@ -17,7 +14,10 @@ public class Person {
 
     private String firstName;
     private String lastName;
+    @Enumerated(EnumType.ORDINAL)
     private Role role;
+
+    //@OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 
     public Person() {
     }
@@ -26,6 +26,14 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

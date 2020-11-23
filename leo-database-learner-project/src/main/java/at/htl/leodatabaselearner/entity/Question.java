@@ -1,10 +1,12 @@
-package at.htl;
+package at.htl.leodatabaselearner.entity;
+
+import at.htl.leodatabaselearner.entity.DataModel;
+import at.htl.leodatabaselearner.entity.Person;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.sql.DataSource;
 import java.time.LocalDate;
 
 @Entity

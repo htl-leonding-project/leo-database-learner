@@ -1,4 +1,4 @@
-package at.htl;
+package at.htl.leodatabaselearner;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-//@NamedQuery(name = "Person.getByGender", query = "select p from Person p where p.gender = :gender")
+@XmlRootElement
 public class Person {
 
     @Id
@@ -17,11 +17,11 @@ public class Person {
     private String lastName;
     @Enumerated(EnumType.ORDINAL)
     private Role role;
-
-    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<DataModel> dataModels = new ArrayList<>();
-    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<Question> questions = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+//    private List<DataModel> dataModels = new ArrayList<>();
+//    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+//    private List<Question> questions = new ArrayList<>();
 
     public Person() {
     }

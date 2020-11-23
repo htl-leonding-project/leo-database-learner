@@ -3,8 +3,10 @@ package at.htl.leodatabaselearner.entity;
 import at.htl.leodatabaselearner.entity.DataModel;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class SqlScript {
 
     @Id
@@ -16,7 +18,7 @@ public class SqlScript {
     private String insertScript;
 
     @ManyToOne
-    @JoinColumn(name = "dataModel_id")
+//    @JoinColumn(name = "dataModel_id")
     private DataModel dataModel;
 
     public SqlScript() {

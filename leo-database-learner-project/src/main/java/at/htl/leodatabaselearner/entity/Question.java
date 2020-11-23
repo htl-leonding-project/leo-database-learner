@@ -4,9 +4,11 @@ import at.htl.leodatabaselearner.entity.DataModel;
 import at.htl.leodatabaselearner.entity.Person;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
 @Entity
+@XmlRootElement
 public class Question {
 
     @Id
@@ -19,11 +21,11 @@ public class Question {
     private LocalDate localDate;
 
     @ManyToOne
-    @JoinColumn(name = "dataModel_id")
+//    @JoinColumn(name = "dataModel_id")
     private DataModel dataModel;
 
     @ManyToOne
-    @JoinColumn(name = "person_id")
+//    @JoinColumn(name = "person_id")
     private Person owner;
 
     public Question() {

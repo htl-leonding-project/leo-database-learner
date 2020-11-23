@@ -1,0 +1,14 @@
+= User Stories - business processes
+
+== instructor
+- creates data model (with graphic representation of the ERD)
+so that he can create related questions.
+- creates SQL questions belonging to a data model so that students can answer them.
+- creates an SQL script object in order to make tables and data available for the data model for answering the SQL questions.
+- can view / edit tasks which he has created
+
+== student
+- practice SQL tasks
+- answer SQL questions provided by the teacher
+- view the current state of knowledge
+- view tasks

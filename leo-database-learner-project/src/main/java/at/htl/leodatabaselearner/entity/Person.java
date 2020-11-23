@@ -2,6 +2,8 @@ package at.htl.leodatabaselearner.entity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 //@NamedQuery(name = "Person.getByGender", query = "select p from Person p where p.gender = :gender")
@@ -11,13 +13,13 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
-
     private String firstName;
     private String lastName;
     @Enumerated(EnumType.ORDINAL)
     private Role role;
 
-    //@OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<DataModel> dataModels = new ArrayList<>();
 
     public Person() {
     }

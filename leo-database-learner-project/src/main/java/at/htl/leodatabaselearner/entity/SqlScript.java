@@ -2,10 +2,7 @@ package at.htl.leodatabaselearner.entity;
 
 import at.htl.leodatabaselearner.entity.DataModel;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class SqlScript {
@@ -14,16 +11,18 @@ public class SqlScript {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
-    private DataModel dataModel;
     private String createScript;
     private String dropScript;
     private String insertScript;
 
+    @ManyToOne
+    @JoinColumn(name = "dataModel_id")
+    private DataModel dataModel;
+
     public SqlScript() {
     }
 
-    public SqlScript(Long id, DataModel dataModel, String createScript, String dropScript, String insertScript) {
-        this.id = id;
+    public SqlScript(DataModel dataModel, String createScript, String dropScript, String insertScript) {
         this.dataModel = dataModel;
         this.createScript = createScript;
         this.dropScript = dropScript;

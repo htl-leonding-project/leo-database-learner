@@ -22,6 +22,8 @@ public class DataModel {
 
     @OneToMany(mappedBy = "datamodel", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Question> questions = new ArrayList<>();
+    @OneToMany(mappedBy = "datamodel", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<SqlScript> sqlScripts = new ArrayList<>();
 
     public DataModel() {
     }

@@ -20,6 +20,8 @@ public class Person {
 
     @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<DataModel> dataModels = new ArrayList<>();
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Question> questions = new ArrayList<>();
 
     public Person() {
     }

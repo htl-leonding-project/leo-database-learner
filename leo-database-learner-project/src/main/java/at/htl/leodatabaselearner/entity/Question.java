@@ -3,10 +3,7 @@ package at.htl.leodatabaselearner.entity;
 import at.htl.leodatabaselearner.entity.DataModel;
 import at.htl.leodatabaselearner.entity.Person;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -20,18 +17,22 @@ public class Question {
     private String sql;
     private int points;
     private LocalDate localDate;
+
+    @ManyToOne
+    @JoinColumn(name = "dataModel_id")
     private DataModel dataModel;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id")
     private Person owner;
 
     public Question() {
     }
 
-    public Question(Long id, String text, String sql, int points, LocalDate localDate, DataModel dataModel, Person owner) {
-        this.id = id;
+    public Question(String text, String sql, int points, DataModel dataModel, Person owner) {
         this.text = text;
         this.sql = sql;
         this.points = points;
-        this.localDate = localDate;
         this.dataModel = dataModel;
         this.owner = owner;
     }

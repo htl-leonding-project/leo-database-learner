@@ -2,6 +2,8 @@ package at.htl.leodatabaselearner.entity;
 
 import javax.persistence.*;
 import java.sql.Blob;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class DataModel {
@@ -17,6 +19,9 @@ public class DataModel {
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person owner;
+
+    @OneToMany(mappedBy = "datamodel", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Question> questions = new ArrayList<>();
 
     public DataModel() {
     }

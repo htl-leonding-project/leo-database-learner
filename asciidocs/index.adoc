@@ -24,7 +24,7 @@ Practice tool to learn database commands and to check your level of knowledge.
 
 == Documents
 
-https://htl-leonding-project.github.io/leo-database-learner/system-architecture[*Systemarchitecture*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
 
 === English:
 https://htl-leonding-project.github.io/leo-database-learner/project-proposal[*Projectproposal*,role=black] +

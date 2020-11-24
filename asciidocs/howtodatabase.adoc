@@ -1,0 +1,39 @@
+= LeoDatabaseLearner - How to get the db
+19SM, 22TI, 15PV
+1.1.0, 2020-10-23: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Database Manual
+
+To install the database you first have to run the link:/leo-database-learner-project/start-db.sh[start-db.sh].
+
+Then you have to open link:/leo-database-learner-project/datasource.txt[datasource.txt] and copy the included text.
+
+Then check if the Data source properties look like this:
+
+:module: .
+
+image::{module}./../images/properties.png[Properties]
+
+
+Then test the connection.
+
+If the connection works start quarkus:
+
+----
+mvnw clean compile quarkus:dev
+----
+
+if you are using Linux:
+
+----
+mvn clean compile quarkus:dev
+----

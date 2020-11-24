@@ -32,7 +32,7 @@ If the connection works start quarkus:
 mvnw clean compile quarkus:dev
 ----
 
-if you are using Linux:
+If you are using Ubuntu:
 
 ----
 mvn clean compile quarkus:dev

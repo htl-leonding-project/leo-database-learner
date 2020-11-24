@@ -24,16 +24,18 @@ Practice tool to learn database commands and to check your level of knowledge.
 
 == Documents
 
+https://htl-leonding-project.github.io/leo-database-learner/howtodatabase.html[*How to get the DB*,role=black] +
 https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
 
 === English:
 https://htl-leonding-project.github.io/leo-database-learner/project-proposal[*Projectproposal*,role=black] +
 https://htl-leonding-project.github.io/leo-database-learner/system-specification[*Systemspecification*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/business-processes.html[*Businessprocesses*,role=black] +
 
 === German:
 https://htl-leonding-project.github.io/leo-database-learner/projektauftrag[*Projektauftrag*,role=black] +
 https://htl-leonding-project.github.io/leo-database-learner/pflichtenheft[*Pflichtenheft*,role=black] +
-
+https://htl-leonding-project.github.io/leo-database-learner/geschaeftsprozesse.html[*Geschäftsprozesse*,role=black] +
 
 == External Project Repository
 

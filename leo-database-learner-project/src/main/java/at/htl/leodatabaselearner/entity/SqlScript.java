@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class SqlScript {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String createScript;

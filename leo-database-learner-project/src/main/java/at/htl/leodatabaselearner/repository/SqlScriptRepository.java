@@ -24,4 +24,8 @@ public class SqlScriptRepository {
         return query.getResultStream().findFirst().orElse(null);
     }
 
+    public List<SqlScript> findAll(){
+        var query = em.createQuery("select ss from SqlScript ss", SqlScript.class);
+        return query.getResultList();
+    }
 }

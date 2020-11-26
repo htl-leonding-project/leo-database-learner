@@ -50,6 +50,10 @@ class DataModelRepositoryTest {
         assertThat(dataModel.getId()).isEqualTo(1L);
     }
 
+    @Test
+    public void findById() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
+
+    }
 
 
 

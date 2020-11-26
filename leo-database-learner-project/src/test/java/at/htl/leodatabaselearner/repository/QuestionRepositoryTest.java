@@ -38,6 +38,34 @@ class QuestionRepositoryTest {
     @Inject
     UserTransaction tx;
 
+    @Test
+    public void addQuestion() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
+
+        Person person = new Person("Susi","Snow", Role.ADMIN);
+        DataModel dataModel = new DataModel("Test01", person, "comment1");
+
+        tx.begin();
+        dataModelRepo.addDataModel(dataModel);
+        personRepo.addPerson(person);
+        tx.commit();
+
+        Question question = new Question("text2", "select * from person", 2, dataModel, person);
+
+        Table questionTable = new Table(getDataSource(), "question");
+        output(questionTable).toConsole();
+
+        tx.begin();
+        questionRepo.addQuestion(question);
+        tx.commit();
+
+        questionTable = new Table(getDataSource(), "question");
+        output(questionTable).toConsole();
+
+        assertThat(question.getId()).isEqualTo(2L);
+        tx.begin();
+        tx.rollback();
+    }
+
 
     static final String DATABASE = "db";
     static final String USERNAME = "app";

@@ -17,7 +17,7 @@ public class DataModel {
     private String name;
     private String comment;
 
-    //TODO Blob
+    //TODO: Blob
     //@Lob
     //private byte[] erd;
     //private Blob erd;

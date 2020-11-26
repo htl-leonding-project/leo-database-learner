@@ -27,6 +27,12 @@ class DataModelRepositoryTest {
     @Inject
     UserTransaction tx;
 
+    @Test
+    public void addDataModel() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
+
+    }
+
+
 
 
     static final String DATABASE = "db";

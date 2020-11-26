@@ -20,4 +20,10 @@ public class DataModelRepository {
         em.persist(entity);
     }
 
+    public DataModel findById(Long id){
+        var query = em.createQuery("select d from DataModel d where d.id = :id", DataModel.class);
+        query.setParameter("id", id);
+        return query.getResultStream().findFirst().orElse(null);
+    }
+
 }

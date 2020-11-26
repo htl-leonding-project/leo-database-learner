@@ -60,6 +60,12 @@ public class PersonRepositoryTest {
 
     }
 
+    @Test
+    public void findAll(){
+
+
+    }
+
 
     static final String DATABASE = "db";
     static final String USERNAME = "app";

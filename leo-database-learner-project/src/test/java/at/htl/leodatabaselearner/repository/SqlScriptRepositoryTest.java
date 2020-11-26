@@ -3,7 +3,10 @@ package at.htl.leodatabaselearner.repository;
 import at.htl.leodatabaselearner.entity.*;
 import io.quarkus.test.junit.QuarkusTest;
 import org.assertj.db.type.Table;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.postgresql.ds.PGSimpleDataSource;
 
 import javax.inject.Inject;
@@ -16,6 +19,7 @@ import static org.assertj.db.output.Outputs.output;
 import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class SqlScriptRepositoryTest {
 
     @Inject
@@ -31,6 +35,7 @@ class SqlScriptRepositoryTest {
     UserTransaction tx;
 
     @Test
+    @Order(1)
     public void addSqlScript() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
 
         Person person = new Person("Susi","Snow", Role.ADMIN);
@@ -57,6 +62,7 @@ class SqlScriptRepositoryTest {
     }
 
     @Test
+    @Order(2)
     public void findById(){
 
         SqlScript foundSqlScript = sqlScriptRepo.findById(1L);
@@ -70,6 +76,7 @@ class SqlScriptRepositoryTest {
     }
 
     @Test
+    @Order(0)
     public void findAll() {
 
         List<SqlScript> foundPersons = sqlScriptRepo.findAll();
@@ -79,11 +86,6 @@ class SqlScriptRepositoryTest {
 
         assertThat(foundPersons.size()).isEqualTo(1);
     }
-
-
-
-
-
 
 
     static final String DATABASE = "db";

@@ -18,4 +18,10 @@ public class SqlScriptRepository {
         em.persist(entity);
     }
 
+    public SqlScript findById(Long id){
+        var query = em.createQuery("select ss from SqlScript ss where ss.id = :id", SqlScript.class);
+        query.setParameter("id", id);
+        return query.getResultStream().findFirst().orElse(null);
+    }
+
 }

@@ -50,6 +50,14 @@ public class PersonRepositoryTest {
     @Test
     public void findById(){
 
+        Person foundPerson = repo.findById(2L);
+
+        Table personTable = new Table(getDataSource(), "person");
+        output(personTable).toConsole();
+
+        assertThat(foundPerson.getFirstName()).isEqualTo("madschi");
+        assertThat(foundPerson.getLastName()).isEqualTo("stei");
+
     }
 
 

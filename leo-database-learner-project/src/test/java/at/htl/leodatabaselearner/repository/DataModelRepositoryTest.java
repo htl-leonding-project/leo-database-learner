@@ -5,7 +5,10 @@ import at.htl.leodatabaselearner.entity.Person;
 import at.htl.leodatabaselearner.entity.Role;
 import io.quarkus.test.junit.QuarkusTest;
 import org.assertj.db.type.Table;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.postgresql.ds.PGSimpleDataSource;
 
 import javax.inject.Inject;
@@ -17,6 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.db.output.Outputs.output;
 
 @QuarkusTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DataModelRepositoryTest {
     @Inject
     DataModelRepository dataModelRepo;
@@ -28,6 +32,7 @@ class DataModelRepositoryTest {
     UserTransaction tx;
 
     @Test
+    @Order(1)
     public void addDataModel() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
 
         Person person = new Person("Susi", "Snow", Role.ADMIN);
@@ -36,7 +41,7 @@ class DataModelRepositoryTest {
         personRepo.addPerson(person);
         tx.commit();
 
-        DataModel dataModel = new DataModel("Marah", person, "Hi");
+        DataModel dataModel = new DataModel("Test02", person, "comment2");
         Table datamodelTable = new Table(getDataSource(), "datamodel");
         output(datamodelTable).toConsole();
 
@@ -47,62 +52,35 @@ class DataModelRepositoryTest {
         datamodelTable = new Table(getDataSource(), "datamodel");
         output(datamodelTable).toConsole();
 
-        assertThat(dataModel.getId()).isEqualTo(1L);
+        assertThat(dataModel.getId()).isEqualTo(2L);
+
+
     }
 
     @Test
+    @Order(2)
     public void findById() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
 
-        Person person = new Person("Susi", "Snow", Role.ADMIN);
+        DataModel foundDataModel = dataModelRepo.findById(2L);
 
-        tx.begin();
-        personRepo.addPerson(person);
-        tx.commit();
-
-        DataModel dataModel = new DataModel("Test01", person, "comment");
         Table datamodelTable = new Table(getDataSource(), "datamodel");
         output(datamodelTable).toConsole();
 
-        tx.begin();
-        dataModelRepo.addDataModel(dataModel);
-        tx.commit();
-
-        DataModel foundDataModel = dataModelRepo.findById(1L);
-
-        datamodelTable = new Table(getDataSource(), "datamodel");
-        output(datamodelTable).toConsole();
-
-        assertThat(foundDataModel.getName()).isEqualTo("Test01");
+        assertThat(foundDataModel.getName()).isEqualTo("Test02");
 
 
     }
 
     @Test
+    @Order(0)
     public void findAll() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
-        Person person = new Person("Susi", "Snow", Role.ADMIN);
-
-        tx.begin();
-        personRepo.addPerson(person);
-        tx.commit();
-
-        DataModel dataModel1 = new DataModel("Test01", person, "comment1");
-        DataModel dataModel2 = new DataModel("Test02", person, "comment2");
-        Table datamodelTable = new Table(getDataSource(), "datamodel");
-        output(datamodelTable).toConsole();
-
-        tx.begin();
-        dataModelRepo.addDataModel(dataModel1);
-        dataModelRepo.addDataModel(dataModel2);
-        tx.commit();
 
         List<DataModel> foundDataModels = dataModelRepo.findAll();
 
         Table personTable = new Table(getDataSource(), "datamodel");
         output(personTable).toConsole();
 
-        assertThat(foundDataModels.size()).isEqualTo(2);
-
-
+        assertThat(foundDataModels.size()).isEqualTo(1);
 
     }
 

@@ -67,17 +67,28 @@ class QuestionRepositoryTest {
     }
     @Test
     public void findById() {
+
         Question foundQuestion = questionRepo.findById(1L);
 
         Table personTable = new Table(getDataSource(), "question");
         output(personTable).toConsole();
 
         assertThat(foundQuestion.getText()).isEqualTo("text01");
+    }
 
+    @Test
+    public void findAll() {
+
+        List<Question> foundQuestions = questionRepo.findAll();
+
+        Table personTable = new Table(getDataSource(), "question");
+        output(personTable).toConsole();
+
+        assertThat(foundQuestions.size()).isEqualTo(1);
 
     }
 
-    static final String DATABASE = "db";
+        static final String DATABASE = "db";
     static final String USERNAME = "app";
     static final String PASSWORD = "app";
     public static final String URL = "jdbc:postgresql://localhost:5432/db";

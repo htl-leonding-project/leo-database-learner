@@ -31,4 +31,10 @@ public class QuestionRepository {
         return query.getResultList();
     }
 
+    public List<Question> findByOwner(Person person){
+        var query = em.createQuery("select q.id, q.localDate, q.points, q.sql, q.text, q.dataModel," +
+                " q.owner from Question q where q.owner = :owner", Question.class);
+        query.setParameter("owner", person.getId());
+        return query.getResultList();
+    }
 }

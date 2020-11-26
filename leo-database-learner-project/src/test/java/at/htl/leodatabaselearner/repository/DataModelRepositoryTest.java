@@ -84,6 +84,31 @@ class DataModelRepositoryTest {
 
     }
 
+//    @Test
+//    @Order(3)
+//    public void findByOwner() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
+//        Person person = new Person("Susi", "Snow", Role.ADMIN);
+//
+//        tx.begin();
+//        personRepo.addPerson(person);
+//        tx.commit();
+//
+//        DataModel dataModel = new DataModel("Test02", person, "comment2");
+//        Table datamodelTable = new Table(getDataSource(), "datamodel");
+//        output(datamodelTable).toConsole();
+//
+//        tx.begin();
+//        dataModelRepo.addDataModel(dataModel);
+//        tx.commit();
+//
+//        List<DataModel> foundDataModels = dataModelRepo.findByOwner(person);
+//
+//        Table personTable = new Table(getDataSource(), "datamodel");
+//        output(personTable).toConsole();
+//
+//        assertThat(foundDataModels.size()).isEqualTo(2);
+//
+//    }
 
     static final String DATABASE = "db";
     static final String USERNAME = "app";

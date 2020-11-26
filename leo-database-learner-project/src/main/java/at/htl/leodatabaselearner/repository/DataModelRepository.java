@@ -29,4 +29,11 @@ public class DataModelRepository {
         var query = em.createQuery("select dm from DataModel dm", DataModel.class);
         return query.getResultList();
     }
+
+    public List<DataModel> findByOwner(Person person){
+        var query = em.createQuery("select dm from DataModel dm" +
+                " where dm.owner = :owner", DataModel.class);
+        query.setParameter("owner", person.getId());
+        return query.getResultList();
+    }
 }

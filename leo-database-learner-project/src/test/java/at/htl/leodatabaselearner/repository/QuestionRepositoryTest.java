@@ -63,8 +63,6 @@ class QuestionRepositoryTest {
         output(questionTable).toConsole();
 
         assertThat(question.getId()).isEqualTo(2L);
-        tx.begin();
-        tx.rollback();
     }
     @Test
     @Order(2)
@@ -91,7 +89,36 @@ class QuestionRepositoryTest {
 
     }
 
-        static final String DATABASE = "db";
+//        @Test
+//    @Order(3)
+//    public void findByOwner() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
+//            Person person = new Person("Susi","Snow", Role.ADMIN);
+//            DataModel dataModel = new DataModel("Test01", person, "comment1");
+//
+//            tx.begin();
+//            dataModelRepo.addDataModel(dataModel);
+//            personRepo.addPerson(person);
+//            tx.commit();
+//
+//            Question question = new Question("text2", "select * from person", 2, dataModel, person);
+//
+//            Table questionTable = new Table(getDataSource(), "question");
+//            output(questionTable).toConsole();
+//
+//            tx.begin();
+//            questionRepo.addQuestion(question);
+//            tx.commit();
+//
+//        List<DataModel> foundDataModels = dataModelRepo.findByOwner(person);
+//
+//        Table personTable = new Table(getDataSource(), "question");
+//        output(personTable).toConsole();
+//
+//        assertThat(foundDataModels.size()).isEqualTo(2);
+//
+//    }
+
+    static final String DATABASE = "db";
     static final String USERNAME = "app";
     static final String PASSWORD = "app";
     public static final String URL = "jdbc:postgresql://localhost:5432/db";

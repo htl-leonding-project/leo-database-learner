@@ -25,7 +25,7 @@ public class PersonRepository {
     }
 
     public List<Person> findAll(){
-        var query = em.createQuery("select p.id, p.firstName, p.lastName, p.role from Person p", Person.class);
+        var query = em.createQuery("select p from Person p", Person.class);
         return query.getResultList();
     }
 

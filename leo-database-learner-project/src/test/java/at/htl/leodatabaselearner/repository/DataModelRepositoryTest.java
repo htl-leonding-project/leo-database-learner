@@ -30,6 +30,24 @@ class DataModelRepositoryTest {
     @Test
     public void addDataModel() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
 
+        Person person = new Person("Susi", "Snow", Role.ADMIN);
+
+        tx.begin();
+        personRepo.addPerson(person);
+        tx.commit();
+
+        DataModel dataModel = new DataModel("Marah", person, "Hi");
+        Table datamodelTable = new Table(getDataSource(), "datamodel");
+        output(datamodelTable).toConsole();
+
+        tx.begin();
+        dataModelRepo.addDataModel(dataModel);
+        tx.commit();
+
+        datamodelTable = new Table(getDataSource(), "datamodel");
+        output(datamodelTable).toConsole();
+
+        assertThat(dataModel.getId()).isEqualTo(1L);
     }
 
 

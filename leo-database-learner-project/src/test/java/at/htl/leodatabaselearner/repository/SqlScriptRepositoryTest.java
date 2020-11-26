@@ -56,6 +56,20 @@ class SqlScriptRepositoryTest {
 
     }
 
+    @Test
+    public void findById(){
+
+        SqlScript foundSqlScript = sqlScriptRepo.findById(1L);
+
+        Table sqlScriptTable = new Table(getDataSource(), "sqlscript");
+        output(sqlScriptTable).toConsole();
+
+        assertThat(foundSqlScript.getCreateScript()).isEqualTo("createScript");
+
+
+    }
+
+
     static final String DATABASE = "db";
     static final String USERNAME = "app";
     static final String PASSWORD = "app";

@@ -79,6 +79,29 @@ class DataModelRepositoryTest {
 
     @Test
     public void findAll() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
+        Person person = new Person("Susi", "Snow", Role.ADMIN);
+
+        tx.begin();
+        personRepo.addPerson(person);
+        tx.commit();
+
+        DataModel dataModel1 = new DataModel("Test01", person, "comment1");
+        DataModel dataModel2 = new DataModel("Test02", person, "comment2");
+        Table datamodelTable = new Table(getDataSource(), "datamodel");
+        output(datamodelTable).toConsole();
+
+        tx.begin();
+        dataModelRepo.addDataModel(dataModel1);
+        dataModelRepo.addDataModel(dataModel2);
+        tx.commit();
+
+        List<DataModel> foundDataModels = dataModelRepo.findAll();
+
+        Table personTable = new Table(getDataSource(), "datamodel");
+        output(personTable).toConsole();
+
+        assertThat(foundDataModels.size()).isEqualTo(2);
+
 
 
     }

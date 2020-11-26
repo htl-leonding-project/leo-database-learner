@@ -47,6 +47,11 @@ public class PersonRepositoryTest {
 
     }
 
+    @Test
+    public void findById(){
+
+    }
+
 
     static final String DATABASE = "db";
     static final String USERNAME = "app";

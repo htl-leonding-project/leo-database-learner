@@ -19,8 +19,10 @@ public class AutoStart {
     @Transactional
     void startup(@Observes StartupEvent event) {
         System.out.println("It works!");
-        Person p = new Person("van","prim", Role.ADMIN);
-        em.persist(p);
+        Person p1 = new Person("vani","prim", Role.ADMIN);
+        Person p2 = new Person("madschi","stei", Role.ADMIN);
+        em.persist(p1);
+        em.persist(p2);
     }
 
 }

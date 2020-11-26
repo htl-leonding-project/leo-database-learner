@@ -13,4 +13,11 @@ import java.util.List;
 @ApplicationScoped
 public class DataModelRepository {
 
+    @Inject
+    EntityManager em;
+
+    public void addDataModel(DataModel entity){
+        em.persist(entity);
+    }
+
 }

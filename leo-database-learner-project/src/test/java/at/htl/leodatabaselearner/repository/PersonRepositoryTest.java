@@ -4,8 +4,7 @@ import at.htl.leodatabaselearner.entity.Person;
 import at.htl.leodatabaselearner.entity.Role;
 import io.quarkus.test.junit.QuarkusTest;
 import org.assertj.db.type.Table;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.postgresql.ds.PGSimpleDataSource;
 
 
@@ -21,6 +20,7 @@ import static org.assertj.db.output.Outputs.output;
 
 
 @QuarkusTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PersonRepositoryTest {
 
     @Inject
@@ -30,6 +30,7 @@ public class PersonRepositoryTest {
     UserTransaction tx;
 
     @Test
+    @Order(1)
     public void addPerson() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
 
         Person person = new Person("Susi","Snow", Role.ADMIN);
@@ -48,6 +49,7 @@ public class PersonRepositoryTest {
     }
 
     @Test
+    @Order(2)
     public void findById(){
 
         Person foundPerson = repo.findById(2L);
@@ -59,8 +61,9 @@ public class PersonRepositoryTest {
         assertThat(foundPerson.getLastName()).isEqualTo("stei");
 
     }
-
+    
     @Test
+    @Order(0)
     public void findAll(){
 
         List<Person> foundPersons = repo.findAll();

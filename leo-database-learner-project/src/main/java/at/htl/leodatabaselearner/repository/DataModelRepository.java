@@ -25,5 +25,8 @@ public class DataModelRepository {
         query.setParameter("id", id);
         return query.getResultStream().findFirst().orElse(null);
     }
-
+    public List<DataModel> findAll(){
+        var query = em.createQuery("select dm from DataModel dm", DataModel.class);
+        return query.getResultList();
+    }
 }

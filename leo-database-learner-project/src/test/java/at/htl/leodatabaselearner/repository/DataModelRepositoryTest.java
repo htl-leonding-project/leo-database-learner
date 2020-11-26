@@ -77,6 +77,11 @@ class DataModelRepositoryTest {
 
     }
 
+    @Test
+    public void findAll() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
+
+
+    }
 
 
     static final String DATABASE = "db";

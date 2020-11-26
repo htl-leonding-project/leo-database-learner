@@ -14,4 +14,8 @@ public class SqlScriptRepository {
     @Inject
     EntityManager em;
 
+    public void addSqlScript(SqlScript entity){
+        em.persist(entity);
+    }
+
 }

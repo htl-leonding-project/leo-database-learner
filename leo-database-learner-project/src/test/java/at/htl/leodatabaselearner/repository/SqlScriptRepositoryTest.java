@@ -30,6 +30,31 @@ class SqlScriptRepositoryTest {
     @Inject
     UserTransaction tx;
 
+    @Test
+    public void addSqlScript() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
+
+        Person person = new Person("Susi","Snow", Role.ADMIN);
+        DataModel dataModel = new DataModel("Datamodel2", person,"comment2");
+
+        tx.begin();
+        personRepo.addPerson(person);
+        dataModelRepo.addDataModel(dataModel);
+        tx.commit();
+
+        SqlScript sqlScript = new SqlScript(dataModel,"createScript1","dropScript1", "insertScript1");
+        Table sqlScriptTable = new Table(getDataSource(), "sqlscript");
+        output(sqlScriptTable).toConsole();
+
+        tx.begin();
+        sqlScriptRepo.addSqlScript(sqlScript);
+        tx.commit();
+
+        sqlScriptTable = new Table(getDataSource(), "sqlscript");
+        output(sqlScriptTable).toConsole();
+
+        assertThat(sqlScript.getId()).isEqualTo(2L);
+
+    }
 
     static final String DATABASE = "db";
     static final String USERNAME = "app";

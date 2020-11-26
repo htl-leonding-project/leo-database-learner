@@ -1,6 +1,7 @@
 = User Stories- Geschäftsprozesse
 
 == Instruktor
+- kann sich ein Profil anlegen
 - erstellt Datenmodell (mit graf. Darstellung des ERD)
   damit er dazugehörige Fragen erstellen kann.
 - erstellt SQL-Fragen, die zu einem Datenmodell gehören, damit Studenten diese beantworten können.
@@ -8,6 +9,7 @@
 - kann Aufgaben, die er angelegt hat, einsehen/bearbeiten
 
 == Student
+- kann sich ein Profil anlegen
 - SQL-Aufgaben üben
 - SQL-Fragen, die vom Lehrer zur Verfügung gestellt wurden, beantworten
 - derzeitigen Wissensstand einsehen

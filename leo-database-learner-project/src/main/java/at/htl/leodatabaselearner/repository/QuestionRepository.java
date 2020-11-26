@@ -20,4 +20,10 @@ public class QuestionRepository {
         em.persist(entity);
     }
 
+    public Question findById(Long id){
+        var query = em.createQuery("select q from Question q where q.id = :id", Question.class);
+        query.setParameter("id", id);
+        return query.getResultStream().findFirst().orElse(null);
+    }
+
 }

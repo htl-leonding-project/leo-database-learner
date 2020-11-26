@@ -39,6 +39,7 @@ class QuestionRepositoryTest {
     UserTransaction tx;
 
     @Test
+    @Order(1)
     public void addQuestion() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
 
         Person person = new Person("Susi","Snow", Role.ADMIN);
@@ -66,6 +67,7 @@ class QuestionRepositoryTest {
         tx.rollback();
     }
     @Test
+    @Order(2)
     public void findById() {
 
         Question foundQuestion = questionRepo.findById(1L);
@@ -77,6 +79,7 @@ class QuestionRepositoryTest {
     }
 
     @Test
+    @Order(0)
     public void findAll() {
 
         List<Question> foundQuestions = questionRepo.findAll();

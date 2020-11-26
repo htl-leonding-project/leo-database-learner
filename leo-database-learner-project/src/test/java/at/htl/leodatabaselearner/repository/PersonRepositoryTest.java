@@ -63,6 +63,12 @@ public class PersonRepositoryTest {
     @Test
     public void findAll(){
 
+        List<Person> foundPersons = repo.findAll();
+
+        Table personTable = new Table(getDataSource(), "person");
+        output(personTable).toConsole();
+
+        assertThat(foundPersons.size()).isEqualTo(2);
 
     }
 

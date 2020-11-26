@@ -65,7 +65,17 @@ class QuestionRepositoryTest {
         tx.begin();
         tx.rollback();
     }
+    @Test
+    public void findById() {
+        Question foundQuestion = questionRepo.findById(1L);
 
+        Table personTable = new Table(getDataSource(), "question");
+        output(personTable).toConsole();
+
+        assertThat(foundQuestion.getText()).isEqualTo("text01");
+
+
+    }
 
     static final String DATABASE = "db";
     static final String USERNAME = "app";

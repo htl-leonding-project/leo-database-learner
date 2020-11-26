@@ -16,4 +16,8 @@ public class QuestionRepository {
     @Inject
     EntityManager em;
 
+    public void addQuestion(Question entity){
+        em.persist(entity);
+    }
+
 }

@@ -26,4 +26,9 @@ public class QuestionRepository {
         return query.getResultStream().findFirst().orElse(null);
     }
 
+    public List<Question> findAll(){
+        var query = em.createQuery("select q from Question q", Question.class);
+        return query.getResultList();
+    }
+
 }

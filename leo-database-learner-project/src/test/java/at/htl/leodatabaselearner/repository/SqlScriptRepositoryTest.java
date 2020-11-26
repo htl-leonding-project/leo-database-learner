@@ -69,6 +69,22 @@ class SqlScriptRepositoryTest {
 
     }
 
+    @Test
+    public void findAll() {
+
+        List<SqlScript> foundPersons = sqlScriptRepo.findAll();
+
+        Table personTable = new Table(getDataSource(), "sqlscript");
+        output(personTable).toConsole();
+
+        assertThat(foundPersons.size()).isEqualTo(1);
+    }
+
+
+
+
+
+
 
     static final String DATABASE = "db";
     static final String USERNAME = "app";

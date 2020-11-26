@@ -53,6 +53,28 @@ class DataModelRepositoryTest {
     @Test
     public void findById() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
 
+        Person person = new Person("Susi", "Snow", Role.ADMIN);
+
+        tx.begin();
+        personRepo.addPerson(person);
+        tx.commit();
+
+        DataModel dataModel = new DataModel("Test01", person, "comment");
+        Table datamodelTable = new Table(getDataSource(), "datamodel");
+        output(datamodelTable).toConsole();
+
+        tx.begin();
+        dataModelRepo.addDataModel(dataModel);
+        tx.commit();
+
+        DataModel foundDataModel = dataModelRepo.findById(1L);
+
+        datamodelTable = new Table(getDataSource(), "datamodel");
+        output(datamodelTable).toConsole();
+
+        assertThat(foundDataModel.getName()).isEqualTo("Test01");
+
+
     }
 
 

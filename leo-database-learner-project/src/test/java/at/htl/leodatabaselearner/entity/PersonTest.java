@@ -2,6 +2,8 @@ package at.htl.leodatabaselearner.entity;
 
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 class PersonTest {
     @Test
     void testToString() {
@@ -12,7 +14,7 @@ class PersonTest {
                 + person.getFirstName() + "" + person.getLastName() + "hat die Rolle "
                 + person.getRole() + ".\n";
 
-
+    //assertThat();
 
     }
 }

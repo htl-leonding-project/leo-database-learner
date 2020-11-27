@@ -83,11 +83,10 @@ public class DataModel {
 
     @Override
     public String toString() {
-        return "DataModel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", owner=" + owner +
-                ", comment='" + comment +
-                '}';
+        return "DataModel mit der Id " + id +
+                ", dem Namen '" + name + '\'' +
+                ", dem owner " + owner +
+                " hat das comment '" + comment +
+                '.';
     }
 }

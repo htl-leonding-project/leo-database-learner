@@ -97,14 +97,13 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question{" +
-                "id=" + id +
-                ", text='" + text + '\'' +
-                ", sql='" + sql + '\'' +
-                ", points=" + points +
-                ", localDate=" + localDate +
-                ", dataModel=" + dataModel +
-                ", owner=" + owner +
-                '}';
+        return "Die Question mit der id " + id +
+                ", dem text '" + text + '\'' +
+                ", dem sql '" + sql + '\'' +
+                ", den points " + points +
+                ", dem localDate " + localDate +
+                ", dem dataModel " + dataModel +
+                " hat den owner " + owner +
+                '.';
     }
 }

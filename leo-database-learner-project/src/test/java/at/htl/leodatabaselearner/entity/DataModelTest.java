@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import javax.sql.DataSource;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 class DataModelTest {
 
@@ -19,5 +21,7 @@ class DataModelTest {
                 ", dem owner " + dataModel.getOwner() +
                 " hat das comment '" + dataModel.getComment() +
                 '.';
+
+        assertThat(testString).isEqualTo(rightString);
     }
 }

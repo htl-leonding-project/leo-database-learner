@@ -73,12 +73,12 @@ public class SqlScript {
 
     @Override
     public String toString() {
-        return "SqlScript{" +
-                "id=" + id +
-                ", dataModel=" + dataModel +
-                ", createScript='" + createScript + '\'' +
-                ", dropScript='" + dropScript + '\'' +
-                ", insertScript='" + insertScript + '\'' +
-                '}';
+        return "Das SqlScript hat die" +
+                " id " + id +
+                ", das dataModel " + dataModel +
+                " das createScript '" + createScript + '\'' +
+                " das dropScript '" + dropScript + '\'' +
+                " und das insertScript '" + insertScript + '\'' +
+                '.';
     }
 }

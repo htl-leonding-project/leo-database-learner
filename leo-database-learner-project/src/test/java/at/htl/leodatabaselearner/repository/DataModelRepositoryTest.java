@@ -59,7 +59,7 @@ class DataModelRepositoryTest {
 
     @Test
     @Order(2)
-    public void findById() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
+    public void findById() {
 
         DataModel foundDataModel = dataModelRepo.findById(2L);
 
@@ -73,7 +73,7 @@ class DataModelRepositoryTest {
 
     @Test
     @Order(0)
-    public void findAll() throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException{
+    public void findAll() {
 
         List<DataModel> foundDataModels = dataModelRepo.findAll();
 

@@ -66,11 +66,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", role=" + role +
-                '}';
+        return "Person mit der " +
+                "id " + id +
+                ", namens " + firstName + '\'' +
+                " " + lastName + '\'' +
+                " hat die Rolle " + role;
     }
 }

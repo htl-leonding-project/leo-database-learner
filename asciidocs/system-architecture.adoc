@@ -31,5 +31,5 @@ include::plantuml/system-architecture.puml[]
 
 [plantuml, datamodel, png, align=left]
 ----
-include::plantuml/datamodel.puml[]
+include::plantuml/cld.puml[]
 ----

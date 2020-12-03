@@ -42,5 +42,5 @@ enum Role {
 SqlScript -right-> DataModel : "creating >"
 Question -left-> DataModel : "belongs to >"
 Role -up- Person
-DataModel -down- Person
+DataModel -down- Person: owns <
 @enduml

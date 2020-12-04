@@ -21,7 +21,7 @@ import static org.assertj.db.output.Outputs.output;
 
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class DataModelRepositoryTest {
+class DataModlRepositoryTest {
     @Inject
     DataModelRepository dataModelRepo;
 

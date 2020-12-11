@@ -18,6 +18,6 @@ Enter the information as follows:
 
 [propertiesOracleDB, png]
 :imagesdir:
-image::{imagesdir}./images/propertiesOracleDB.png[]
+image::{imagesdir}../images/propertiesOracleDB.png[]
 
 Then test the connection.

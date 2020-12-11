@@ -40,7 +40,7 @@ https://htl-leonding-project.github.io/leo-database-learner/pflichtenheft[*Pflic
 https://htl-leonding-project.github.io/leo-database-learner/geschaeftsprozesse.html[*Geschäftsprozesse*,role=black] +
 
 === Information from teachers:
-//https://htl-leonding-project.github.io/leo-database-learner/InformationFromTeacher[*Information from teachers*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/informationfromteacher.html[*Information from teachers*,role=black] +
 
 
 == External Project Repository

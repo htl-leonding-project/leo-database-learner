@@ -21,7 +21,7 @@ Then check if the Data source properties look like this:
 
 [propertiesPostgresDB, png]
 :imagesdir:
-image::{imagesdir}../images/propertiesPostgresDB.png[]
+image::{imagesdir}./images/propertiesPostgresDB.png[]
 
 
 Then test the connection.

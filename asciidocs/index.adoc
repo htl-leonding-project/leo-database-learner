@@ -25,6 +25,8 @@ Practice tool to learn database commands and to check your level of knowledge.
 == Documents
 
 https://htl-leonding-project.github.io/leo-database-learner/howtodatabase.html[*How to get the DB*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/howtooracledatabase.html[*How to get the DB*,role=black] +
+
 https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
 
 === English:

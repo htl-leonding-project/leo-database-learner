@@ -32,8 +32,7 @@ https://htl-leonding-project.github.io/leo-database-learner/system-architecture.
 === English:
 https://htl-leonding-project.github.io/leo-database-learner/project-proposal[*Projectproposal*,role=black] +
 https://htl-leonding-project.github.io/leo-database-learner/system-specification[*Systemspecification*,role=black] +
-https://htl-leonding-
-.github.io/leo-database-learner/business-processes.html[*Businessprocesses*,role=black] +
+https://htl-leonding-.github.io/leo-database-learner/business-processes.html[*Businessprocesses*,role=black] +
 
 === German:
 https://htl-leonding-project.github.io/leo-database-learner/projektauftrag[*Projektauftrag*,role=black] +

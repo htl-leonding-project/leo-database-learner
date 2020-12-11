@@ -1,0 +1,1 @@
+docker run -d --name oracledb -p 8100:8080 -p 1521:1521 quay.io/maksymbilenko/oracle-12c

@@ -16,8 +16,6 @@ ifndef::imagesdir[:imagesdir: images]
 Open the Data source properties and add a Oracle DB.
 Enter the information as follows:
 
-[propertiesOracleDB, png]
-:imagesdir:
-image::{imagesdir}../images/propertiesOracleDB.png[]
+image::propertiesOracleDB.png[]
 
 Then test the connection.

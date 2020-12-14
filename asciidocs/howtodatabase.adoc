@@ -19,9 +19,7 @@ Then you have to open link:/leo-database-learner-project/datasource.txt[datasour
 
 Then check if the Data source properties look like this:
 
-[propertiesPostgresDB, png]
-:imagesdir:
-image::images/propertiesPostgresDB.png[]
+image::propertiesPostgresDB.png[]
 
 
 Then test the connection.

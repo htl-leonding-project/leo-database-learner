@@ -13,23 +13,23 @@ ifdef::backend-html5[]
 
 [20112020_01, png]
 :imagesdir:
-image::{imagesdir}../images/20112020_01.png[]
+image::images/20112020_01.png[]
 
 ---
 [20112020_02, png]
 :imagesdir:
-image::{imagesdir}../images/20112020_02.png[]
+image::images/20112020_02.png[]
 
 ---
 [20112020_03, png]
 :imagesdir:
-image::{imagesdir}../images/20112020_03.png[]
+image::images/20112020_03.png[]
 
 ---
 [20112020_04, png]
 :imagesdir:
-image::{imagesdir}../images/20112020_04.png[]
+image::images/20112020_04.png[]
 ---
 [20112020_05, png]
 :imagesdir:
-image::{imagesdir}../images/03122020_05.png[]
+image::images/03122020_05.png[]

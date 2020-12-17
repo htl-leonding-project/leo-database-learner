@@ -17,6 +17,10 @@ To install the database you first have to run the link:/leo-database-learner-pro
 
 Then you have to open link:/leo-database-learner-project/datasource.txt[datasource.txt] and copy the included text.
 
+Click on "+" in the database window. Then select the following (as shown in the picture).
+
+image::newdb.png[]
+
 Then check if the Data source properties look like this:
 
 image::propertiesPostgresDB.png[]

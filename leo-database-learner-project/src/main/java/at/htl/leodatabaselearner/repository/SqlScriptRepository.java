@@ -11,6 +11,8 @@ import java.util.List;
 @ApplicationScoped
 public class SqlScriptRepository {
 
+    // test
+
     @Inject
     EntityManager em;
 

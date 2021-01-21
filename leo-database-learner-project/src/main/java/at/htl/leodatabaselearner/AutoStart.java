@@ -1,5 +1,6 @@
 package at.htl.leodatabaselearner;
 
+import at.htl.leodatabaselearner.boundary.ExerciseSqlEndpoint;
 import at.htl.leodatabaselearner.entity.*;
 import io.quarkus.runtime.StartupEvent;
 
@@ -8,6 +9,7 @@ import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.Scanner;
 
 @ApplicationScoped
 public class AutoStart {
@@ -33,6 +35,7 @@ public class AutoStart {
         em.persist(dataModel);
         em.persist(question);
         em.persist(sqlScript);
+
     }
 
 }

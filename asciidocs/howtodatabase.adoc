@@ -21,7 +21,7 @@ Click on "+" in the database window. Then select the following (as shown in the 
 
 image::newdb.png[]
 
-Then check if the Data source properties look like this:
+Then check if the Data source properties look l^ike this:
 
 image::propertiesPostgresDB.png[]
 

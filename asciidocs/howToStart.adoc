@@ -1,0 +1,24 @@
+= LeoDatabaseLearner - How to get the DB
+19SM, 22TI, 15PV
+1.1.0, 2020-10-23: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Manual
+
+To get started you first have to write
+
+----
+./docker/docker-compose up --build
+----
+
+into your terminal.
+
+

@@ -1,0 +1,6 @@
+GET http://localhost:8080/solutionSql/result/1
+
+###
+
+#GET http://localhost:8080/solutionSql/result/
+#parameter "Select e from EMP"

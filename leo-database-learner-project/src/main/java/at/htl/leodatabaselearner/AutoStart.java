@@ -1,5 +1,6 @@
 package at.htl.leodatabaselearner;
 
+import at.htl.leodatabaselearner.boundary.ExerciseSqlEndpoint;
 import at.htl.leodatabaselearner.entity.*;
 import io.quarkus.runtime.StartupEvent;
 
@@ -8,6 +9,7 @@ import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.Scanner;
 
 @ApplicationScoped
 public class AutoStart {
@@ -23,7 +25,8 @@ public class AutoStart {
 
         DataModel dataModel = new DataModel("Datamodel01", p1, "comment1");
 
-        Question question = new Question("text01", "select * from question", 2, dataModel, p2);
+        //Question question = new Question("text01", "Select d from IT160205.DEPT d", 2, dataModel, p2);
+        Question question = new Question("text01", "Select p from Person p order by p.firstName", 2, dataModel, p2);
 
         SqlScript sqlScript = new SqlScript(dataModel, "createScript", "dropScript", "insertScript");
 
@@ -32,6 +35,7 @@ public class AutoStart {
         em.persist(dataModel);
         em.persist(question);
         em.persist(sqlScript);
+
     }
 
 }

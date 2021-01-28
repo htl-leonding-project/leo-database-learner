@@ -10,3 +10,4 @@ gh-pages/
 .DS_Store
 .env
 db/
+./lib

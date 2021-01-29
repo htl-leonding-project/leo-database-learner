@@ -49,12 +49,14 @@ image::startdb01.png[]
 *Studentdb*
 
 So make sure that everything looks exactly like this and the password is *app*.
+Then test the connection and if everything works it should look like the picture.
 
 image::startdb02.png[]
 
 *Operativedb*
 
 So make sure that everything looks exactly like this and the password is *app*.
+Then test the connection and if everything works it should look like the picture.
 
 image::startdb03.png[]
 

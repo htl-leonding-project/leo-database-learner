@@ -1,7 +1,3 @@
-drop table emp;
-drop table dept;
-drop table salgrade;
-
 CREATE TABLE DEPT (
                       DEPTNO              NUMERIC(2) CONSTRAINT DEPT_PRIMARY_KEY PRIMARY KEY,
                       DNAME               VARCHAR(14),

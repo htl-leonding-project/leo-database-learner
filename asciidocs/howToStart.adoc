@@ -60,3 +60,11 @@ Then test the connection and if everything works it should look like the picture
 
 image::startdb03.png[]
 
+
+If you have updated the docker-compose and nothing changed try this:
+
+----
+docker-compose up --build
+docker-compose down
+docker volume prune
+----

@@ -17,6 +17,21 @@ In the second term we are going to work on testing the entered SQL statements an
 
 // woher musterlösung
 
+// Grundsätzlich ist der Plan, dass das SQL Statement für die Musterlösung aus der operativen db geholt wird.
+// Da wir jedoch in kleinen Schritten arbeiten, werden wir dieses zunächst "hardcoden".
+// Das SQL Statement von der operativen db wird auf der Student db ausgeführt und das daraus resultierende Ergebnis auf
+//einem Resultset gespeichert.
+
+// Das SQL Statement des Schülers wird auch ausgeführt und das Ergebnis wird ebenfalls in ein Resultset gespeichert.
+// Sollte dieses Statement nicht ausführbar sein, soll dies mit Exceptionhandling abgewickelt werden.
+
+
+
 // wie ma vorhaben des zmochn
+
+// Die beiden Resultsets werden daraufhin auf Zeilenanzahl, Spaltenanzahl bzw. generell Gleichheit verglichen.
+
+//
+
 // junit tests - resultset
 

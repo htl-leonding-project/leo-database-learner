@@ -15,23 +15,16 @@ ifndef::imagesdir[:imagesdir: images]
 
 In the second term we are going to work on testing the entered SQL statements and compare if they get along with the solution.
 
-// woher musterlösung
+Basically, the plan is that the SQL statement for the sample solution is taken from the operational db.
+Since we are working in small steps, we will "hardcode" this first.
+The SQL statement from the operative db is executed on the student db and the resulting outcome is saved as a result set.
 
-// Grundsätzlich ist der Plan, dass das SQL Statement für die Musterlösung aus der operativen db geholt wird.
-// Da wir jedoch in kleinen Schritten arbeiten, werden wir dieses zunächst "hardcoden".
-// Das SQL Statement von der operativen db wird auf der Student db ausgeführt und das daraus resultierende Ergebnis auf
-//einem Resultset gespeichert.
+The student's SQL statement is also executed and the result is also saved in a result set.
+If this statement cannot be executed, it should be handled with exception handling.
 
-// Das SQL Statement des Schülers wird auch ausgeführt und das Ergebnis wird ebenfalls in ein Resultset gespeichert.
-// Sollte dieses Statement nicht ausführbar sein, soll dies mit Exceptionhandling abgewickelt werden.
-
+The two result sets are then compared for number of rows, number of columns or general equality.
 
 
-// wie ma vorhaben des zmochn
 
-// Die beiden Resultsets werden daraufhin auf Zeilenanzahl, Spaltenanzahl bzw. generell Gleichheit verglichen.
 
-//
-
-// junit tests - resultset
 

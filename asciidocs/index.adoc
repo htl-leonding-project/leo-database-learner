@@ -26,10 +26,10 @@ Practice tool to learn database commands and to check your level of knowledge.
 
 https://htl-leonding-project.github.io/leo-database-learner/howToStart.html[*How to get started*,role=black] +
 
+https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
+
 https://htl-leonding-project.github.io/leo-database-learner/howtodatabase.html[*(Deprecated)How to get the Postgres DB*,role=black] +
 https://htl-leonding-project.github.io/leo-database-learner/howtooracledatabase.html[*(Deprecated)How to get the Oracle DB*,role=black] +
-
-https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
 
 === English:
 https://htl-leonding-project.github.io/leo-database-learner/project-proposal[*Projectproposal*,role=black] +
@@ -43,6 +43,7 @@ https://htl-leonding-project.github.io/leo-database-learner/geschaeftsprozesse.h
 
 === Information from teachers:
 https://htl-leonding-project.github.io/leo-database-learner/informationfromteacher.html[*Information from teachers*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/currentPlan.html[*Current plan*,role=black] +
 
 
 == External Project Repository

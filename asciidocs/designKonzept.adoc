@@ -1,2 +1,48 @@
 = Design Konzept
 
+== Schüler Ansicht
+---
+
+[SchuelerAnsicht, jpg]
+:imagesdir:
+image::{imagesdir}../images/SchuelerAnsicht.jpg[]
+
+=== 1) Bild
+---
+Nach dem Login wird die Startseite angezeigt.
+Hier befindet sich Text über die Webseite bzw. über das Projekt.
+
+=== 2) Bild
+---
+Unter dem Menüpunkt "Exercises" werden alle Tasks der Reihe
+nach aufgelistet.
+
+Der Lernfortschritt wird jeweils in % angezeigt.
+
+So wird es auch beim Menüpunkt "Exams" ungefähr aussehen.
+(Deshalb auch die strichlierte Linie über dem Menüpunkt "Exams")
+
+=== 3) Bild
+---
+Wenn ein Schüler seinen Wissensstand einsehen möchte, kann er dies
+unter dem Menüpunkt "Knowledge" tun.
+
+Bei den Exercises werden alle einzelnen Tasks mit der jeweiligen Punkteanzahl
+dargestellt, ebenso wird ein Kreisdiagramm berechnet und angezeigt, um
+es auch noch in dieser Form zu veranschaulichen.
+
+Dasselbe gilt  hierbei auch für die Ergebnisse der Exams.
+
+=== 4) Bild
+---
+Startet der Schüler ein Exam, wird unter der Überschrift die Frage
+bzw. die Aufgabenstellung angezeigt.
+
+Darunter befindet sich ein Eingabefeld für den Code bzw. die Antwort.
+
+Hat der Schüler die Frage beantwortet, klickt er darunter auf den Button
+und kommt somit zur nächsten Frage.
+
+Ist das Exam beendet, wird das Ergebnis ausgewertet, die Punkte werden
+angezeigt.
+

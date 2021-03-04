@@ -88,13 +88,13 @@ public class sqlStudentInsertTest {
         String sql = "select * from emp where job = 'CLERK'";
 
         Statement  statement = connection.createStatement();
-        ResultSet s = statement.executeQuery(sql);
+        ResultSet rs = statement.executeQuery(sql);
 
         System.out.println("SQL-Statement: " + sql);
         System.out.print("\n");
 
         int size = 0;
-        while (s.next()) {
+        while (rs.next()) {
             size++;
         }
         System.out.println("Rows: " + size);
@@ -119,6 +119,44 @@ public class sqlStudentInsertTest {
         System.out.println("SQL-Statement: " + sql);
         System.out.println("\nSpalten: " + meta.getColumnCount());
 
+    }
+
+    @Test
+    @Order(5)
+    void t050_ResultsetAsTable_01() throws SQLException {
+
+        String url = "jdbc:postgresql://localhost:5433/postgres";
+        Properties props = new Properties();
+        props.setProperty("user", "postgres");
+        props.setProperty("password", "app");
+        Connection connection = DriverManager.getConnection(url, props);
+
+        String sql = "select * from emp where job = 'CLERK'";
+
+        Statement  statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        ResultSetMetaData meta = rs.getMetaData();
+        int columnsnr = meta.getColumnCount();
+
+        System.out.println("SQL-Statement: " + sql + "\n");
+
+        for (int j = 1; j <= columnsnr; j++) {
+            System.out.printf("%10s", meta.getColumnName(j));
+        }
+
+        System.out.println("\n");
+
+        while (rs.next()) {
+            for (int i = 0; i <= columnsnr-1; i++) {
+                if (i > 0 && i < columnsnr){
+                    System.out.print(",");
+                }
+
+                System.out.printf("%10s",
+                        rs.getString(i+1));
+            }
+            System.out.println("");
+        }
     }
 
 }

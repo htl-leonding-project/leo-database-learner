@@ -75,5 +75,30 @@ public class sqlStudentInsertTest {
         }
         System.out.println(sb.toString());
     }
+
+    @Test
+    @Order(3)
+    void t030_getResultsetRowCount() throws SQLException {
+        String url = "jdbc:postgresql://localhost:5433/postgres";
+        Properties props = new Properties();
+        props.setProperty("user", "postgres");
+        props.setProperty("password", "app");
+        Connection connection = DriverManager.getConnection(url, props);
+
+        String sql = "select * from emp where job = 'CLERK'";
+
+        Statement  statement = connection.createStatement();
+        ResultSet s = statement.executeQuery(sql);
+
+        System.out.println("SQL-Statement: " + sql);
+        System.out.print("\n");
+
+        int size = 0;
+        while (s.next()) {
+            size++;
+        }
+        System.out.println("Rows: " + size);
+    }
+
 }
 

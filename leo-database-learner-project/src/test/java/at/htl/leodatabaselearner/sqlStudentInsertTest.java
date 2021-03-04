@@ -159,5 +159,37 @@ public class sqlStudentInsertTest {
         }
     }
 
+    @Test
+    @Order(6)
+    void t060_ResultsetAsTable_02() throws SQLException {
+
+        String url = "jdbc:postgresql://localhost:5433/postgres";
+        Properties props = new Properties();
+        props.setProperty("user", "postgres");
+        props.setProperty("password", "app");
+        Connection connection = DriverManager.getConnection(url, props);
+
+        String sql = "select * from emp";
+
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        ResultSetMetaData meta = rs.getMetaData();
+        int columnsNumber = meta.getColumnCount();
+
+        System.out.println("SQL-Statement: " + sql + "\n");
+
+        for (int i = 1; i <= meta.getColumnCount(); i++) {
+            System.out.printf("%-15s", meta.getColumnLabel(i));
+        }
+
+        System.out.println("");
+
+        while (rs.next()) {
+            for (int i = 1; i < columnsNumber+1; i++) {
+                System.out.printf("%-15s", rs.getString(i));
+            }
+            System.out.println("");
+        }
+    }
 }
 

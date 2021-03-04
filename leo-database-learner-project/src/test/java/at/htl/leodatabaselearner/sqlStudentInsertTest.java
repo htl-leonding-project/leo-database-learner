@@ -100,5 +100,26 @@ public class sqlStudentInsertTest {
         System.out.println("Rows: " + size);
     }
 
+    @Test
+    @Order(4)
+    void t040_getResultsetColumnCount() throws SQLException {
+        String url = "jdbc:postgresql://localhost:5433/postgres";
+        Properties props = new Properties();
+        props.setProperty("user", "postgres");
+        props.setProperty("password", "app");
+        Connection connection = DriverManager.getConnection(url, props);
+
+        String sql = "select * from emp where job = 'CLERK'";
+
+        Statement  statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        ResultSetMetaData meta = rs.getMetaData();
+
+
+        System.out.println("SQL-Statement: " + sql);
+        System.out.println("\nSpalten: " + meta.getColumnCount());
+
+    }
+
 }
 

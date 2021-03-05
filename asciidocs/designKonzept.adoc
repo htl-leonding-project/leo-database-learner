@@ -3,7 +3,7 @@
 == Schüler Ansicht
 ---
 
-[lchuelerAnsicht, jpg]
+[schuelerAnsicht, jpg]
 :imagesdir:
 image::{imagesdir}./images/schuelerAnsicht.jpg[]
 
@@ -21,6 +21,7 @@ Der Lernfortschritt wird jeweils in % angezeigt.
 
 So wird es auch beim Menüpunkt "Exams" ungefähr aussehen.
 (Deshalb auch die strichlierte Linie über dem Menüpunkt "Exams")
+
 
 === 3) Bild
 ---
@@ -84,3 +85,13 @@ Klickt er auf den "Next"-Button, kann er die nächste Frage + Antwort eintippen,
 hat er jedoch schon genug Fragen erstellt, klickt er auf den "Finish"-Button.
 
 Dasselbe Prinzip gilt hierbei auch für die Tasks (Exercises).
+
+[lehrerAnsicht5), jpg]
+:imagesdir:
+image::{imagesdir}./images/lehrerAnsicht5).jpg[]
+
+=== 5) Bild
+Hier kann der Lehrer alle Datenmodelle, welche er für die Exams oder die Exercises
+verwendet, erstellen bzw. hochladen und speichern.
+Dafür gibt er die entsprechenden Daten ein und klick anschließend auf den
+"save"-Button.

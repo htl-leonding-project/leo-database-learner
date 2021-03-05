@@ -18,8 +18,10 @@ Unter dem Menüpunkt "Exercises" werden alle Tasks der Reihe
 nach aufgelistet.
 
 Der Lernfortschritt wird jeweils in % angezeigt.
+Bei den danebenliegenden Buttons, können Schüler ebenso sehen, ob die Übung
+schon beendet ist bzw. ob sie noch fertig gemacht bzw. gestartet werden muss.
 
-So wird es auch beim Menüpunkt "Exams" ungefähr aussehen.
+So wird es auch beim Menüpunkt "Exams" aussehen, nur dass statt Task01 zB. Exam01 steht.
 (Deshalb auch die strichlierte Linie über dem Menüpunkt "Exams")
 
 
@@ -31,18 +33,21 @@ unter dem Menüpunkt "Knowledge" tun.
 Bei den Exercises werden alle einzelnen Tasks mit der jeweiligen Punkteanzahl
 dargestellt, ebenso wird ein Kreisdiagramm berechnet und angezeigt, um
 es auch noch in dieser Form zu veranschaulichen.
+Das Kreisdiagramm zeigt den Durchschnitt aller Ergebnisse.
 
 Dasselbe gilt  hierbei auch für die Ergebnisse der Exams.
 
 === 4) Bild
 ---
-Startet der Schüler ein Exam, wird unter der Überschrift die Frage
-bzw. die Aufgabenstellung angezeigt.
+Startet der Schüler ein Exam, wird der Bildschirm in 3 glecih große Teile geteilt.
+Ganz links befindet sich die vom Lehrer vorgefertigte Aufgabenstellung.
 
-Darunter befindet sich ein Eingabefeld für den Code bzw. die Antwort.
+In der Mitte wird der Schüler dann die (hoffentlich) richtige Antwort bzw. den richtigen Code einfügen.
+Unten links in diesem Abteil ist ein "Run"-Button, wird dieser gedrückt,
+wird im rechten Fenster eine Vorschau angezeigt.
 
-Hat der Schüler die Frage beantwortet, klickt er darunter auf den Button
-und kommt somit zur nächsten Frage.
+Hat der Schüler die Aufgabenstellung bewältigt, klickt er auf den "Next"-Button
+und kommt somit zur nächsten Aufgabe.
 
 Ist das Exam beendet, wird das Ergebnis ausgewertet, die Punkte werden
 angezeigt.

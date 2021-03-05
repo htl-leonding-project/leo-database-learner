@@ -8,28 +8,23 @@ ifndef::imagesdir[:imagesdir: images]
 :sectnums:    // Nummerierung der Überschriften / section numbering
 :toc: left
 
-//Need this blank line after ifdef, don't know why...
-ifdef::backend-html5[]
 
-[20112020_01, png]
-:imagesdir:
-image::{imagesdir}../images/20112020_01.png[]
+image::20112020_01.png[]
 
 ---
-[20112020_02, png]
-:imagesdir:
-image::{imagesdir}../images/20112020_02.png[]
+
+image::20112020_02.png[]
 
 ---
-[20112020_03, png]
-:imagesdir:
-image::{imagesdir}../images/20112020_03.png[]
+
+image::20112020_03.png[]
 
 ---
-[20112020_04, png]
-:imagesdir:
-image::{imagesdir}../images/20112020_04.png[]
+
+image::20112020_04.png[]
 ---
-[20112020_05, png]
-:imagesdir:
-image::{imagesdir}../images/03122020_05.png[]
+
+image::03122020_05.png[]
+---
+
+image::07012021.png[]

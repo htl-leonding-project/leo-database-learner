@@ -1,0 +1,30 @@
+= LeoDatabaseLearner - Current plan
+19SM, 22TI, 15PV
+1.1.1, 2021-01-28: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Plan for the second term
+
+In the second term we are going to work on testing the entered SQL statements and compare if they get along with the solution.
+
+Basically, the plan is that the SQL statement for the sample solution is taken from the operational db.
+Since we are working in small steps, we will "hardcode" this first.
+The SQL statement from the operative db is executed on the student db and the resulting outcome is saved as a result set.
+
+The student's SQL statement is also executed and the result is also saved in a result set.
+If this statement cannot be executed, it should be handled with exception handling.
+
+The two result sets are then compared for number of rows, number of columns or general equality.
+
+
+
+
+

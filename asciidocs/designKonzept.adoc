@@ -3,9 +3,9 @@
 == Schüler Ansicht
 ---
 
-[SchuelerAnsicht, jpg]
+[lchuelerAnsicht, jpg]
 :imagesdir:
-image::{imagesdir}../images/SchuelerAnsicht.jpg[]
+image::{imagesdir}./images/schuelerAnsicht.jpg[]
 
 === 1) Bild
 ---
@@ -49,9 +49,9 @@ angezeigt.
 == Lehrer Ansicht
 ---
 
-[LehrerAnsicht, jpg]
+[lehrerAnsicht, jpg]
 :imagesdir:
-image::{imagesdir}../images/LehrerAnsicht.jpg[]
+image::{imagesdir}./images/lehrerAnsicht.jpg[]
 
 === 1) Bild
 ---

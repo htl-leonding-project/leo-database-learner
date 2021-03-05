@@ -1,4 +1,4 @@
 package at.htl.leodatabaselearner;
 
-public class TestSqlStatement {
+public class sqlStudentInsertTest {
 }

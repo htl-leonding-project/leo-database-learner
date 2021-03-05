@@ -1,0 +1,70 @@
+= LeoDatabaseLearner - How to get started
+19SM, 22TI, 15PV
+1.1.1, 2021-01-28: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Manual
+
+First you have to open the *leo-database-learner-project* in any development environment.
+We used the *IntelliJ IDEA Ultimate* environment. Make sure you use Linux or MacOS.
+
+Then open your terminal and make sure that the path is correct:
+
+e.g.
+
+----
+/Users/user/Desktop/project_itp/leo-database-learner/leo-database-learner-project
+----
+
+After this you have to write the following into your terminal:
+
+
+*Linux*
+
+----
+./docker/docker-compose up --build
+----
+
+*MacOS*
+
+----
+cd ./docker
+docker-compose up --build
+
+----
+
+Click on "+" in the database window. Then select the following (as shown in the picture)
+and create 2 PostgreSQL databases:
+
+image::startdb01.png[]
+
+*Studentdb*
+
+So make sure that everything looks exactly like this and the password is *app*.
+Then test the connection and if everything works it should look like the picture.
+
+image::startdb02.png[]
+
+*Operativedb*
+
+So make sure that everything looks exactly like this and the password is *app*.
+Then test the connection and if everything works it should look like the picture.
+
+image::startdb03.png[]
+
+
+If you have updated the docker-compose and nothing changed try this:
+
+----
+docker-compose up --build
+docker-compose down
+docker volume prune
+----

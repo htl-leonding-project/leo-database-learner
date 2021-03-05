@@ -69,9 +69,9 @@ auf die Startseite.
 Unter dem Menüpunkt "Exams" kann der Lehrer die Klasse auswählen,
 welcher er ein neues Exam hochladen möchte.
 
-Er kann hier quasi die einzelnen Exams, welche er zuvor erstellt hat, freigeben.
+Er kann hier auch die einzelnen Exams, welche er zuvor erstellt hat, freigeben.
 
-Neue Exams können erstellt werden. (Mehr dazu beim 4. Bild)
+Neue Exams können beim "New Exam"-Button erstellt werden. (Mehr dazu beim 4. Bild)
 
 === 3) Bild
 ---
@@ -83,13 +83,14 @@ er alle seine Ergebnisse und seinen Wissensstand.
 === 4) Bild
 ---
 Beim Erstellen eines neuen Exams, gibt der Lehrer einmalig den Namen des neuen Exams ein.
+Das Datenmodell kann hier auch hochgeladen werden.
 
 Danach tippt er die Frage und die dazugehörig richtige Antwort auf diese Frage ein.
 
 Klickt er auf den "Next"-Button, kann er die nächste Frage + Antwort eintippen,
 hat er jedoch schon genug Fragen erstellt, klickt er auf den "Finish"-Button.
 
-Dasselbe Prinzip gilt hierbei auch für die Tasks (Exercises).
+Dasselbe Prinzip gilt hierbei auch für die Tasks (Exercises), die erstellt werden können.
 
 [lehrerAnsicht5), jpg]
 :imagesdir:
@@ -98,5 +99,6 @@ image::{imagesdir}./images/lehrerAnsicht5).jpg[]
 === 5) Bild
 Hier kann der Lehrer alle Datenmodelle, welche er für die Exams oder die Exercises
 verwendet, erstellen bzw. hochladen und speichern.
+
 Dafür gibt er die entsprechenden Daten ein und klick anschließend auf den
 "save"-Button.

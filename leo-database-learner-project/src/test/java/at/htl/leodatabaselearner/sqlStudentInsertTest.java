@@ -4,8 +4,10 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.testng.annotations.BeforeMethod;
 
 import javax.swing.table.DefaultTableModel;
+import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 import java.util.Scanner;
@@ -15,34 +17,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 public class sqlStudentInsertTest {
 
-    static Scanner scanner = new Scanner(System.in);
-
-    //    @Test
-//    @Order(1)
-//    void test_getSQLWithUserInput() throws SQLException {
-//        String url = "jdbc:postgresql://localhost:5433/postgres";
-//        Properties props = new Properties();
-//        props.setProperty("user", "postgres");
-//        props.setProperty("password", "app");
-//        Connection connection = DriverManager.getConnection(url, props);
-//
-//        System.out.print("SQL Statement:")
-//        String sql = scanner.nextLine();
-//
-//        System.out.println(sql);
-//
-//        StringBuilder sb = new StringBuilder();
-//        PreparedStatement ps = connection.prepareStatement(sql);
-//        ResultSet rs = ps.executeQuery();
-//        while (rs.next()) {
-//            sb.append(rs.getString("ename")).append("\n");
-//        }
-//
-//        System.out.println(sb.toString());
-//    }
     @Test
-    @Order(2)
-    void t020_getResultset() throws SQLException {
+    @Order(1)
+    void t010_getResultset() throws SQLException {
         String url = "jdbc:postgresql://localhost:5433/postgres";
         Properties props = new Properties();
         props.setProperty("user", "postgres");
@@ -77,8 +54,8 @@ public class sqlStudentInsertTest {
     }
 
     @Test
-    @Order(3)
-    void t030_getResultsetRowCount() throws SQLException {
+    @Order(2)
+    void t020_getResultsetRowCount() throws SQLException {
         String url = "jdbc:postgresql://localhost:5433/postgres";
         Properties props = new Properties();
         props.setProperty("user", "postgres");
@@ -101,8 +78,8 @@ public class sqlStudentInsertTest {
     }
 
     @Test
-    @Order(4)
-    void t040_getResultsetColumnCount() throws SQLException {
+    @Order(3)
+    void t030_getResultsetColumnCount() throws SQLException {
         String url = "jdbc:postgresql://localhost:5433/postgres";
         Properties props = new Properties();
         props.setProperty("user", "postgres");
@@ -122,8 +99,8 @@ public class sqlStudentInsertTest {
     }
 
     @Test
-    @Order(5)
-    void t050_ResultsetAsTable_01() throws SQLException {
+    @Order(4)
+    void t040_ResultsetAsTable_01() throws SQLException {
 
         String url = "jdbc:postgresql://localhost:5433/postgres";
         Properties props = new Properties();
@@ -160,8 +137,8 @@ public class sqlStudentInsertTest {
     }
 
     @Test
-    @Order(6)
-    void t060_ResultsetAsTable_02() throws SQLException {
+    @Order(5)
+    void t050_ResultsetAsTable_02() throws SQLException {
 
         String url = "jdbc:postgresql://localhost:5433/postgres";
         Properties props = new Properties();

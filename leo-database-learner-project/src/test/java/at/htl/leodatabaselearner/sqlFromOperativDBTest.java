@@ -145,6 +145,4 @@ public class sqlFromOperativDBTest {
       System.out.println("");
     }
   }
-
-
 }

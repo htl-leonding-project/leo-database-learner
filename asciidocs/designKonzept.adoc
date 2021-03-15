@@ -105,4 +105,11 @@ verwendet, erstellen bzw. hochladen und speichern.
 Dafür gibt er die entsprechenden Daten ein und klick anschließend auf den
 "save"-Button.
 
+== Digitale Umsetzung
+---
+=== Schüler Ansicht unter dem Menüpunkt "Exercises"
+---
 
+[vorschau_Exercises, jpg]
+:imagesdir:
+image::{imagesdir}./images/vorschau_Exercises.jpg[]

@@ -113,3 +113,11 @@ Dafür gibt er die entsprechenden Daten ein und klick anschließend auf den
 [vorschau_Exercises, jpg]
 :imagesdir:
 image::{imagesdir}./images/vorschau_Exercises.jpg[]
+
+=== Schüler Ansicht unter dem Menüpunkt "Exams"
+==== Gestartetes Exam
+---
+
+[vorschau_Exam, jpg]
+:imagesdir:
+image::{imagesdir}./images/vorschau_Exam.jpg[]

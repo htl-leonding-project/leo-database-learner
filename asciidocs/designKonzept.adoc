@@ -18,7 +18,7 @@ Unter dem Menüpunkt "Exercises" werden alle Tasks der Reihe
 nach aufgelistet.
 
 Der Lernfortschritt wird jeweils in % angezeigt.
-Bei den danebenliegenden Buttons, können Schüler ebenso sehen, ob die Übung
+Bei den danebenliegenden Buttons können Schüler ebenso sehen, ob die Übung
 schon beendet ist bzw. ob sie noch fertig gemacht bzw. gestartet werden muss.
 
 So wird es auch beim Menüpunkt "Exams" aussehen, nur dass statt Task01 zB. Exam01 steht.
@@ -93,6 +93,7 @@ hat er jedoch schon genug Fragen erstellt, klickt er auf den "Finish"-Button.
 
 Dasselbe Prinzip gilt hierbei auch für die Tasks (Exercises), die erstellt werden können.
 
+
 [lehrerAnsicht5), jpg]
 :imagesdir:
 image::{imagesdir}./images/lehrerAnsicht5).jpg[]
@@ -103,3 +104,5 @@ verwendet, erstellen bzw. hochladen und speichern.
 
 Dafür gibt er die entsprechenden Daten ein und klick anschließend auf den
 "save"-Button.
+
+

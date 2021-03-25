@@ -4,15 +4,9 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.testng.annotations.BeforeMethod;
 
-import javax.swing.table.DefaultTableModel;
-import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
-import java.util.Scanner;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 public class sqlStudentInsertTest {

@@ -239,4 +239,63 @@ public class compareResultsets {
 
   }
 
+  @Test
+  @Order(5)
+  void t0050_compareResultsetColumnType() throws SQLException {
+    String url = "jdbc:postgresql://localhost:5432/postgres";
+    Properties props = new Properties();
+    props.setProperty("user", "postgres");
+    props.setProperty("password", "app");
+    Connection connection = DriverManager.getConnection(url, props);
+
+
+    StringBuilder sb = new StringBuilder();
+    PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
+    ResultSet rs = ps.executeQuery();
+
+
+    while (rs.next()) {
+      if (rs.getInt("id") == 4) {
+        sb.append(rs.getString("sql")).append("\n");
+      }
+    }
+
+    String sql = sb.toString();
+
+    url = "jdbc:postgresql://localhost:5433/postgres";
+    props = new Properties();
+    props.setProperty("user", "postgres");
+    props.setProperty("password", "app");
+    connection = DriverManager.getConnection(url, props);
+
+    ps = connection.prepareStatement(sql);
+    rs = ps.executeQuery();
+    ResultSetMetaData metaOP = rs.getMetaData();
+    int columnCountOP = metaOP.getColumnCount();
+
+    sql = "Select * from salgrade";
+
+    Statement statement = connection.createStatement();
+    rs = statement.executeQuery(sql);
+    ResultSetMetaData metaST = rs.getMetaData();
+    int columnCountST = metaST.getColumnCount();
+
+    String[] labels = new String[5];
+
+    if (columnCountOP == columnCountST){
+      labels = new String[columnCountOP];
+
+      for (int i = 0; i < columnCountST; i++) {
+        if (metaST.getColumnTypeName(i+1).equals(metaOP.getColumnTypeName(i+1))){
+          labels[i] = metaST.getColumnTypeName(i+1);
+          System.out.println(labels[i]);
+        }
+      }
+    }
+
+    String[] correctLabels = {"numeric", "numeric", "numeric"};
+    //assertThat(columnCountST).isEqualTo(columnCountOP);
+    assertThat(labels).isEqualTo(correctLabels);
+  }
+
 }

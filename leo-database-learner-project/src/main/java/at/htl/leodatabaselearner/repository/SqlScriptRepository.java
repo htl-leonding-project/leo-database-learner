@@ -6,6 +6,7 @@ import at.htl.leodatabaselearner.entity.SqlScript;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceUnit;
 import java.util.List;
 
 @ApplicationScoped
@@ -14,6 +15,7 @@ public class SqlScriptRepository {
     // test
 
     @Inject
+    //@PersistenceUnit(name = "prod")
     EntityManager em;
 
     public void addSqlScript(SqlScript entity){

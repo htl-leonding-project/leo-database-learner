@@ -8,6 +8,7 @@ import at.htl.leodatabaselearner.entity.Question;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceUnit;
 import java.util.List;
 
 @ApplicationScoped

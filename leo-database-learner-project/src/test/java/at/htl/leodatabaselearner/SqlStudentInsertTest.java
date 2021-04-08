@@ -65,11 +65,13 @@ public class SqlStudentInsertTest {
   @Test
   @Order(2)
   void t020_getResultsetRowCount() throws SQLException {
-    String url = "jdbc:postgresql://localhost:5433/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5433/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
+
+    Connection connection = studentDataSource.getConnection();
 
     String sql = "select * from emp where job = 'CLERK'";
 
@@ -89,11 +91,13 @@ public class SqlStudentInsertTest {
   @Test
   @Order(3)
   void t030_getResultsetColumnCount() throws SQLException {
-    String url = "jdbc:postgresql://localhost:5433/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5433/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
+
+    Connection connection = studentDataSource.getConnection();
 
     String sql = "select * from emp where job = 'CLERK'";
 
@@ -111,11 +115,13 @@ public class SqlStudentInsertTest {
   @Order(4)
   void t040_ResultsetAsTable_01() throws SQLException {
 
-    String url = "jdbc:postgresql://localhost:5433/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5433/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
+
+    Connection connection = studentDataSource.getConnection();
 
     String sql = "select * from emp where job = 'CLERK'";
 
@@ -149,11 +155,13 @@ public class SqlStudentInsertTest {
   @Order(5)
   void t050_ResultsetAsTable_02() throws SQLException {
 
-    String url = "jdbc:postgresql://localhost:5433/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5433/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
+
+    Connection connection = studentDataSource.getConnection();
 
     String sql = "select * from emp";
 

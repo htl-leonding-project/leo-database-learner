@@ -40,11 +40,11 @@ Dasselbe gilt  hierbei auch für die Ergebnisse der Exams.
 === 4) Bild
 ---
 Startet der Schüler ein Exam, wird der Bildschirm in 3 glecih große Teile geteilt.
-Ganz links befindet sich die vom Lehrer vorgefertigte Aufgabenstellung.
+Oben befindet sich die vom Lehrer vorgefertigte Aufgabenstellung.
 
-In der Mitte wird der Schüler dann die (hoffentlich) richtige Antwort bzw. den richtigen Code einfügen.
-Unten links in diesem Abteil ist ein "Run"-Button, wird dieser gedrückt,
-wird im rechten Fenster eine Vorschau angezeigt.
+Darunter wird der Schüler dann die (hoffentlich) richtige Antwort bzw. den richtigen Code einfügen.
+Unten rechts in diesem Abteil ist ein "Run"-Button, wird dieser gedrückt,
+wird im unteren Fenster eine Vorschau angezeigt.
 
 Hat der Schüler die Aufgabenstellung bewältigt, klickt er auf den "Next"-Button
 und kommt somit zur nächsten Aufgabe.

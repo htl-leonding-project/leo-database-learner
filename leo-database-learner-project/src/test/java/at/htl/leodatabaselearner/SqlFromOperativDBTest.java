@@ -1,23 +1,36 @@
 package at.htl.leodatabaselearner;
 
+import io.agroal.api.AgroalDataSource;
+import io.quarkus.agroal.DataSource;
+import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.*;
 
+import javax.inject.Inject;
 import java.sql.*;
 import java.util.Properties;
 
+@QuarkusTest
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-public class sqlFromOperativDBTest {
+public class SqlFromOperativDBTest {
+
+  @Inject
+  AgroalDataSource prodDataSource;
+
+  @Inject
+  @DataSource("student")
+  AgroalDataSource studentDataSource;
 
   @Test
   @Order(1)
   void t0010_getEmp_pictureOnTerminal() throws SQLException {
 
-    String url = "jdbc:postgresql://localhost:5433/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5433/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+    Connection connection = studentDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM emp");
@@ -34,12 +47,13 @@ public class sqlFromOperativDBTest {
   @Order(2)
   void t0020_getQuestion_pictureSQLOnTerminal() throws SQLException {
 
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+    Connection connection = prodDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
@@ -56,12 +70,13 @@ public class sqlFromOperativDBTest {
   @Order(3)
   void t0030_pictureResultsetSizeRows() throws SQLException {
 
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+    Connection connection = prodDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
@@ -76,11 +91,13 @@ public class sqlFromOperativDBTest {
 
     System.out.println(sql);
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
+
+    connection = studentDataSource.getConnection();
 
     ps = connection.prepareStatement(sql);
     rs = ps.executeQuery();
@@ -98,12 +115,13 @@ public class sqlFromOperativDBTest {
   @Order(4)
   void t0040_pictureResultsetTable() throws SQLException {
 
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+    Connection connection = prodDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
@@ -118,11 +136,13 @@ public class sqlFromOperativDBTest {
 
     System.out.println(sql);
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
+
+    connection = studentDataSource.getConnection();
 
     ps = connection.prepareStatement(sql);
     rs = ps.executeQuery();
@@ -150,12 +170,13 @@ public class sqlFromOperativDBTest {
   @Order(5)
   void t0050_pictureResultsetSizeColumns() throws SQLException {
 
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+    Connection connection = prodDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
@@ -170,11 +191,13 @@ public class sqlFromOperativDBTest {
 
     System.out.println(sql);
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
+
+    connection = studentDataSource.getConnection();
 
     ps = connection.prepareStatement(sql);
     rs = ps.executeQuery();
@@ -183,5 +206,4 @@ public class sqlFromOperativDBTest {
     System.out.println(meta.getColumnCount());
 
   }
-
 }

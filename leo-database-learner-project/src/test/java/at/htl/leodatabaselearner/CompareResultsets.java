@@ -1,28 +1,40 @@
 package at.htl.leodatabaselearner;
 
+import io.agroal.api.AgroalDataSource;
+import io.quarkus.agroal.DataSource;
+import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+import javax.inject.Inject;
 import java.sql.*;
 import java.util.Properties;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@QuarkusTest
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-public class compareResultsets {
+public class CompareResultsets {
 
+  @Inject
+  AgroalDataSource prodDataSource;
+
+  @Inject
+  @DataSource("student")
+  AgroalDataSource studentDataSource;
 
   @Test
   @Order(1)
   void t0010_compareResultsetSizeRows() throws SQLException {
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+    Connection connection = prodDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
@@ -35,11 +47,13 @@ public class compareResultsets {
 
     String sql = sb.toString();
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
+
+    connection = studentDataSource.getConnection();
 
     ps = connection.prepareStatement(sql);
     rs = ps.executeQuery();
@@ -49,12 +63,11 @@ public class compareResultsets {
       sizeOP++;
     }
 
-
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
 
     sql = "Select * from salgrade";
 
@@ -74,11 +87,13 @@ public class compareResultsets {
   @Order(2)
   void t0020_compareResultsetSizeColumns() throws SQLException {
 
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
+
+    Connection connection = prodDataSource.getConnection();
 
 
     StringBuilder sb = new StringBuilder();
@@ -92,22 +107,25 @@ public class compareResultsets {
 
     String sql = sb.toString();
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
+
+    connection = studentDataSource.getConnection();
+
 
     ps = connection.prepareStatement(sql);
     rs = ps.executeQuery();
     ResultSetMetaData meta = rs.getMetaData();
     int sizeOP = meta.getColumnCount();
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
 
     sql = "Select * from salgrade";
 
@@ -124,12 +142,13 @@ public class compareResultsets {
   @Test
   @Order(3)
   void t0030_compareResultsetSizeRows() throws SQLException {
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+    Connection connection = prodDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
@@ -145,11 +164,13 @@ public class compareResultsets {
 
     String sql = sb.toString();
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
+
+    connection = studentDataSource.getConnection();
 
     ps = connection.prepareStatement(sql);
     rs = ps.executeQuery();
@@ -157,11 +178,11 @@ public class compareResultsets {
     while(rs.next()){
       sizeOP++;
     }
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
 
     sql = "Select * from salgrade";
 
@@ -178,12 +199,13 @@ public class compareResultsets {
   @Test
   @Order(4)
   void t0040_compareResultsetColumnLabel() throws SQLException {
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+    Connection connection = prodDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
@@ -198,11 +220,13 @@ public class compareResultsets {
 
     String sql = sb.toString();
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
+
+    connection = studentDataSource.getConnection();
 
     ps = connection.prepareStatement(sql);
     rs = ps.executeQuery();
@@ -242,12 +266,13 @@ public class compareResultsets {
   @Test
   @Order(5)
   void t0050_compareResultsetColumnType() throws SQLException {
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    Properties props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    Connection connection = DriverManager.getConnection(url, props);
+//    String url = "jdbc:postgresql://localhost:5432/postgres";
+//    Properties props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    Connection connection = DriverManager.getConnection(url, props);
 
+     Connection connection = prodDataSource.getConnection();
 
     StringBuilder sb = new StringBuilder();
     PreparedStatement ps = connection.prepareStatement(" SELECT * FROM question");
@@ -262,11 +287,13 @@ public class compareResultsets {
 
     String sql = sb.toString();
 
-    url = "jdbc:postgresql://localhost:5433/postgres";
-    props = new Properties();
-    props.setProperty("user", "postgres");
-    props.setProperty("password", "app");
-    connection = DriverManager.getConnection(url, props);
+//    url = "jdbc:postgresql://localhost:5433/postgres";
+//    props = new Properties();
+//    props.setProperty("user", "postgres");
+//    props.setProperty("password", "app");
+//    connection = DriverManager.getConnection(url, props);
+
+    connection = studentDataSource.getConnection();
 
     ps = connection.prepareStatement(sql);
     rs = ps.executeQuery();

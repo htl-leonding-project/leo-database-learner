@@ -44,6 +44,7 @@ https://htl-leonding-project.github.io/leo-database-learner/geschaeftsprozesse.h
 === Information from teachers:
 https://htl-leonding-project.github.io/leo-database-learner/informationfromteacher.html[*Information from teachers*,role=black] +
 https://htl-leonding-project.github.io/leo-database-learner/currentPlan.html[*Current plan*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/2021-02-26-protocol.html[*Protocol - 26/02/21*,role=black] +
 
 
 == External Project Repository

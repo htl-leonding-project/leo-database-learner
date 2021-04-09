@@ -1,0 +1,63 @@
+= Besprechungsprotokoll 26.02.2021
+firstname lastname
+1.0, 2021-02-26: Some notes
+ifndef::imagesdir[:imagesdir: images]
+:icons: font
+//:sectnums:    // Nummerierung der Überschriften / section numbering
+//:toc: left
+
+
+.Teilnehmer
+|===
+|anwesend
+
+|15PV
+
+|19SM
+
+|22TI
+
+|TS
+|===
+
+.Ort und Zeit
+[cols=3*]
+|===
+|Ort|von-bis|Dauer
+
+|Online-Unterricht (Discord)
+|Fr. 26.02.2021, 11:50 - 12:47
+|57 min
+|===
+
+
+== Besprochene Themen
+
+
+== Vereinbarungen und Entscheidungen
+
+.Was wurde vereinbart?
+[%autowidth]
+|===
+|wer |macht was |bis wann
+
+|15PV
+a|Von der operativedb das benötigte Lösungssql des gewünschten Beispieles abrufen.
+Mit dem Lösungssql nun eine Abfrage auf die studentdb machen und als Resultset speichern
+Gib das Resultset als Tabelle aus.
+Gib die Länge und weitere Eigenschaften, welche man zum Vergleichen verwenden kann, aus.
+| 05.03.21
+
+|19SM
+a|Simuliere eine Schülereingabe eines SQLs und versuche das Resultset dafür aus der studentdb zu bekommen.
+Gib das Resultset als Tabelle aus.
+Gib die Länge und weitere Eigenschaften, welche man zum Vergleichen verwenden kann, aus.
+|05.03.21
+
+|22TI
+a| Designkonzept erstellen, dieses dokumentieren und beschreiben welche Elemente verwendet werden.
+
+|grob: 05.03.21
+fertig:12.03.21
+|===
+

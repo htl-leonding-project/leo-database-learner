@@ -5,6 +5,7 @@ import at.htl.leodatabaselearner.entity.Person;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceUnit;
 import java.util.ArrayList;
 import java.util.List;
 

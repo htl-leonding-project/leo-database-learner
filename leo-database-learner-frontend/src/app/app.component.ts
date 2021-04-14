@@ -13,6 +13,6 @@ export class AppComponent {
 
 
   buttonCLick(): void{
-    alert('Button was clicked');
+    alert('Daten werden an Server geschickt');
   }
 }

@@ -1,7 +1,5 @@
-// @ts-ignore
 import { Component } from '@angular/core';
 
-// @ts-ignore
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +8,6 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'leo-database-learner-frontend';
-
 
   buttonCLick(): void{
     alert('Daten werden an Server geschickt');

@@ -8,8 +8,4 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'leo-database-learner-frontend';
-
-  buttonCLick(): void{
-    alert('Daten werden an Server geschickt');
-  }
 }

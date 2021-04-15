@@ -12,4 +12,7 @@ export class FeatureComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  buttonCLick(): void{
+    alert('Daten werden an Server geschickt');
+  }
 }

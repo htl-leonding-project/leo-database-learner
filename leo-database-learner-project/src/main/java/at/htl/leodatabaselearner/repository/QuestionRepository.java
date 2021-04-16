@@ -27,6 +27,11 @@ public class QuestionRepository {
         return query.getResultStream().findFirst().orElse(null);
     }
 
+  public String getSqlFromQuestionById(Long id){
+    var question = this.findById(id);
+    return question.getSql();
+  }
+
     public List<Question> findAll(){
         var query = em.createQuery("select q from Question q", Question.class);
         return query.getResultList();

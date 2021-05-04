@@ -10,11 +10,18 @@ export class TaskDetailComponent implements OnInit {
 
   id = '';
 
-  constructor(private route: ActivatedRoute) {
-  }
+  constructor(
+    private route: ActivatedRoute
+  ) {  }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => { this.id = params.get('id'); } );
+
+    this.id = this.route.snapshot.paramMap.get('id') || '';
+
+    // this.route.paramMap.subscribe(params => {
+    //   console.log(params.get('id'));
+    //   this.id = params.get('id');
+    // });
   }
 
 }

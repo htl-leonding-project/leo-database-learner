@@ -1,17 +1,7 @@
-<div>
-  <a href="" style="float: left;">Exercises</a>
-  <a href="" style="float: left;">Exam</a>
-  <a href="" style="float: left;">Knowledge</a>
-</div><br>
-
-<!--<mat-list style="margin-left: 29.5%; margin-top: 5%;">
-  <mat-list-item><a href="">Aufgabe 01</a></mat-list-item>
-  <mat-list-item><a href="">Aufgabe 02</a></mat-list-item>
-  <mat-list-item><a href="">Aufgabe 03</a></mat-list-item>
-</mat-list>-->
-
 <ul>
   <li *ngFor="let t of tasks">
-    <a [routerLink]="t.id">{{t.name}}</a>
+    <a [routerLink]="t.id">{{ t.name }}</a>
   </li>
 </ul>
+
+

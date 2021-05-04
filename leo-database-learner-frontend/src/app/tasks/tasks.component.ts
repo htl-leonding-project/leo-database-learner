@@ -11,6 +11,7 @@ export class TasksComponent implements OnInit {
     {name: 'Task2', id: 2},
     {name: 'Task3', id: 3}
   ];
+
   constructor() { }
 
   ngOnInit(): void {

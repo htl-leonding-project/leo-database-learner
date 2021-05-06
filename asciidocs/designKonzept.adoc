@@ -1,0 +1,86 @@
+= Design Konzept
+
+== Schüler Ansicht
+---
+
+[lchuelerAnsicht, jpg]
+:imagesdir:
+image::{imagesdir}./images/schuelerAnsicht.jpg[]
+
+=== 1) Bild
+---
+Nach dem Login wird die Startseite angezeigt.
+Hier befindet sich Text über die Webseite bzw. über das Projekt.
+
+=== 2) Bild
+---
+Unter dem Menüpunkt "Exercises" werden alle Tasks der Reihe
+nach aufgelistet.
+
+Der Lernfortschritt wird jeweils in % angezeigt.
+
+So wird es auch beim Menüpunkt "Exams" ungefähr aussehen.
+(Deshalb auch die strichlierte Linie über dem Menüpunkt "Exams")
+
+=== 3) Bild
+---
+Wenn ein Schüler seinen Wissensstand einsehen möchte, kann er dies
+unter dem Menüpunkt "Knowledge" tun.
+
+Bei den Exercises werden alle einzelnen Tasks mit der jeweiligen Punkteanzahl
+dargestellt, ebenso wird ein Kreisdiagramm berechnet und angezeigt, um
+es auch noch in dieser Form zu veranschaulichen.
+
+Dasselbe gilt  hierbei auch für die Ergebnisse der Exams.
+
+=== 4) Bild
+---
+Startet der Schüler ein Exam, wird unter der Überschrift die Frage
+bzw. die Aufgabenstellung angezeigt.
+
+Darunter befindet sich ein Eingabefeld für den Code bzw. die Antwort.
+
+Hat der Schüler die Frage beantwortet, klickt er darunter auf den Button
+und kommt somit zur nächsten Frage.
+
+Ist das Exam beendet, wird das Ergebnis ausgewertet, die Punkte werden
+angezeigt.
+
+== Lehrer Ansicht
+---
+
+[lehrerAnsicht, jpg]
+:imagesdir:
+image::{imagesdir}./images/lehrerAnsicht.jpg[]
+
+=== 1) Bild
+---
+Genau wie beim Schüler, kommt der Lehrer nach dem Login erstmal
+auf die Startseite.
+
+=== 2) Bild
+---
+Unter dem Menüpunkt "Exams" kann der Lehrer die Klasse auswählen,
+welcher er ein neues Exam hochladen möchte.
+
+Er kann hier quasi die einzelnen Exams, welche er zuvor erstellt hat, freigeben.
+
+Neue Exams können erstellt werden. (Mehr dazu beim 4. Bild)
+
+=== 3) Bild
+---
+Beim Menüpunkt "Knowledge" kann der Lehrer den Wissensstand jedes einzelnen Schülers
+abrufen.
+Dafür muss er nur die Klasse mit dem jeweiligen Schüler auswählen und folglich sieht
+er alle seine Ergebnisse und seinen Wissensstand.
+
+=== 4) Bild
+---
+Beim Erstellen eines neuen Exams, gibt der Lehrer einmalig den Namen des neuen Exams ein.
+
+Danach tippt er die Frage und die dazugehörig richtige Antwort auf diese Frage ein.
+
+Klickt er auf den "Next"-Button, kann er die nächste Frage + Antwort eintippen,
+hat er jedoch schon genug Fragen erstellt, klickt er auf den "Finish"-Button.
+
+Dasselbe Prinzip gilt hierbei auch für die Tasks (Exercises).

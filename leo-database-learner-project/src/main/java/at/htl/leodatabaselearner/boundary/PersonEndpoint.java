@@ -34,4 +34,11 @@ public class PersonEndpoint {
     return result;
   }
 
+  @GET
+  @Path("getById/{id}")
+  @Produces({MediaType.APPLICATION_JSON})
+  public Person getById(@PathParam("id") Long id){
+    return this.personRepository.findById(id);
+  }
+
 }

@@ -1,3 +1,10 @@
+<nav style="text-align: center;">
+  <a style="float: left; margin-right: 20%; margin-left: 25%;" routerLink="/">Tasks</a>
+  <a style="float: left; margin-right: 20%" routerLink="/">Exams</a>
+  <a style="float: left;" routerLink="/">Knowledge</a>
+</nav>
+<br><br><br>
+
 <ul>
   <li *ngFor="let t of tasks">
     <a [routerLink]="t.id.toString()">{{ t.name }}</a>

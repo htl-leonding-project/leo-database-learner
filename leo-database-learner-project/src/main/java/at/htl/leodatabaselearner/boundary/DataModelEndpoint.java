@@ -33,4 +33,10 @@ public class DataModelEndpoint {
         return result;
     }
 
+    @GET
+    @Path("getById/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public DataModel getById(@PathParam("id") Long id){
+        return this.dataModelRepository.findById(id);
+    }
 }

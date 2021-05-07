@@ -34,4 +34,10 @@ public class SqlScriptEndpoint {
         return result;
     }
 
+    @GET
+    @Path("getById/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public SqlScript getById(@PathParam("id") Long id){
+        return this.sqlScriptRepository.findById(id);
+    }
 }

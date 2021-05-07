@@ -26,4 +26,11 @@ public class DataModelEndpoint {
         dataModelRepository.addDataModel(dataModel);
     }
 
+    @GET
+    @Path("/getAll")
+    public List<DataModel> getAllDataModels() {
+        final List<DataModel> result = dataModelRepository.findAll();
+        return result;
+    }
+
 }

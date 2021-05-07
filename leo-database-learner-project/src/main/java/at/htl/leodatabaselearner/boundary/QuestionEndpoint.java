@@ -27,4 +27,11 @@ public class QuestionEndpoint {
         questionRepository.addQuestion(question);
     }
 
+    @GET
+    @Path("/getAll")
+    public List<Question> getAllQuestions() {
+        final List<Question> result = questionRepository.findAll();
+        return result;
+    }
+
 }

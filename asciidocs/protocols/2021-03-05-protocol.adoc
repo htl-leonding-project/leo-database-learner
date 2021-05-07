@@ -45,6 +45,7 @@ ifndef::imagesdir[:imagesdir: images]
 
 |15PV
 a| Sysadmin bezüglich der VM kontaktieren und Problem lösen.
+
 Überlege, wonach die Fragen/Antworten überprüft werden sollen.
 | 13.03.21
 

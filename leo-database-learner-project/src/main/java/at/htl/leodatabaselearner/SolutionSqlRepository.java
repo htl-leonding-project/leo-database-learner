@@ -21,7 +21,6 @@ public class SolutionSqlRepository {
 
     public List<Question> getSqlResultsFromDB(long id){
         String sql = em.find(Question.class, id).getSql();
-
         return em.createQuery(sql,Question.class).getResultList();
     }
 

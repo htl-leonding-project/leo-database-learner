@@ -15,9 +15,7 @@ public class ExerciseSqlRepository {
     @Inject
     EntityManager em;
 
-
     public List getSqlResultsFromOracleDB(String sql){
-
         return em.createQuery(sql).getResultList();
     }
 

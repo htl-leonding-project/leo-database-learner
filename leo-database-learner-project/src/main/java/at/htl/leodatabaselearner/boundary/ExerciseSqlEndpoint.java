@@ -5,6 +5,7 @@ import at.htl.leodatabaselearner.SolutionSqlRepository;
 import at.htl.leodatabaselearner.entity.Person;
 import at.htl.leodatabaselearner.entity.Role;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -13,7 +14,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
-@Path("exercisesql")
+@Path("/exercisesql")
+@ApplicationScoped
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ExerciseSqlEndpoint {

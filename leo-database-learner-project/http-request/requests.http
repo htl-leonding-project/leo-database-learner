@@ -4,3 +4,118 @@ GET http://localhost:8080/solutionSql/result/1
 
 #GET http://localhost:8080/solutionSql/result/
 #parameter "Select e from EMP"
+
+### ??
+POST http://localhost:8080/datamodel/addDataModel
+Content-Type: application/json
+
+{
+
+  "name": "Datamodel01",
+  "person": {
+    "firstName": "Lisa",
+    "lastName": "Gruber",
+    "role": "STUDENT"
+  },
+  "comment": "comment1"
+}
+
+
+###
+
+GET http://localhost:8080/datamodel/getById/5
+
+###
+
+
+GET http://localhost:8080/datamodel/getAll
+Accept: application/json
+
+
+#### ??
+POST http://localhost:8080/person/addPerson
+Content-Type: application/json
+
+{
+    "firstName": "Sabrina",
+    "lastName": "Haus",
+    "role": "ADMIN"
+}
+
+###
+
+GET http://localhost:8080/person/getById/3
+
+
+###
+
+GET http://localhost:8080/person/getAll
+Accept: application/json
+
+
+### ??
+POST http://localhost:8080/question/addQuestion
+Content-Type: application/json
+
+{
+  "text": "text01",
+  "sql": "Select p from Person p order by p.lastName",
+  "points": 2,
+  "datamodel": {
+    "name": "Datamodel01",
+    "person": {
+      "firstName": "Lisa",
+      "lastName": "Gruber",
+      "role": "STUDENT"
+    },
+    "comment": "comment1"
+  },
+  "person": {
+    "firstName": "madschi",
+    "lastName": "stei",
+    "role": "ADMIN"
+  }
+}
+
+###
+
+GET http://localhost:8080/question/getById/7
+
+###
+
+GET http://localhost:8080/question/getAll
+Accept: application/json
+
+
+###
+
+POST http://localhost:8080/sqlscript/addSqlScript
+Content-Type: application/json
+
+{
+  "datamodel":{
+    "name": "Datamodel03",
+    "person": {
+      "firstName": "Marah",
+      "lastName": "Steigersdorfer",
+      "role": "ADMIN"
+    },
+  "comment": "comment1"
+  },
+  "createScript": "createScript",
+  "dropScript": "dropScript",
+  "insertScript": "insertScript"
+}
+
+###
+
+
+GET http://localhost:8080/sqlscript/getById/3
+
+###
+
+
+GET http://localhost:8080/sqlscript/getAll
+Accept: application/json
+
+###

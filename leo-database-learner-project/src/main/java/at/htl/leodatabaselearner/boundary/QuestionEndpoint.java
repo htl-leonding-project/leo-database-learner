@@ -34,4 +34,10 @@ public class QuestionEndpoint {
         return result;
     }
 
+    @GET
+    @Path("getById/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Question getById(@PathParam("id") Long id){
+        return this.questionRepository.findById(id);
+    }
 }

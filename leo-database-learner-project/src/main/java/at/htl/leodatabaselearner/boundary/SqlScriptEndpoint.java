@@ -27,4 +27,11 @@ public class SqlScriptEndpoint {
         sqlScriptRepository.addSqlScript(sqlScript);
     }
 
+    @GET
+    @Path("/getAll")
+    public List<SqlScript> getAllSqlScripts() {
+        final List<SqlScript> result = sqlScriptRepository.findAll();
+        return result;
+    }
+
 }

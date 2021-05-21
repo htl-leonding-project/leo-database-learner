@@ -5,11 +5,11 @@
 </nav>
 <br><br><br>
 
-<ul>
-  <li *ngFor="let t of tasks">
-    <a [routerLink]="t.id.toString()">{{ t.name }}</a>
-  </li>
-</ul>
-
-<!--<p>{{person[0].firstName}}</p>-->
+<mat-card>
+  <ul>
+    <li *ngFor="let t of tasks">
+      <a [routerLink]="t.id.toString()">{{ t.name }}</a>
+    </li>
+  </ul>
+</mat-card>
 

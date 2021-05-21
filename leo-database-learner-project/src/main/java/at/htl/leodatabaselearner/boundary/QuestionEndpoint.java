@@ -21,21 +21,21 @@ public class QuestionEndpoint {
     QuestionRepository questionRepository;
 
     @POST
-    @Path("addQuestion")
+    @Path("add_question")
     @Transactional
     public void addDataModel(Question question){
         questionRepository.addQuestion(question);
     }
 
     @GET
-    @Path("/getAll")
+    @Path("/get_all")
     public List<Question> getAllQuestions() {
         final List<Question> result = questionRepository.findAll();
         return result;
     }
 
     @GET
-    @Path("getById/{id}")
+    @Path("getbyid/{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public Question getById(@PathParam("id") Long id){
         return this.questionRepository.findById(id);

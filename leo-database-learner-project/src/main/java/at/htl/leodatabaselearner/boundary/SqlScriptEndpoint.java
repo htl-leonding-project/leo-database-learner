@@ -21,21 +21,21 @@ public class SqlScriptEndpoint {
     SqlScriptRepository sqlScriptRepository;
 
     @POST
-    @Path("addSqlScript")
+    @Path("add_sqlscript")
     @Transactional
     public void addDataModel(SqlScript sqlScript){
         sqlScriptRepository.addSqlScript(sqlScript);
     }
 
     @GET
-    @Path("/getAll")
+    @Path("/get_all")
     public List<SqlScript> getAllSqlScripts() {
         final List<SqlScript> result = sqlScriptRepository.findAll();
         return result;
     }
 
     @GET
-    @Path("getById/{id}")
+    @Path("getbyid/{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public SqlScript getById(@PathParam("id") Long id){
         return this.sqlScriptRepository.findById(id);

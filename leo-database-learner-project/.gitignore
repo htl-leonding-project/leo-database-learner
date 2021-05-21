@@ -1,3 +1,6 @@
+studentdata/
+proddata/
+
 #Maven
 target/
 pom.xml.tag

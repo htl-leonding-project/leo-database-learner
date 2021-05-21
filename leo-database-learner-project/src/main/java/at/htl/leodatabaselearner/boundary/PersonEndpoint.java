@@ -21,21 +21,21 @@ public class PersonEndpoint {
   PersonRepository personRepository;
 
   @POST
-  @Path("addPerson")
+  @Path("add_person")
   @Transactional
   public void addPerson(Person person){
     personRepository.addPerson(person);
   }
 
   @GET
-  @Path("/getAll")
+  @Path("/get_all")
   public List<Person> getAllPersons() {
     final List<Person> result = personRepository.findAll();
     return result;
   }
 
   @GET
-  @Path("getById/{id}")
+  @Path("getbyid/{id}")
   @Produces({MediaType.APPLICATION_JSON})
   public Person getById(@PathParam("id") Long id){
     return this.personRepository.findById(id);

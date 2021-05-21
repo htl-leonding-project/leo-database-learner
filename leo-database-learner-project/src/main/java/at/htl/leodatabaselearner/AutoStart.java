@@ -2,6 +2,10 @@ package at.htl.leodatabaselearner;
 
 import at.htl.leodatabaselearner.boundary.ExerciseSqlEndpoint;
 import at.htl.leodatabaselearner.entity.*;
+import at.htl.leodatabaselearner.repository.DataModelRepository;
+import at.htl.leodatabaselearner.repository.PersonRepository;
+import at.htl.leodatabaselearner.repository.QuestionRepository;
+import at.htl.leodatabaselearner.repository.SqlScriptRepository;
 import io.quarkus.runtime.StartupEvent;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -15,7 +19,16 @@ import java.util.Scanner;
 public class AutoStart {
 
     @Inject
-    EntityManager em;
+    PersonRepository personRepository;
+
+    @Inject
+    DataModelRepository dataModelRepository;
+
+    @Inject
+    QuestionRepository questionRepository;
+
+    @Inject
+    SqlScriptRepository sqlScriptRepository;
 
     @Transactional
     void startup(@Observes StartupEvent event) {
@@ -34,14 +47,15 @@ public class AutoStart {
 
       SqlScript sqlScript = new SqlScript(dataModel, "createScript", "dropScript", "insertScript");
 
-        em.persist(p1);
-        em.persist(p2);
-        em.persist(dataModel);
-        em.persist(question1);
-        em.persist(question2);
-        em.persist(question3);
-        em.persist(question4);
-        em.persist(sqlScript);
+
+      personRepository.addPerson(p1);
+      personRepository.addPerson(p2);
+      dataModelRepository.addDataModel(dataModel);
+      questionRepository.addQuestion(question1);
+      questionRepository.addQuestion(question2);
+      questionRepository.addQuestion(question3);
+      questionRepository.addQuestion(question4);
+      sqlScriptRepository.addSqlScript(sqlScript);
 
     }
 

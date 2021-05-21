@@ -1,4 +1,4 @@
-GET http://localhost:8080/solutionSql/result/1
+###GET http://localhost:8080/solution_sql/result/1
 
 ###
 
@@ -6,7 +6,7 @@ GET http://localhost:8080/solutionSql/result/1
 #parameter "Select e from EMP"
 
 ### ??
-POST http://localhost:8080/datamodel/addDataModel
+POST http://localhost:8080/datamodel/add_datamodel
 Content-Type: application/json
 
 {
@@ -23,17 +23,17 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/datamodel/getById/5
+GET http://localhost:8080/datamodel/getbyid/3
 
 ###
 
 
-GET http://localhost:8080/datamodel/getAll
+GET http://localhost:8080/datamodel/get_all
 Accept: application/json
 
 
 #### ??
-POST http://localhost:8080/person/addPerson
+POST http://localhost:8080/person/add_person
 Content-Type: application/json
 
 {
@@ -44,17 +44,17 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/person/getById/3
+GET http://localhost:8080/person/getbyid/3
 
 
 ###
 
-GET http://localhost:8080/person/getAll
+GET http://localhost:8080/person/get_all
 Accept: application/json
 
 
 ### ??
-POST http://localhost:8080/question/addQuestion
+POST http://localhost:8080/question/add_question
 Content-Type: application/json
 
 {
@@ -79,17 +79,17 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/question/getById/7
+GET http://localhost:8080/question/getbyid/3
 
 ###
 
-GET http://localhost:8080/question/getAll
+GET http://localhost:8080/question/get_all
 Accept: application/json
 
 
 ###
 
-POST http://localhost:8080/sqlscript/addSqlScript
+POST http://localhost:8080/sqlscript/add_sqlscript
 Content-Type: application/json
 
 {
@@ -102,20 +102,20 @@ Content-Type: application/json
     },
   "comment": "comment1"
   },
-  "createScript": "createScript",
-  "dropScript": "dropScript",
-  "insertScript": "insertScript"
+  "createScript": "create1",
+  "dropScript": "drop1",
+  "insertScript": "insert1"
 }
 
 ###
 
 
-GET http://localhost:8080/sqlscript/getById/3
+GET http://localhost:8080/sqlscript/getbyid/2
 
 ###
 
 
-GET http://localhost:8080/sqlscript/getAll
+GET http://localhost:8080/sqlscript/get_all
 Accept: application/json
 
 ###

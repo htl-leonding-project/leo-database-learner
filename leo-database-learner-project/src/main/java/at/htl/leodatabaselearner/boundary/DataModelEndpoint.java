@@ -20,21 +20,21 @@ public class DataModelEndpoint {
     DataModelRepository dataModelRepository;
 
     @POST
-    @Path("addDataModel")
+    @Path("add_datamodel")
     @Transactional
     public void addDataModel(DataModel dataModel){
         dataModelRepository.addDataModel(dataModel);
     }
 
     @GET
-    @Path("/getAll")
+    @Path("/get_all")
     public List<DataModel> getAllDataModels() {
         final List<DataModel> result = dataModelRepository.findAll();
         return result;
     }
 
     @GET
-    @Path("getById/{id}")
+    @Path("getbyid/{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public DataModel getById(@PathParam("id") Long id){
         return this.dataModelRepository.findById(id);

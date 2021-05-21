@@ -19,7 +19,7 @@ public class SolutionSqlEndpoint {
     SolutionSqlRepository solutionSqlRepository;
 
     @GET
-    @Path("/result/{id}")
+    @Path("result/{id}")
     public Response getResultset(@PathParam("id") long id){
 
         final List result = solutionSqlRepository.getSqlResultsFromDB(id);

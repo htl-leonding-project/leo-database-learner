@@ -27,7 +27,7 @@ public class DataModelEndpoint {
     }
 
     @GET
-    @Path("/get_all")
+    @Path("get_all")
     public List<DataModel> getAllDataModels() {
         final List<DataModel> result = dataModelRepository.findAll();
         return result;

@@ -24,7 +24,7 @@ public class ExerciseSqlEndpoint {
   ExerciseSqlRepository exerciseSqlRepository;
 
   @GET
-  @Path("/result/{sql}")
+  @Path("result/{sql}")
   public Response getResultset(@PathParam("sql") String sql) {
 
     final List result = exerciseSqlRepository.getSqlResultsFromOracleDB(sql);

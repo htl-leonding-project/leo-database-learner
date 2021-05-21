@@ -27,18 +27,44 @@ e.g.
 After this you have to write the following into your terminal:
 
 
-*Linux*
+=== Linux / MacOS
 
-----
-./docker/docker-compose up --build
-----
-
-*MacOS*
-
+==== start db
 ----
 cd ./docker
-docker-compose up --build
+docker-compose up --build -d
+----
 
+or you can use a script
+
+----
+./run-db.sh
+----
+
+==== stop db
+
+----
+docker-compose down
+----
+
+=== Win
+
+==== run db
+----
+cd ./docker
+docker-compose -f docker-compose-volume.yml up --build -d
+----
+
+or you can use a script
+
+----
+run-db.bat
+----
+
+==== stop db
+
+----
+docker-compose down
 ----
 
 Click on "+" in the database window. Then select the following (as shown in the picture)

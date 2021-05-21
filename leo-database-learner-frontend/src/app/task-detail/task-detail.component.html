@@ -1,0 +1,23 @@
+<nav style="text-align: center;">
+  <a style="float: left; margin-right: 20%; margin-left: 25%;" routerLink="/">Tasks</a>
+  <a style="float: left; margin-right: 20%" routerLink="/">Exams</a>
+  <a style="float: left;" routerLink="/">Knowledge</a>
+</nav>
+<br><br><br>
+<mat-card>
+  <h1>This is Task Number {{ id }}</h1>
+
+  <mat-card>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Sql</mat-label>
+        <input matInput placeholder="Select..." value="Select...">
+      </mat-form-field>
+    </form>
+
+    <button mat-button color="accent" (click)="click()">Send</button>
+  </mat-card>
+</mat-card>
+
+
+

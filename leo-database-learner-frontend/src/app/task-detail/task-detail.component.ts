@@ -23,5 +23,7 @@ export class TaskDetailComponent implements OnInit {
     //   this.id = params.get('id');
     // });
   }
-
+  click(): void {
+    alert('Data successfully sent');
+  }
 }

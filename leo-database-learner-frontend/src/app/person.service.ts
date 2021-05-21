@@ -14,6 +14,6 @@ export class PersonService {
     return this.http.get<Person>('http://localhost:8080/exercisesql/person');  }
 
   getAllPerson(): Observable<Person[]>{
-    return this.http.get<Person[]>('http://localhost:8080/person/getAll');  }
+    return this.http.get<Person[]>('http://localhost:8080/person/get_all');  }
 
 }

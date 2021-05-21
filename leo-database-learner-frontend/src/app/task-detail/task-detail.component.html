@@ -1,4 +1,4 @@
-<div style = "text-align: center;">
+<mat-card>
   <nav style="text-align: center;">
     <a style="float: left; margin-right: 20%; margin-left: 25%;" routerLink="/">Tasks</a>
     <a style="float: left; margin-right: 20%" routerLink="/">Exams</a>
@@ -6,15 +6,19 @@
   </nav>
   <br><br><br>
 
-<h1>This is Task Number {{ id }}</h1>
+  <h1>This is Task Number {{ id }}</h1>
 
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Input</mat-label>
-    <input matInput placeholder="Input" value="">
-  </mat-form-field>
-</form>
-  <button mat-button (click)="click()">Send</button>
-</div>
+  <mat-card>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Sql</mat-label>
+        <input matInput placeholder="Select..." value="Select...">
+      </mat-form-field>
+    </form>
+
+    <button mat-button color="accent" (click)="click()">Send</button>
+  </mat-card>
+</mat-card>
+
 
 

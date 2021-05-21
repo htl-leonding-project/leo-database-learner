@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {MatListModule} from '@angular/material/list';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TaskDetailComponent } from './task-detail/task-detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

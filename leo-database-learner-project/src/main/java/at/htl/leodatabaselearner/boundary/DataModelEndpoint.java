@@ -22,7 +22,7 @@ public class DataModelEndpoint {
     @POST
     @Path("add_datamodel")
     @Transactional
-    public void addDataModel(DataModel dataModel){
+    public void addDataModel(DataModel dataModel) {
         dataModelRepository.addDataModel(dataModel);
     }
 
@@ -36,7 +36,7 @@ public class DataModelEndpoint {
     @GET
     @Path("getbyid/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public DataModel getById(@PathParam("id") Long id){
+    public DataModel getById(@PathParam("id") Long id) {
         return this.dataModelRepository.findById(id);
     }
 }

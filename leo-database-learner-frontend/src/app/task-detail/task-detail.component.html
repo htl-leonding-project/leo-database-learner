@@ -1,6 +1,7 @@
 <p>
   <mat-toolbar color="primary">
-    <a style="float: left; margin-right: 20%; margin-left: 5%;"><span [style.cursor]="'pointer'" routerLink="/">Tasks</span></a>
+    <a style="float: left; margin-right: 20%; margin-left: 5%;"><span [style.cursor]="'pointer'"
+                                                                      routerLink="/">Tasks</span></a>
     <a style="float: left; margin-right: 20%;"><span [style.cursor]="'pointer'" routerLink="/">Exams</span></a>
     <a style="float: left;"><span [style.cursor]="'pointer'" routerLink="/">Knowledge</span></a>
     <span style="margin-left: 30%;">LeoDbLearner</span>
@@ -14,14 +15,14 @@
 <!--    <a style="float: left; margin-right: 20%" routerLink="/">Exams</a>-->
 <!--    <a style="float: left;" routerLink="/">Knowledge</a>-->
 <!--  </nav>-->
-  <br><br><br>
+<br><br><br>
 
 <div style="text-align: center;">
-<h1>This is Task Number {{ id }}</h1>
+  <h1>This is Task Number {{ id }}</h1>
 
-<form class="example-form">
+  <form class="example-form">
     <input matInput placeholder="Input" value="">
-</form>
+  </form>
   <br>
   <button mat-button (click)="click()" style="background-color: darkgray;">Send</button>
 </div>

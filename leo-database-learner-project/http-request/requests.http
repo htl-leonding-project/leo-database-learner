@@ -1,23 +1,20 @@
 ###GET http://localhost:8080/solution_sql/result/1
 
-###
-
 #GET http://localhost:8080/solutionSql/result/
 #parameter "Select e from EMP"
 
-### ??
+###
 POST http://localhost:8080/datamodel/add_datamodel
 Content-Type: application/json
 
 {
-
-  "name": "Datamodel01",
+  "name": "Restaurant",
   "person": {
     "firstName": "Lisa",
     "lastName": "Gruber",
     "role": "STUDENT"
   },
-  "comment": "comment1"
+  "comment": "Das Modell zeigt ein Restaurant mit seinen jeweiligen Attributen."
 }
 
 
@@ -32,14 +29,14 @@ GET http://localhost:8080/datamodel/get_all
 Accept: application/json
 
 
-#### ??
+####
 POST http://localhost:8080/person/add_person
 Content-Type: application/json
 
 {
-    "firstName": "Sabrina",
-    "lastName": "Haus",
-    "role": "ADMIN"
+  "firstName": "Sabrina",
+  "lastName": "Haus",
+  "role": "ADMIN"
 }
 
 ###
@@ -53,22 +50,22 @@ GET http://localhost:8080/person/get_all
 Accept: application/json
 
 
-### ??
+###
 POST http://localhost:8080/question/add_question
 Content-Type: application/json
 
 {
-  "text": "text01",
+  "text": "Geben Sie alle Personen sortiert nach dem Nachnamen aus.",
   "sql": "Select p from Person p order by p.lastName",
   "points": 2,
   "datamodel": {
-    "name": "Datamodel01",
+    "name": "Schwimmkurs",
     "person": {
       "firstName": "Lisa",
       "lastName": "Gruber",
       "role": "STUDENT"
     },
-    "comment": "comment1"
+    "comment": "Das Modell zeigt einen Schwimmkurs mit seinen jeweiligen Attributen."
   },
   "person": {
     "firstName": "madschi",
@@ -93,18 +90,18 @@ POST http://localhost:8080/sqlscript/add_sqlscript
 Content-Type: application/json
 
 {
-  "datamodel":{
-    "name": "Datamodel03",
+  "datamodel": {
+    "name": "Hundeschule",
     "person": {
       "firstName": "Marah",
       "lastName": "Steigersdorfer",
       "role": "ADMIN"
     },
-  "comment": "comment1"
+    "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
   },
-  "createScript": "create1",
-  "dropScript": "drop1",
-  "insertScript": "insert1"
+  "createScript": "CREATE TABLE DOGSCHOOL(id number not null, name varchar2(255), location varchar2(255), zip number ",
+  "dropScript": "DROP TABLE DOGSCHOOL;",
+  "insertScript": "INSERT INTO DOGSCHOOL(id, name, location, zip) VALUES (1, 'Hundeschule Mayr', 'Leonding', 4060)"
 }
 
 ###

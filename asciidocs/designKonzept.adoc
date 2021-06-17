@@ -1,11 +1,17 @@
-= Design Konzept
+= LeoDatabaseLearner - Design Konzept
+19SM, 22TI, 15PV
+1.1.0, 2020-10-23: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
 
 == Schüler Ansicht
 ---
 
-[schuelerAnsicht, jpg]
-:imagesdir:
-image::{imagesdir}./images/schuelerAnsicht.jpg[]
+image::SchuelerAnsicht.jpg[]
 
 === 1) Bild
 ---
@@ -55,9 +61,7 @@ angezeigt.
 == Lehrer Ansicht
 ---
 
-[lehrerAnsicht, jpg]
-:imagesdir:
-image::{imagesdir}./images/lehrerAnsicht.jpg[]
+image::LehrerAnsicht.jpg[]
 
 === 1) Bild
 ---
@@ -94,9 +98,7 @@ hat er jedoch schon genug Fragen erstellt, klickt er auf den "Finish"-Button.
 Dasselbe Prinzip gilt hierbei auch für die Tasks (Exercises), die erstellt werden können.
 
 
-[lehrerAnsicht5), jpg]
-:imagesdir:
-image::{imagesdir}./images/lehrerAnsicht5).jpg[]
+image::lehrerAnsicht5).jpg[]
 
 === 5) Bild
 Hier kann der Lehrer alle Datenmodelle, welche er für die Exams oder die Exercises
@@ -113,14 +115,10 @@ Eventuell werden die Menüpunkte links in die ausklappbare Navigation verlegt.
 === Schüler Ansicht unter dem Menüpunkt "Exercises"
 ---
 
-[vorschau_Exercises, jpg]
-:imagesdir:
-image::{imagesdir}./images/vorschau_Exercises.jpg[]
+image::vorschau_Exercises.JPG[]
 
 === Schüler Ansicht unter dem Menüpunkt "Exams"
 ==== Gestartetes Exam
 ---
 
-[vorschau_Exam, jpg]
-:imagesdir:
-image::{imagesdir}./images/vorschau_Exam.jpg[]
+image::vorschau_Exam.JPG[]

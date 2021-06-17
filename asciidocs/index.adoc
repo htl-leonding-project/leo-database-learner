@@ -28,8 +28,7 @@ https://htl-leonding-project.github.io/leo-database-learner/howToStart.html[*How
 
 https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
 
-https://htl-leonding-project.github.io/leo-database-learner/howtodatabase.html[*(Deprecated)How to get the Postgres DB*,role=black] +
-https://htl-leonding-project.github.io/leo-database-learner/howtooracledatabase.html[*(Deprecated)How to get the Oracle DB*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/designKonzept.html[*Design concept*,role=black] +
 
 === English:
 https://htl-leonding-project.github.io/leo-database-learner/project-proposal[*Projectproposal*,role=black] +
@@ -46,6 +45,10 @@ https://htl-leonding-project.github.io/leo-database-learner/informationfromteach
 https://htl-leonding-project.github.io/leo-database-learner/currentPlan.html[*Current plan*,role=black] +
 https://htl-leonding-project.github.io/leo-database-learner/2021-02-26-protocol.html[*Protocol - 26/02/21*,role=black] +
 
+=== Deprecated
+
+https://htl-leonding-project.github.io/leo-database-learner/howtodatabase.html[*(Deprecated)How to get the Postgres DB*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/howtooracledatabase.html[*(Deprecated)How to get the Oracle DB*,role=black] +
 
 == External Project Repository
 

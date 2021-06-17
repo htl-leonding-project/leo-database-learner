@@ -20,23 +20,23 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class ExerciseSqlEndpoint {
 
-  @Inject
-  ExerciseSqlRepository exerciseSqlRepository;
+    @Inject
+    ExerciseSqlRepository exerciseSqlRepository;
 
-  @GET
-  @Path("result/{sql}")
-  public Response getResultset(@PathParam("sql") String sql) {
+    @GET
+    @Path("result/{sql}")
+    public Response getResultset(@PathParam("sql") String sql) {
 
-    final List result = exerciseSqlRepository.getSqlResultsFromOracleDB(sql);
+        final List result = exerciseSqlRepository.getSqlResultsFromOracleDB(sql);
 
-    return Response.ok(result).build();
+        return Response.ok(result).build();
 
-  }
+    }
 
-  @GET
-  @Path("person")
-  public Response foo(){
-    Person p = new Person("susi","primerl", Role.STUDENT);
-    return Response.ok(p).build();
-  }
+    @GET
+    @Path("person")
+    public Response foo() {
+        Person p = new Person("susi", "primerl", Role.STUDENT);
+        return Response.ok(p).build();
+    }
 }

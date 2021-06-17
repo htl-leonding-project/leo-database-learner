@@ -23,7 +23,7 @@ public class SqlScriptEndpoint {
     @POST
     @Path("add_sqlscript")
     @Transactional
-    public void addDataModel(SqlScript sqlScript){
+    public void addDataModel(SqlScript sqlScript) {
         sqlScriptRepository.addSqlScript(sqlScript);
     }
 
@@ -37,7 +37,7 @@ public class SqlScriptEndpoint {
     @GET
     @Path("getbyid/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public SqlScript getById(@PathParam("id") Long id){
+    public SqlScript getById(@PathParam("id") Long id) {
         return this.sqlScriptRepository.findById(id);
     }
 }

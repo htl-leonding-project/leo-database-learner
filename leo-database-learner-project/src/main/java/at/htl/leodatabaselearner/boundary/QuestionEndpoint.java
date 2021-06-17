@@ -23,7 +23,7 @@ public class QuestionEndpoint {
     @POST
     @Path("add_question")
     @Transactional
-    public void addDataModel(Question question){
+    public void addDataModel(Question question) {
         questionRepository.addQuestion(question);
     }
 
@@ -37,7 +37,7 @@ public class QuestionEndpoint {
     @GET
     @Path("getbyid/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Question getById(@PathParam("id") Long id){
+    public Question getById(@PathParam("id") Long id) {
         return this.questionRepository.findById(id);
     }
 }

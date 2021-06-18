@@ -30,7 +30,7 @@ public class SqlScriptEndpoint {
     @GET
     @Path("get_all")
     public List<SqlScript> getAllSqlScripts() {
-        final List<SqlScript> result = sqlScriptRepository.findAll();
+        final List<SqlScript> result = sqlScriptRepository.findAllSqlScripts();
         return result;
     }
 

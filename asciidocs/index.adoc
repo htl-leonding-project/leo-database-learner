@@ -13,14 +13,9 @@ ifndef::imagesdir[:imagesdir: images]
 // Short Desciption of your Project
 Practice tool to learn database commands and to check your level of knowledge.
 
-== Team
+== Systemarchitecture
 
-// <catalog-number><first letter of lastname><first letter of first name>
-// ie
-
-* 15PV
-* 19SM
-* 22TI
+image::07012021.png[]
 
 == Documents
 

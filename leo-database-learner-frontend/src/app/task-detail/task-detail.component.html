@@ -1,23 +1,25 @@
-<nav style="text-align: center;">
-  <a style="float: left; margin-right: 20%; margin-left: 25%;" routerLink="/">Tasks</a>
-  <a style="float: left; margin-right: 20%" routerLink="/">Exams</a>
-  <a style="float: left;" routerLink="/">Knowledge</a>
-</nav>
+<p>
+  <mat-toolbar style="margin-top: -1%;" color="primary">
+    <span style="margin-left: 85%">LeoDataBaseLearner</span>
+  </mat-toolbar>
+  <mat-toolbar color="primary">
+    <a style="float: left; margin-right: 20%; margin-left: 25%; text-decoration: underline;"><span
+      [style.cursor]="'pointer'" routerLink="/">Tasks</span></a>
+    <a style="float: left; margin-right: 20%;"><span [style.cursor]="'pointer'" routerLink="/">Exams</span></a>
+    <a style="float: left;"><span [style.cursor]="'pointer'" routerLink="/">Knowledge</span></a>
+  </mat-toolbar>
+</p>
+
 <br><br><br>
-<mat-card>
+
+<div style="text-align: center;">
   <h1>This is Task Number {{ id }}</h1>
 
-  <mat-card>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Sql</mat-label>
-        <input matInput value="">
-      </mat-form-field>
-    </form>
-
-    <button mat-button color="primary" (click)="click()">Send</button>
-  </mat-card>
-</mat-card>
-
+  <form class="example-form">
+    <input matInput placeholder="Input" value="">
+  </form>
+  <br>
+  <button mat-button (click)="click()" style="background-color: darkgray;">Send</button>
+</div>
 
 

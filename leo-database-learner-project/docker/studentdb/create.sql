@@ -1,3 +1,7 @@
+-- https://www.postgresql.org/docs/9.1/ddl-schemas.html
+-- CREATE SCHEMA dept_emp;
+-- SET search_path TO dept_emp;
+
 CREATE TABLE DEPT (
                       DEPTNO              NUMERIC(2) CONSTRAINT DEPT_PRIMARY_KEY PRIMARY KEY,
                       DNAME               VARCHAR(14),

@@ -1,0 +1,15 @@
+@startuml
+
+node Backend <<quarkus>>
+node GUI <<nodejs>>
+node Browser<<angular>>
+
+Backend --> BackendAPI
+GUI ..> BackendAPI : use
+GUI --> GUIAPI
+Browser ..> GUIAPI : use
+skinparam node {
+borderColor Black
+}
+
+@enduml

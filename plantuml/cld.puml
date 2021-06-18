@@ -1,0 +1,46 @@
+@startuml
+
+class Question {
+  id: Long
+  text: String
+  sql: String
+  points: int
+  createDate: LocalDate
+  dataModel: DataModel
+  owner : Person [INSTRUCTOR]
+}
+
+class DataModel {
+  id: Long
+  name: String
+  owner: Person/Instructor
+  comment: String
+  erd: BLOB [image]
+}
+
+class SqlScript {
+  id: Long
+  dataModel: DataModel
+  createScript: String;
+  dropScript : String;
+  insertScript : String;
+}
+
+class Person {
+  firstName: String
+  lastName: String
+  ...
+  Role : role
+}
+
+enum Role {
+  INSTRUCTOR,
+  STUDENT,
+  ADMIN
+}
+
+SqlScript -right-> DataModel : "creating >"
+Question -left-> DataModel : "belongs to >"
+Role -up- Person
+DataModel -down- Person: owns <
+@enduml

@@ -30,7 +30,7 @@ public class QuestionRepository implements PanacheRepository<Question> {
 
   public String getSqlFromQuestionById(Long id) {
     var question = this.findById(id);
-    return question.getSql();
+    return question.sql;
   }
 
   public List<Question> findAllQuestions() {

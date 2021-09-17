@@ -20,7 +20,7 @@ public class SolutionSqlRepository {
 //    }
 
     public List<Question> getSqlResultsFromDB(long id){
-        String sql = em.find(Question.class, id).getSql();
+        String sql = em.find(Question.class, id).sql;
         return em.createQuery(sql,Question.class).getResultList();
     }
 

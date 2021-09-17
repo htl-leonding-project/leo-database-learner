@@ -1,5 +1,8 @@
 package at.htl.leodatabaselearner.entity;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.sql.Blob;
@@ -8,14 +11,14 @@ import java.util.List;
 
 @Entity
 @XmlRootElement
-public class DataModel {
+public class DataModel extends PanacheEntityBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;;
 
-    private String name;
-    private String comment;
+    public String name;
+    public String comment;
 
     //TODO: Blob
     //@Lob
@@ -23,8 +26,8 @@ public class DataModel {
     //private Blob erd;
 
     @ManyToOne
-//    @JoinColumn(name = "person_id")
-    private Person owner;
+    @JoinColumn(name = "person_id")
+    public Person owner;
 
 //    @OneToMany(mappedBy = "datamodel", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 //    private List<Question> questions = new ArrayList<>();
@@ -48,38 +51,6 @@ public class DataModel {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Person getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Person owner) {
-        this.owner = owner;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-//    public Blob getErd() {
-//        return erd;
-//    }
-//
-//    public void setErd(Blob erd) {
-//        this.erd = erd;
-//    }
 
     @Override
     public String toString() {

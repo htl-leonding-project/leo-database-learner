@@ -17,9 +17,9 @@ class DataModelTest {
         String testString = dataModel.toString();
         String rightString = "" +
                 "DataModel mit der Id " + dataModel.getId() +
-                ", dem Namen '" + dataModel.getName() + '\'' +
-                ", dem owner " + dataModel.getOwner() +
-                " hat das comment '" + dataModel.getComment() +
+                ", dem Namen '" + dataModel.name + '\'' +
+                ", dem owner " + dataModel.owner +
+                " hat das comment '" + dataModel.comment +
                 '.';
 
         assertThat(testString).isEqualTo(rightString);

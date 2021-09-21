@@ -57,23 +57,23 @@ public class PersonRepositoryTest {
         Table personTable = new Table(getDataSource(), "person");
         output(personTable).toConsole();
 
-        assertThat(foundPerson.getFirstName()).isEqualTo("madschi");
-        assertThat(foundPerson.getLastName()).isEqualTo("stei");
+        assertThat(foundPerson.firstName).isEqualTo("madschi");
+        assertThat(foundPerson.lastName).isEqualTo("stei");
 
     }
-    
-    @Test
-    @Order(0)
-    public void findAll(){
 
-        List<Person> foundPersons = repo.findAll();
-
-        Table personTable = new Table(getDataSource(), "person");
-        output(personTable).toConsole();
-
-        assertThat(foundPersons.size()).isEqualTo(2);
-
-    }
+//    @Test
+//    @Order(0)
+//    public void findAll(){
+//
+//        List<Person> foundPersons = repo.findAll();
+//
+//        Table personTable = new Table(getDataSource(), "person");
+//        output(personTable).toConsole();
+//
+//        assertThat(foundPersons.size()).isEqualTo(2);
+//
+//    }
 
 
     static final String DATABASE = "db";

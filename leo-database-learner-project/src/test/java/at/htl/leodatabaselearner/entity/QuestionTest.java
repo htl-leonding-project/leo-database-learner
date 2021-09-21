@@ -14,12 +14,10 @@ class QuestionTest {
         Question question = new Question("text1", "sql1", 1, dataModel, owner);
         String testString = question.toString();
         String rightString = "Die Question mit der id " + question.getId() +
-        ", dem text '" + question.getText() + '\'' +
-                ", dem sql '" + question.getSql() + '\'' +
-                ", den points " + question.getPoints() +
-                ", dem localDate " + question.getLocalDate() +
-                ", dem dataModel " + question.getDataModel() +
-                " hat den owner " + question.getOwner() +
+        ", dem text '" + question.text + '\'' +
+                ", dem sql '" + question.sql + '\'' +
+                ", den points " + question.points +
+                ", dem localDate " + question.localDate +
                 '.';
 
         assertThat(testString).isEqualTo(rightString);

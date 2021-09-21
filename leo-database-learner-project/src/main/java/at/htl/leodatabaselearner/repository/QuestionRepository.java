@@ -3,6 +3,7 @@ package at.htl.leodatabaselearner.repository;
 import at.htl.leodatabaselearner.entity.DataModel;
 import at.htl.leodatabaselearner.entity.Person;
 import at.htl.leodatabaselearner.entity.Question;
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -12,7 +13,7 @@ import java.util.List;
 
 
 @ApplicationScoped
-public class QuestionRepository {
+public class QuestionRepository implements PanacheRepository<Question> {
 
   @Inject
   EntityManager em;
@@ -29,10 +30,10 @@ public class QuestionRepository {
 
   public String getSqlFromQuestionById(Long id) {
     var question = this.findById(id);
-    return question.getSql();
+    return question.sql;
   }
 
-  public List<Question> findAll() {
+  public List<Question> findAllQuestions() {
     var query = em.createQuery("select q from Question q", Question.class);
     return query.getResultList();
   }

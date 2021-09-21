@@ -30,7 +30,7 @@ public class PersonEndpoint {
     @GET
     @Path("get_all")
     public List<Person> getAllPersons() {
-        final List<Person> result = personRepository.findAll();
+        final List<Person> result = personRepository.findAllPerson();
         return result;
     }
 

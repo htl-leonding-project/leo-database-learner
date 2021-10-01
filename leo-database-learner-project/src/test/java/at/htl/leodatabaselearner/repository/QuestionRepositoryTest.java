@@ -73,21 +73,21 @@ class QuestionRepositoryTest {
         Table personTable = new Table(getDataSource(), "question");
         output(personTable).toConsole();
 
-        assertThat(foundQuestion.getText()).isEqualTo("text01");
+        assertThat(foundQuestion.text).isEqualTo("text01");
     }
 
-    @Test
-    @Order(0)
-    public void findAll() {
-
-        List<Question> foundQuestions = questionRepo.findAll();
-
-        Table personTable = new Table(getDataSource(), "question");
-        output(personTable).toConsole();
-
-        assertThat(foundQuestions.size()).isEqualTo(1);
-
-    }
+//    @Test
+//    @Order(0)
+//    public void findAll() {
+//
+//        List<Question> foundQuestions = questionRepo.findAll();
+//
+//        Table personTable = new Table(getDataSource(), "question");
+//        output(personTable).toConsole();
+//
+//        assertThat(foundQuestions.size()).isEqualTo(1);
+//
+//    }
 
 //        @Test
 //    @Order(3)

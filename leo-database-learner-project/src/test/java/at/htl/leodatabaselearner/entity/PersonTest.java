@@ -12,9 +12,9 @@ class PersonTest {
         String testString = person.toString();
         String rightString = "Person mit der " +
                 "id " + person.getId() +
-                ", namens " + person.getFirstName() + '\'' +
-                " " + person.getLastName() + '\'' +
-                " hat die Rolle " + person.getRole();
+                ", namens " + person.firstName + '\'' +
+                " " + person.lastName + '\'' +
+                " hat die Rolle " + person.role;
 
         assertThat(testString).isEqualTo(rightString);
 

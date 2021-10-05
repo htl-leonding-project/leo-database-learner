@@ -13,6 +13,8 @@ ifndef::imagesdir[:imagesdir: images]
 
 == Manual
 
+=== DB
+
 First you have to open the *leo-database-learner-project* in any development environment.
 We used the *IntelliJ IDEA Ultimate* environment. Make sure you use Linux or MacOS.
 
@@ -27,9 +29,9 @@ e.g.
 After this you have to write the following into your terminal:
 
 
-=== Linux / MacOS
+==== Linux / MacOS
 
-==== start db
+===== start db
 ----
 cd ./docker
 docker-compose up --build -d
@@ -41,15 +43,15 @@ or you can use a script
 ./run-db.sh
 ----
 
-==== stop db
+===== stop db
 
 ----
 docker-compose down
 ----
 
-=== Win
+==== Win
 
-==== run db
+===== run db
 ----
 cd ./docker
 docker-compose -f docker-compose-volume.yml up --build -d
@@ -61,7 +63,7 @@ or you can use a script
 run-db.bat
 ----
 
-==== stop db
+===== stop db
 
 ----
 docker-compose down
@@ -94,3 +96,36 @@ docker-compose up --build
 docker-compose down
 docker volume prune
 ----
+
+=== Backend
+
+Check if you are in the backend folder.
+
+----
+/Users/user/Desktop/project_itp/leo-database-learner/leo-database-learner-project
+----
+
+To start the backend project enter following code into the terminal:
+
+----
+./mvnw clean compile quarkus:dev
+----
+
+=== Frontend
+
+Check if you are in the frontend folder.
+
+----
+/Users/user/Desktop/project_itp/leo-database-learner/leo-database-learner-frontend
+----
+
+To start the backend project enter following code into the terminal:
+
+----
+npm install
+----
+
+----
+ng serve --open
+----
+

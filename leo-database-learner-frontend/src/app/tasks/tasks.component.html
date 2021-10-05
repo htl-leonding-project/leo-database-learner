@@ -1,21 +1,28 @@
-<p>
-  <mat-toolbar style="margin-top: -1%;" color="primary">
-    <span style="margin-left: 85%">LeoDataBaseLearner</span>
-  </mat-toolbar>
-  <mat-toolbar color="primary">
-    <a style="float: left; margin-right: 20%; margin-left: 25%;"><span
-      [style.cursor]="'pointer'" routerLink="/">Tasks</span></a>
-    <a style="float: left; margin-right: 20%;"><span [style.cursor]="'pointer'" routerLink="/">Exams</span></a>
-    <a style="float: left;"><span [style.cursor]="'pointer'" routerLink="/">Knowledge</span></a>
-  </mat-toolbar>
-</p>
 
-<br><br><br>
+<mat-toolbar color="primary">
+    <div id="menu">
+      <mat-icon (click)="drawer.toggle();" (click)="colorNav()">menu</mat-icon>
+    </div>
+    <a><span>Tasks</span></a>
+    <a><span>Exams</span></a>
+    <a><span>Knowledge</span></a>
+    <div id="logo"></div>
+</mat-toolbar>
 
-<ul>
-  <li *ngFor="let t of tasks">
-    <a style="color: black; text-decoration: none;" [routerLink]="t.id.toString()">{{ t.name }}</a>
-  </li>
-</ul>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+      <div>
+        <a routerLink="/about">About</a>
+        <a routerLink="/impressum" >Impressum</a>
+        <a routerLink="/profile" >Profil</a>
+        <a>Log</a>
+      </div>
+  </mat-drawer>
 
+  <ul>
+    <li *ngFor="let t of tasks">
+      <a style="color: black; text-decoration: none;" [routerLink]="t.id.toString()">{{ t.name }}</a>
+    </li>
+  </ul>
+</mat-drawer-container>
 

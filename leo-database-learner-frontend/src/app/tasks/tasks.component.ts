@@ -21,5 +21,11 @@ export class TasksComponent implements OnInit {
   ngOnInit(): void {
     this.questionService.getAllQuestion().subscribe(q => this.tasks = q);
     this.personService.getAllPerson().subscribe(p => this.person = p);
+    
   }
+
+  colorNav(){
+    //document.getElementById("menu").style.backgroundColor="#ebe7e7";
+  }
+
 }

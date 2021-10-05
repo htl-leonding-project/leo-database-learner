@@ -66,23 +66,23 @@ class DataModlRepositoryTest {
         Table datamodelTable = new Table(getDataSource(), "datamodel");
         output(datamodelTable).toConsole();
 
-        assertThat(foundDataModel.getName()).isEqualTo("Test02");
+        assertThat(foundDataModel.name).isEqualTo("Test02");
 
 
     }
 
-    @Test
-    @Order(0)
-    public void findAll() {
-
-        List<DataModel> foundDataModels = dataModelRepo.findAll();
-
-        Table personTable = new Table(getDataSource(), "datamodel");
-        output(personTable).toConsole();
-
-        assertThat(foundDataModels.size()).isEqualTo(1);
-
-    }
+//    @Test
+//    @Order(0)
+//    public void findAll() {
+//
+//        List<DataModel> foundDataModels = dataModelRepo.findAll();
+//
+//        Table personTable = new Table(getDataSource(), "datamodel");
+//        output(personTable).toConsole();
+//
+//        assertThat(foundDataModels.size()).isEqualTo(1);
+//
+//    }
 
 //    @Test
 //    @Order(3)

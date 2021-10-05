@@ -14,12 +14,19 @@ import {MatButton, MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { AboutComponent } from './about/about.component';
+import { ProfilComponent } from './profil/profil.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    AboutComponent,
+    ProfilComponent,
+    ImpressumComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

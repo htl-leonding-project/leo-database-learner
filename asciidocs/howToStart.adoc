@@ -102,7 +102,7 @@ docker volume prune
 Check if you are in the backend folder.
 
 ----
-~/leo-database-learner/leo-database-learner-project
+/Users/user/Desktop/project_itp/leo-database-learner/leo-database-learner-project
 ----
 
 To start the backend project enter following code into the terminal:
@@ -116,7 +116,7 @@ To start the backend project enter following code into the terminal:
 Check if you are in the frontend folder.
 
 ----
-~/leo-database-learner/leo-database-learner-frontend
+/Users/user/Desktop/project_itp/leo-database-learner/leo-database-learner-frontend
 ----
 
 To start the backend project enter following code into the terminal:

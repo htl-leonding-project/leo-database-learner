@@ -10,8 +10,9 @@ class QuestionTest {
     @Test
     void testToString() {
         Person owner = new Person("Max", "Muster", Role.INSTRUCTOR);
-        DataModel dataModel = new DataModel("DataModel1", owner, "Comment1");
-        Question question = new Question("text1", "sql1", 1, dataModel, owner);
+        DataModel dataModel = new DataModel("Skikurs", owner, "Dieses Modell zeigt einen Skikurs " +
+                "und seinen jeweiligen Attribute.");
+        Question question = new Question("3. Übung - Select - Easy", "Geben Sie die Location aller Skikurse aus.", "Select sc.location from Skicourse sc", 1, dataModel, owner);
         String testString = question.toString();
         String rightString = "Die Question mit der id " + question.getId() +
         ", dem text '" + question.text + '\'' +

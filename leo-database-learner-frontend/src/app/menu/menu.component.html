@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <div id="menu">
+      <mat-icon (click)="drawer.toggle();" (click)="colorNav()">menu</mat-icon>
+    </div>
+    <a><span>Tasks</span></a>
+    <a><span>Exams</span></a>
+    <a><span>Knowledge</span></a>
+    <div id="logo"></div>
+  </mat-toolbar>
+  
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+      <div>
+        <a routerLink="/about">About</a>
+        <a routerLink="/impressum" >Impressum</a>
+        <a routerLink="/profile" >Profil</a>
+        <a routerLink="/login">Login</a>
+      </div>
+  </mat-drawer>
+  
+  <router-outlet></router-outlet>
+  
+</mat-drawer-container>

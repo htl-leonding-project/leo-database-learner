@@ -18,6 +18,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { AboutComponent } from './about/about.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ImpressumComponent } from './impressum/impressum.component';
+import { LoginComponent } from './login/login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { ImpressumComponent } from './impressum/impressum.component';
     TaskDetailComponent,
     AboutComponent,
     ProfilComponent,
-    ImpressumComponent
+    ImpressumComponent,
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ import { ImpressumComponent } from './impressum/impressum.component';
     MatCardModule,
     MatButtonModule,
     FormsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

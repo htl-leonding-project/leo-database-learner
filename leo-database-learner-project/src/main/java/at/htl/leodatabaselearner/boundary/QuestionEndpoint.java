@@ -30,8 +30,7 @@ public class QuestionEndpoint {
     @GET
     @Path("get_all")
     public List<Question> getAllQuestions() {
-        final List<Question> result = questionRepository.findAllQuestions();
-        return result;
+        return questionRepository.findAllQuestions();
     }
 
     @GET

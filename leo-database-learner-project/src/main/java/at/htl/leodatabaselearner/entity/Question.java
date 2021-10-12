@@ -18,6 +18,7 @@ public class Question extends PanacheEntityBase {
   private Long id;
 
   public String text;
+  public String name;
   public String sql;
   public int points;
   public LocalDate localDate;
@@ -33,7 +34,8 @@ public class Question extends PanacheEntityBase {
   public Question() {
   }
 
-  public Question(String text, String sql, int points, DataModel dataModel, Person owner) {
+  public Question(String name, String text, String sql, int points, DataModel dataModel, Person owner) {
+    this.name = name;
     this.text = text;
     this.sql = sql;
     this.points = points;
@@ -52,6 +54,7 @@ public class Question extends PanacheEntityBase {
   @Override
   public String toString() {
     return "Die Question mit der id " + id +
+      ", dem namen '" + name + '\'' +
       ", dem text '" + text + '\'' +
       ", dem sql '" + sql + '\'' +
       ", den points " + points +

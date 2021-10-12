@@ -16,25 +16,21 @@ import java.util.List;
 @ApplicationScoped
 public class DataModelRepository implements PanacheRepository<DataModel> {
 
-    @Inject
-    EntityManager em;
-
     public void addDataModel(DataModel entity){
-        em.persist(entity);
+        getEntityManager().merge(entity);
     }
 
-    public DataModel findById(Long id){
-        var query = em.createQuery("select d from DataModel d where d.id = :id", DataModel.class);
-        query.setParameter("id", id);
-        return query.getResultStream().findFirst().orElse(null);
-    }
     public List<DataModel> findAllModels(){
-        var query = em.createQuery("select dm from DataModel dm", DataModel.class);
+        var query = getEntityManager().createQuery("Select dm from DataModel dm", DataModel.class);
         return query.getResultList();
     }
 
+    public DataModel findById(Long id){
+        return find("id", id).firstResult();
+    }
+
     public List<DataModel> findByOwner(Person person){
-        var query = em.createQuery("select dm from DataModel dm" +
+        var query = getEntityManager().createQuery("select dm from DataModel dm" +
                 " where dm.owner = :owner", DataModel.class);
         query.setParameter("owner", person.getId());
         return query.getResultList();

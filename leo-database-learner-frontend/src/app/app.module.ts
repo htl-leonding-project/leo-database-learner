@@ -20,7 +20,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { LoginComponent } from './login/login.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { MenuComponent } from './menu/menu.component';
     ProfilComponent,
     ImpressumComponent,
     LoginComponent,
-    MenuComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

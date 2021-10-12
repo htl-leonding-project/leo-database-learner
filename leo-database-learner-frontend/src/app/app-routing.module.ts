@@ -6,9 +6,11 @@ import { AboutComponent } from './about/about.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { ProfilComponent } from './profil/profil.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'tasks' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {path: 'home', component: HomeComponent},
   { path: 'tasks', component: TasksComponent },
   { path: 'tasks/:id', component: TaskDetailComponent},
   {path: 'about', component: AboutComponent},

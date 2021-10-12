@@ -10,7 +10,8 @@ import java.util.List;
 
 @Entity
 @XmlRootElement
-public class Person extends PanacheEntityBase {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Person extends PanacheEntityBase {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,8 +20,8 @@ public class Person extends PanacheEntityBase {
 
   public String firstName;
   public String lastName;
-  @Enumerated(EnumType.STRING)
-  public Role role;
+  public String password;
+
 //
 //    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 //    private List<DataModel> dataModels = new ArrayList<>();
@@ -30,10 +31,10 @@ public class Person extends PanacheEntityBase {
   public Person() {
   }
 
-  public Person(String firstName, String lastName, Role role) {
+  public Person(String firstName, String lastName, String password) {
     this.firstName = firstName;
     this.lastName = lastName;
-    this.role = role;
+    this.password = password;
   }
 
   public Long getId() {
@@ -42,15 +43,5 @@ public class Person extends PanacheEntityBase {
 
   public void setId(Long id) {
     this.id = id;
-  }
-
-
-  @Override
-  public String toString() {
-    return "Person mit der " +
-      "id " + id +
-      ", namens " + firstName + '\'' +
-      " " + lastName + '\'' +
-      " hat die Rolle " + role;
   }
 }

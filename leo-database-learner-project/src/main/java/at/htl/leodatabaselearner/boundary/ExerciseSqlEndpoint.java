@@ -1,17 +1,13 @@
 package at.htl.leodatabaselearner.boundary;
 
 import at.htl.leodatabaselearner.ExerciseSqlRepository;
-import at.htl.leodatabaselearner.SolutionSqlRepository;
 import at.htl.leodatabaselearner.entity.Person;
-import at.htl.leodatabaselearner.entity.Role;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 @Path("/exercise_sql")

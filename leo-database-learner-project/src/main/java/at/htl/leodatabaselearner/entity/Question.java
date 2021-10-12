@@ -11,56 +11,38 @@ import java.time.LocalDate;
 
 @Entity
 @XmlRootElement
-public class Question extends PanacheEntityBase {
+public class Question extends PanacheEntity {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-
-  public String text;
   public String name;
+  public String text;
   public String sql;
   public int points;
   public LocalDate localDate;
 
   @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-  @JoinColumn(name = "dataModel_id")
-  private DataModel dataModel;
+  @JoinColumn(name = "exPackage_id")
+  public ExercisePackage exercisePackage;
 
-  @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-  @JoinColumn(name = "person_id")
-  private Person owner;
-
-  public Question() {
-  }
-
-  public Question(String name, String text, String sql, int points, DataModel dataModel, Person owner) {
+  public Question(String name, String text, String sql, int points, ExercisePackage exercisePackage) {
     this.name = name;
     this.text = text;
     this.sql = sql;
     this.points = points;
-    this.dataModel = dataModel;
-    this.owner = owner;
+    this.exercisePackage = exercisePackage;
   }
 
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
+  public Question() {
   }
 
   @Override
   public String toString() {
-    return "Die Question mit der id " + id +
-      ", dem namen '" + name + '\'' +
-      ", dem text '" + text + '\'' +
-      ", dem sql '" + sql + '\'' +
-      ", den points " + points +
-      ", dem localDate " + localDate +
-      ", dem dataModel " + dataModel +
-      " hat den owner " + owner +
-      '.';
+    return "Question{" +
+      "name='" + name + '\'' +
+      ", text='" + text + '\'' +
+      ", sql='" + sql + '\'' +
+      ", points=" + points +
+      ", localDate=" + localDate +
+      ", exercisePackage=" + exercisePackage +
+      '}';
   }
 }

@@ -11,11 +11,7 @@ import java.util.List;
 
 @Entity
 @XmlRootElement
-public class DataModel extends PanacheEntityBase {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;;
+public class DataModel extends PanacheEntity {
 
     public String name;
     public String comment;
@@ -25,9 +21,9 @@ public class DataModel extends PanacheEntityBase {
     //private byte[] erd;
     //private Blob erd;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "person_id")
-    public Person owner;
+    public Teacher owner;
 
 //    @OneToMany(mappedBy = "datamodel", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 //    private List<Question> questions = new ArrayList<>();
@@ -37,7 +33,7 @@ public class DataModel extends PanacheEntityBase {
     public DataModel() {
     }
 
-    public DataModel(String name, Person owner, String comment) {
+    public DataModel(String name, Teacher owner, String comment) {
         this.name = name;
         this.owner = owner;
         this.comment = comment;

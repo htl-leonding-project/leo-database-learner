@@ -5,6 +5,7 @@ import {TaskDetailComponent} from './task-detail/task-detail.component';
 import { AboutComponent } from './about/about.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { ProfilComponent } from './profil/profil.component';
+import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: "impressum", component: ImpressumComponent},
   {path: "profile", component: ProfilComponent},
-  {path: "**", component: HomeComponent}
+  {path: "login", component: LoginComponent},
+  {path: "**", component: TasksComponent}
 ];
 
 @NgModule({

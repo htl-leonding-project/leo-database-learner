@@ -18,6 +18,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { AboutComponent } from './about/about.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ImpressumComponent } from './impressum/impressum.component';
+import { LoginComponent } from './login/login.component';
+import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -28,6 +30,7 @@ import { HomeComponent } from './home/home.component';
     AboutComponent,
     ProfilComponent,
     ImpressumComponent,
+    LoginComponent,
     HomeComponent
   ],
   imports: [
@@ -44,7 +47,8 @@ import { HomeComponent } from './home/home.component';
     MatCardModule,
     MatButtonModule,
     FormsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

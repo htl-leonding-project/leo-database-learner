@@ -41,3 +41,28 @@ Accept: application/json
 
 ###
 
+
+POST http://localhost:8080/datamodel/add_datamodel
+Content-Type: application/json
+
+{
+  "name": "Restaurant",
+  "person": {
+    "firstName": "Lisa",
+    "lastName": "Gruber",
+    "role": "STUDENT"
+  },
+  "comment": "Das Modell zeigt ein Restaurant mit seinen jeweiligen Attributen."
+}
+
+
+###
+
+GET http://localhost:8080/datamodel/getbyid/1
+
+###
+
+
+GET http://localhost:8080/datamodel/get_all
+Accept: application/json
+

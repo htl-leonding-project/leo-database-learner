@@ -27,7 +27,7 @@ public class DataModelRepository implements PanacheRepository<DataModel> {
     public List<DataModel> findByOwner(Person person){
         var query = getEntityManager().createQuery("select dm from DataModel dm" +
                 " where dm.owner = :owner", DataModel.class);
-        query.setParameter("owner", person.getId());
+        query.setParameter("owner", person.id);
         return query.getResultList();
     }
 }

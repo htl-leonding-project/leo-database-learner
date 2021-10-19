@@ -25,11 +25,6 @@ public class DataModel extends PanacheEntity {
     @JoinColumn(name = "person_id")
     public Teacher owner;
 
-//    @OneToMany(mappedBy = "datamodel", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-//    private List<Question> questions = new ArrayList<>();
-//    @OneToMany(mappedBy = "datamodel", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-//    private List<SqlScript> sqlScripts = new ArrayList<>();
-
     public DataModel() {
     }
 

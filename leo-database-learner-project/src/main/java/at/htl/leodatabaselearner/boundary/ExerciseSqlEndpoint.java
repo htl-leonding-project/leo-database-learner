@@ -23,16 +23,16 @@ public class ExerciseSqlEndpoint {
     @Path("result/{sql}")
     public Response getResultset(@PathParam("sql") String sql) {
 
-        final List result = exerciseSqlRepository.getSqlResultsFromDB(sql);
+        //final List result = exerciseSqlRepository.getSqlResultsFromDB(sql);
 
-        return Response.ok(result).build();
+        return Response.ok().build();
 
     }
 
     @GET
     @Path("person")
     public Response foo() {
-        Person p = new Person("susi", "primerl", Role.STUDENT);
-        return Response.ok(p).build();
+        //Person p = new Person("susi", "primerl");
+        return Response.ok().build();
     }
 }

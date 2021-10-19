@@ -11,12 +11,7 @@ import java.util.List;
 @Entity
 @XmlRootElement
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Person extends PanacheEntityBase {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  ;
+public abstract class Person extends PanacheEntity {
 
   public String firstName;
   public String lastName;
@@ -35,13 +30,5 @@ public abstract class Person extends PanacheEntityBase {
     this.firstName = firstName;
     this.lastName = lastName;
     this.password = password;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 }

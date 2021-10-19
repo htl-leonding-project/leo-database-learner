@@ -1,9 +1,26 @@
-###GET http://localhost:8080/solution_sql/result/1
+####
+POST http://localhost:8080/person/add_person
+Content-Type: application/json
 
-#GET http://localhost:8080/solutionSql/result/
-#parameter "Select e from EMP"
+{
+  "firstName": "Sabrina",
+  "lastName": "Haus",
+  "role": "ADMIN"
+}
 
 ###
+
+GET http://localhost:8080/person/getbyid/3
+
+
+###
+
+GET http://localhost:8080/person/get_all
+Accept: application/json
+
+###
+
+
 POST http://localhost:8080/datamodel/add_datamodel
 Content-Type: application/json
 
@@ -27,28 +44,6 @@ GET http://localhost:8080/datamodel/getbyid/3
 
 GET http://localhost:8080/datamodel/get_all
 Accept: application/json
-
-
-####
-POST http://localhost:8080/person/add_person
-Content-Type: application/json
-
-{
-  "firstName": "Sabrina",
-  "lastName": "Haus",
-  "role": "ADMIN"
-}
-
-###
-
-GET http://localhost:8080/person/getbyid/3
-
-
-###
-
-GET http://localhost:8080/person/get_all
-Accept: application/json
-
 
 ###
 POST http://localhost:8080/question/add_question

@@ -3,14 +3,9 @@ package at.htl.leodatabaselearner.repository;
 
 import at.htl.leodatabaselearner.entity.DataModel;
 import at.htl.leodatabaselearner.entity.Person;
-import at.htl.leodatabaselearner.entity.Question;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
-import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
 import java.util.List;
 
 @ApplicationScoped

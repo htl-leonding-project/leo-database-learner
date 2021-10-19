@@ -19,3 +19,25 @@ GET http://localhost:8080/student/get_all
 Accept: application/json
 
 ###
+
+POST http://localhost:8080/teacher/add_teacher
+Content-Type: application/json
+
+{
+  "firstName": "Ben",
+  "lastName": "Müller",
+  "password": "1234"
+}
+
+###
+
+GET http://localhost:8080/teacher/getbyid/1
+
+
+###
+
+GET http://localhost:8080/teacher/get_all
+Accept: application/json
+
+###
+

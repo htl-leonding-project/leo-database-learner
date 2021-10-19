@@ -98,4 +98,22 @@ GET http://localhost:8080/sqlscript/getbyid/1
 GET http://localhost:8080/sqlscript/get_all
 Accept: application/json
 
+###
+
+
+POST http://localhost:8080/exercisePackage/add_exercisePackage
+Content-Type: application/json
+
+{
+  "name": "Datamodel 1",
+  "datamodel": {
+    "name": "Hundeschule1",
+    "person": {
+      "firstName": "Sarah",
+      "lastName": "Feichtinger",
+      "role": "ADMIN"
+    },
+    "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
+  }
+}
 

@@ -23,7 +23,7 @@ public class SqlScriptEndpoint {
     @POST
     @Path("add_sqlscript")
     @Transactional
-    public void addDataModel(SqlScript sqlScript) {
+    public void addSqlScript(SqlScript sqlScript) {
         sqlScriptRepository.addSqlScript(sqlScript);
     }
 

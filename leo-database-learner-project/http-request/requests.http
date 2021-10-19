@@ -66,3 +66,36 @@ GET http://localhost:8080/datamodel/getbyid/1
 GET http://localhost:8080/datamodel/get_all
 Accept: application/json
 
+###
+
+
+POST http://localhost:8080/sqlscript/add_sqlscript
+Content-Type: application/json
+
+{
+  "datamodel": {
+    "name": "Hundeschule",
+    "person": {
+      "firstName": "Marah",
+      "lastName": "Steigersdorfer",
+      "role": "ADMIN"
+    },
+    "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
+  },
+  "createScript": "CREATE TABLE DOGSCHOOL(id number not null, name varchar2(255), location varchar2(255), zip number ",
+  "dropScript": "DROP TABLE DOGSCHOOL;",
+  "insertScript": "INSERT INTO DOGSCHOOL(id, name, location, zip) VALUES (1, 'Hundeschule Mayr', 'Leonding', 4060)"
+}
+
+###
+
+
+GET http://localhost:8080/sqlscript/getbyid/1
+
+###
+
+
+GET http://localhost:8080/sqlscript/get_all
+Accept: application/json
+
+

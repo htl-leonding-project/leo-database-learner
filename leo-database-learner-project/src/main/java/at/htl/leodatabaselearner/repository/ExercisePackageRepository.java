@@ -4,8 +4,10 @@ import at.htl.leodatabaselearner.entity.Assignment;
 import at.htl.leodatabaselearner.entity.ExercisePackage;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
 
+@ApplicationScoped
 public class ExercisePackageRepository implements PanacheRepository<ExercisePackage> {
 
     public void addExercisePackage(ExercisePackage entity){

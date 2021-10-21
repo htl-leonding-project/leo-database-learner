@@ -5,6 +5,7 @@ import at.htl.leodatabaselearner.entity.Person;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
+import javax.json.bind.annotation.JsonbDateFormat;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
@@ -17,6 +18,7 @@ public class Question extends PanacheEntity {
   public String text;
   public String sql;
   public int points;
+  @JsonbDateFormat("dd-MM-yyyy")
   public LocalDate localDate;
 
   @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})

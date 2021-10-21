@@ -23,7 +23,7 @@ public class QuestionEndpoint {
     @POST
     @Path("add_question")
     @Transactional
-    public void addDataModel(Question question) {
+    public void addQuestion(Question question) {
         questionRepository.addQuestion(question);
     }
 

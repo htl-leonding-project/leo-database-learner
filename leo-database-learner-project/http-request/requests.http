@@ -198,3 +198,35 @@ Content-Type: application/json
 
 ###
 
+
+POST http://localhost:8080/assignment/add_assignment
+Content-Type: application/json
+
+{
+  "student": {
+    "firstName": "Sabrina",
+    "lastName": "Haus",
+    "password": "ADMIN",
+    "classname": "test"
+  },
+  "exPackage": {
+    "name": "Datamodel 1",
+    "datamodel": {
+      "name": "Hundeschule1",
+      "person": {
+        "firstName": "Sarah",
+        "lastName": "Feichtinger",
+        "role": "ADMIN"
+      },
+      "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
+    }
+  }
+}
+
+###
+
+GET http://localhost:8080/assignment/get_all
+Accept: application/json
+
+###
+

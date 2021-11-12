@@ -1,6 +1,6 @@
 = LeoDatabaseLearner
 19SM, 22TI, 15PV
-1.0.0, 2020-10-09: Some notes
+1.0.0, 2020-10-09:
 ifndef::imagesdir[:imagesdir: images]
 //:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
 :sourcedir: ../src/main/java
@@ -13,23 +13,19 @@ ifndef::imagesdir[:imagesdir: images]
 // Short Desciption of your Project
 Practice tool to learn database commands and to check your level of knowledge.
 
-== Team
+== Systemarchitecture
 
-// <catalog-number><first letter of lastname><first letter of first name>
-// ie
-
-* 15PV
-* 19SM
-* 22TI
+image::Systemarchitektur.png[]
 
 == Documents
 
 https://htl-leonding-project.github.io/leo-database-learner/howToStart.html[*How to get started*,role=black] +
 
-https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/system-architecture_5AHITM_2021[*Systemarchitecture*,role=black] +
 
-https://htl-leonding-project.github.io/leo-database-learner/howtodatabase.html[*(Deprecated)How to get the Postgres DB*,role=black] +
-https://htl-leonding-project.github.io/leo-database-learner/howtooracledatabase.html[*(Deprecated)How to get the Oracle DB*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*(Deprecated)Systemarchitecture*,role=black] +
+
+https://htl-leonding-project.github.io/leo-database-learner/designKonzept.html[*Design concept*,role=black] +
 
 === English:
 https://htl-leonding-project.github.io/leo-database-learner/project-proposal[*Projectproposal*,role=black] +
@@ -46,11 +42,14 @@ https://htl-leonding-project.github.io/leo-database-learner/informationfromteach
 https://htl-leonding-project.github.io/leo-database-learner/currentPlan.html[*Current plan*,role=black] +
 https://htl-leonding-project.github.io/leo-database-learner/2021-02-26-protocol.html[*Protocol - 26/02/21*,role=black] +
 
+=== Deprecated
+
+https://htl-leonding-project.github.io/leo-database-learner/howtodatabase.html[*(Deprecated)How to get the Postgres DB*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/howtooracledatabase.html[*(Deprecated)How to get the Oracle DB*,role=black] +
 
 == External Project Repository
 
 https://github.com/Primetzvan/LeoDatabaseLearner
 
 * Githubpage:
-
-https://primetzvan.github.io/LeoDatabaseLearner/[*Index*,role=black]
+https://primetzvan.github.io/LeoDatabaseLearner

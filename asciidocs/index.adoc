@@ -15,13 +15,15 @@ Practice tool to learn database commands and to check your level of knowledge.
 
 == Systemarchitecture
 
-image::07012021.png[]
+image::Systemarchitektur.png[]
 
 == Documents
 
 https://htl-leonding-project.github.io/leo-database-learner/howToStart.html[*How to get started*,role=black] +
 
-https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/system-architecture_5AHITM_2021[*Systemarchitecture*,role=black] +
+
+https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*(Deprecated)Systemarchitecture*,role=black] +
 
 https://htl-leonding-project.github.io/leo-database-learner/designKonzept.html[*Design concept*,role=black] +
 
@@ -50,5 +52,4 @@ https://htl-leonding-project.github.io/leo-database-learner/howtooracledatabase.
 https://github.com/Primetzvan/LeoDatabaseLearner
 
 * Githubpage:
-
-https://primetzvan.github.io/LeoDatabaseLearner/[*Index*,role=black]
+https://primetzvan.github.io/LeoDatabaseLearner

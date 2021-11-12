@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <div id="menu">
+    <mat-icon (click)="drawer.toggle();">menu</mat-icon>
+  </div>
+  <a><span>Tasks</span></a>
+  <a><span>Exams</span></a>
+  <a><span>Knowledge</span></a>
+  <div id="logo"></div>
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+<mat-drawer #drawer class="sidenav" mode="side">
+    <div>
+      <a routerLink="/about">About</a>
+      <a routerLink="/impressum" >Impressum</a>
+      <a routerLink="/profile" >Profil</a>
+      <a (click)="openLogin()">Log</a>
+    </div>
+</mat-drawer>
+
+  <div>
+    <h1>What is Leo Database Learner?</h1>
+    <p>It is a practice tool to learn database commands and to check your level of knowledge.</p>
+    <h2>Why</h2>
+  </div>
+</mat-drawer-container>

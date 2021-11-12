@@ -1,15 +1,27 @@
-<nav style="text-align: center;">
-  <a style="float: left; margin-right: 20%; margin-left: 25%;" routerLink="/">Tasks</a>
-  <a style="float: left; margin-right: 20%" routerLink="/">Exams</a>
-  <a style="float: left;" routerLink="/">Knowledge</a>
-</nav>
-<br><br><br>
+<mat-toolbar color="primary">
+    <div id="menu">
+      <mat-icon (click)="drawer.toggle();">menu</mat-icon>
+    </div>
+    <a><span>Tasks</span></a>
+    <a><span>Exams</span></a>
+    <a><span>Knowledge</span></a>
+    <div id="logo"></div>
+</mat-toolbar>
 
-<mat-card>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+      <div>
+        <a routerLink="/about">About</a>
+        <a routerLink="/impressum" >Impressum</a>
+        <a routerLink="/profile" >Profil</a>
+        <a (click)="openLogin()">Log</a>
+      </div>
+  </mat-drawer>
+
   <ul>
     <li *ngFor="let t of tasks">
-      <a [routerLink]="t.id.toString()">{{ t.name }}</a>
+      <a style="color: black; text-decoration: none;" [routerLink]="t.id.toString()">{{ t.name }}</a>
     </li>
   </ul>
-</mat-card>
+</mat-drawer-container>
 

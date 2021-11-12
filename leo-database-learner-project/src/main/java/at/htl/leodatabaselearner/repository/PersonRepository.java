@@ -1,6 +1,8 @@
 package at.htl.leodatabaselearner.repository;
 
 import at.htl.leodatabaselearner.entity.Person;
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
-public class PersonRepository {
+public class PersonRepository implements PanacheRepository<Person> {
 
     @Inject
     EntityManager em;
@@ -25,7 +27,7 @@ public class PersonRepository {
         return query.getResultStream().findFirst().orElse(null);
     }
 
-    public List<Person> findAll(){
+    public List<Person> findAllPerson(){
         var query = em.createQuery("select p from Person p", Person.class);
         return query.getResultList();
     }

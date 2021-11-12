@@ -14,10 +14,9 @@ class SqlScriptTest {
         String testString = sqlScript.toString();
         String rightString = "Das SqlScript hat die" +
                 " id " + sqlScript.getId() +
-                ", das dataModel " + sqlScript.getDataModel() +
-                " das createScript '" + sqlScript.getCreateScript() + '\'' +
-                " das dropScript '" + sqlScript.getDropScript() + '\'' +
-                " und das insertScript '" + sqlScript.getInsertScript() + '\'' +
+                " das createScript '" + sqlScript.createScript + '\'' +
+                " das dropScript '" + sqlScript.dropScript + '\'' +
+                " und das insertScript '" + sqlScript.insertScript + '\'' +
                 '.';
 
         assertThat(testString).isEqualTo(rightString);

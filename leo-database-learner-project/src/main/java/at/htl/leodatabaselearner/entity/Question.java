@@ -2,6 +2,8 @@ package at.htl.leodatabaselearner.entity;
 
 import at.htl.leodatabaselearner.entity.DataModel;
 import at.htl.leodatabaselearner.entity.Person;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -9,101 +11,53 @@ import java.time.LocalDate;
 
 @Entity
 @XmlRootElement
-public class Question {
+public class Question extends PanacheEntityBase {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String text;
-    private String sql;
-    private int points;
-    private LocalDate localDate;
+  public String text;
+  public String sql;
+  public int points;
+  public LocalDate localDate;
 
-    @ManyToOne
-//    @JoinColumn(name = "dataModel_id")
-    private DataModel dataModel;
+  @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+  @JoinColumn(name = "dataModel_id")
+  private DataModel dataModel;
 
-    @ManyToOne
-//    @JoinColumn(name = "person_id")
-    private Person owner;
+  @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+  @JoinColumn(name = "person_id")
+  private Person owner;
 
-    public Question() {
-    }
+  public Question() {
+  }
 
-    public Question(String text, String sql, int points, DataModel dataModel, Person owner) {
-        this.text = text;
-        this.sql = sql;
-        this.points = points;
-        this.dataModel = dataModel;
-        this.owner = owner;
-    }
+  public Question(String text, String sql, int points, DataModel dataModel, Person owner) {
+    this.text = text;
+    this.sql = sql;
+    this.points = points;
+    this.dataModel = dataModel;
+    this.owner = owner;
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getSql() {
-        return sql;
-    }
-
-    public void setSql(String sql) {
-        this.sql = sql;
-    }
-
-    public int getPoints() {
-        return points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
-    }
-
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
-    }
-
-    public DataModel getDataModel() {
-        return dataModel;
-    }
-
-    public void setDataModel(DataModel dataModel) {
-        this.dataModel = dataModel;
-    }
-
-    public Person getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Person owner) {
-        this.owner = owner;
-    }
-
-    @Override
-    public String toString() {
-        return "Die Question mit der id " + id +
-                ", dem text '" + text + '\'' +
-                ", dem sql '" + sql + '\'' +
-                ", den points " + points +
-                ", dem localDate " + localDate +
-                ", dem dataModel " + dataModel +
-                " hat den owner " + owner +
-                '.';
-    }
+  @Override
+  public String toString() {
+    return "Die Question mit der id " + id +
+      ", dem text '" + text + '\'' +
+      ", dem sql '" + sql + '\'' +
+      ", den points " + points +
+      ", dem localDate " + localDate +
+      ", dem dataModel " + dataModel +
+      " hat den owner " + owner +
+      '.';
+  }
 }

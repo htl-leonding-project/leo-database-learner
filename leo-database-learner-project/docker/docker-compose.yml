@@ -18,7 +18,7 @@ services:
       POSTGRES_PASSWORD: app
     volumes:
       - ./studentdata:/var/lib/postgresql/data
-#volumes:
-#  proddata:
-#  studentdata:
+volumes:
+  proddata:
+  studentdata:
 

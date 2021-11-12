@@ -70,22 +70,22 @@ class SqlScriptRepositoryTest {
         Table sqlScriptTable = new Table(getDataSource(), "sqlscript");
         output(sqlScriptTable).toConsole();
 
-        assertThat(foundSqlScript.getCreateScript()).isEqualTo("createScript");
+        assertThat(foundSqlScript.createScript).isEqualTo("createScript");
 
 
     }
 
-    @Test
-    @Order(0)
-    public void findAll() {
-
-        List<SqlScript> foundPersons = sqlScriptRepo.findAll();
-
-        Table personTable = new Table(getDataSource(), "sqlscript");
-        output(personTable).toConsole();
-
-        assertThat(foundPersons.size()).isEqualTo(1);
-    }
+//    @Test
+//    @Order(0)
+//    public void findAll() {
+//
+//        List<SqlScript> foundPersons = sqlScriptRepo.findAll();
+//
+//        Table personTable = new Table(getDataSource(), "sqlscript");
+//        output(personTable).toConsole();
+//
+//        assertThat(foundPersons.size()).isEqualTo(1);
+//    }
 
 
     static final String DATABASE = "db";

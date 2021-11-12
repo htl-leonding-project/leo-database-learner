@@ -12,7 +12,8 @@ class DataModelTest {
     @Test
     void testToString() {
         Person owner = new Person("Max", "Muster", Role.INSTRUCTOR);
-        DataModel dataModel = new DataModel("DataModel1", owner, "Comment1");
+        DataModel dataModel = new DataModel("Webshop", owner, "Das Modell zeigt einen Webshop uns seine " +
+                "jeweiligen Attribute.");
 
         String testString = dataModel.toString();
         String rightString = "" +

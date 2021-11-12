@@ -10,31 +10,16 @@ import java.util.List;
 
 @Entity
 @XmlRootElement
-public class Person extends PanacheEntityBase {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Person extends PanacheEntityBase {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.TABLE)
   private Long id;
-  ;
 
   public String firstName;
   public String lastName;
-  @Enumerated(EnumType.STRING)
-  public Role role;
-//
-//    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-//    private List<DataModel> dataModels = new ArrayList<>();
-//    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-//    private List<Question> questions = new ArrayList<>();
-
-  public Person() {
-  }
-
-  public Person(String firstName, String lastName, Role role) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.role = role;
-  }
+  public String password;
 
   public Long getId() {
     return id;
@@ -44,13 +29,18 @@ public class Person extends PanacheEntityBase {
     this.id = id;
   }
 
+//
+//    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+//    private List<DataModel> dataModels = new ArrayList<>();
+//    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+//    private List<Question> questions = new ArrayList<>();
 
-  @Override
-  public String toString() {
-    return "Person mit der " +
-      "id " + id +
-      ", namens " + firstName + '\'' +
-      " " + lastName + '\'' +
-      " hat die Rolle " + role;
+  public Person() {
+  }
+
+  public Person(String firstName, String lastName, String password) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.password = password;
   }
 }

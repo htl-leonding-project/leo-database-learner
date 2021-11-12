@@ -27,6 +27,4 @@ public class SolutionSqlEndpoint {
         return Response.ok(result).build();
 
     }
-
-
 }

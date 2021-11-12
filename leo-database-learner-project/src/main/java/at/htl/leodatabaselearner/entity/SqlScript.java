@@ -9,11 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class SqlScript extends PanacheEntityBase {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+public class SqlScript extends PanacheEntity {
 
   public String createScript;
   public String dropScript;

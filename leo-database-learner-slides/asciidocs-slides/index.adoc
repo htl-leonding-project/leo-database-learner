@@ -1,0 +1,78 @@
+= Leodatabase learner
+Vanessa Primetzhofer, Christine Raffeiner, Marah Steigersdorfer, Isabel Turner
+1.0, 2020-08-22
+ifndef::sourcedir[:sourcedir: ../src/main/java]
+ifndef::imagesdir[:imagesdir: images]
+ifndef::backend[:backend: html5]
+:icons: font
+
+== Was war
+
+=== Klassendiagramm
+
+image:cld.png[]
+
+=== Systemarchitektur
+
+image:Systemarchitektur.PNG[]
+
+=== Altes Use Case Diagram
+
+[plantuml]
+----
+@startuml
+left to right direction
+actor Student as s
+actor Teacher as t
+
+package LeoDatabaseLearner {
+  usecase "Aufgaben üben" as UC1
+  usecase "simulierte Prüfung absolvieren" as UC2
+  usecase "Wissensstand einsehen" as UC3
+  usecase "Prüfung freigeben" as UC4
+  usecase "Prüfung absolvieren" as UC5
+  usecase "Übungen / Tests hochladen" as UC6
+  usecase "Wissensstand der Schüler einsehen" as UC7
+}
+s --> UC1
+s --> UC2
+s --> UC3
+s --> UC5
+
+t --> UC4
+t --> UC6
+t --> UC7
+@enduml
+----
+
+=== Neues Use Case Diagram
+
+[plantuml]
+----
+@startuml
+left to right direction
+actor Student as s
+actor Teacher as t
+
+package LeoDatabaseLearner {
+usecase "Aufgaben üben" as UC1
+usecase "Wissensstand einsehen" as UC2
+usecase "Übungen hochladen" as UC3
+usecase "Wissensstand der Schüler einsehen" as UC4
+}
+s --> UC1
+s --> UC2
+
+
+t --> UC3
+t --> UC4
+@enduml
+----
+
+=== Ziele
+
+image:bsp.jpeg[]
+
+== Was ist
+
+== Was wird sein

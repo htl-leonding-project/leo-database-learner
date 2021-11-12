@@ -1,9 +1,47 @@
-###GET http://localhost:8080/solution_sql/result/1
+POST http://localhost:8080/student/add_student
+Content-Type: application/json
 
-#GET http://localhost:8080/solutionSql/result/
-#parameter "Select e from EMP"
+{
+  "firstName": "Sabrina",
+  "lastName": "Haus",
+  "password": "ADMIN",
+  "classname": "test"
+}
 
 ###
+
+GET http://localhost:8080/student/getbyid/1
+
+
+###
+
+GET http://localhost:8080/student/get_all
+Accept: application/json
+
+###
+
+POST http://localhost:8080/teacher/add_teacher
+Content-Type: application/json
+
+{
+  "firstName": "Ben",
+  "lastName": "Müller",
+  "password": "1234"
+}
+
+###
+
+GET http://localhost:8080/teacher/getbyid/1
+
+
+###
+
+GET http://localhost:8080/teacher/get_all
+Accept: application/json
+
+###
+
+
 POST http://localhost:8080/datamodel/add_datamodel
 Content-Type: application/json
 
@@ -20,7 +58,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/datamodel/getbyid/3
+GET http://localhost:8080/datamodel/getbyid/1
 
 ###
 
@@ -28,63 +66,8 @@ GET http://localhost:8080/datamodel/getbyid/3
 GET http://localhost:8080/datamodel/get_all
 Accept: application/json
 
-
-####
-POST http://localhost:8080/person/add_person
-Content-Type: application/json
-
-{
-  "firstName": "Sabrina",
-  "lastName": "Haus",
-  "role": "ADMIN"
-}
-
 ###
 
-GET http://localhost:8080/person/getbyid/3
-
-
-###
-
-GET http://localhost:8080/person/get_all
-Accept: application/json
-
-
-###
-POST http://localhost:8080/question/add_question
-Content-Type: application/json
-
-{
-  "text": "Geben Sie alle Personen sortiert nach dem Nachnamen aus.",
-  "sql": "Select p from Person p order by p.lastName",
-  "points": 2,
-  "datamodel": {
-    "name": "Schwimmkurs",
-    "person": {
-      "firstName": "Lisa",
-      "lastName": "Gruber",
-      "role": "STUDENT"
-    },
-    "comment": "Das Modell zeigt einen Schwimmkurs mit seinen jeweiligen Attributen."
-  },
-  "person": {
-    "firstName": "madschi",
-    "lastName": "stei",
-    "role": "ADMIN"
-  }
-}
-
-###
-
-GET http://localhost:8080/question/getbyid/3
-
-###
-
-GET http://localhost:8080/question/get_all
-Accept: application/json
-
-
-###
 
 POST http://localhost:8080/sqlscript/add_sqlscript
 Content-Type: application/json
@@ -107,7 +90,7 @@ Content-Type: application/json
 ###
 
 
-GET http://localhost:8080/sqlscript/getbyid/2
+GET http://localhost:8080/sqlscript/getbyid/1
 
 ###
 
@@ -116,3 +99,134 @@ GET http://localhost:8080/sqlscript/get_all
 Accept: application/json
 
 ###
+
+
+POST http://localhost:8080/exercisePackage/add_exercisePackage
+Content-Type: application/json
+
+{
+  "name": "Datamodel 1",
+  "datamodel": {
+    "name": "Hundeschule1",
+    "person": {
+      "firstName": "Sarah",
+      "lastName": "Feichtinger",
+      "role": "ADMIN"
+    },
+    "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
+  }
+}
+
+
+###
+
+
+GET http://localhost:8080/exercisePackage/get_all
+Accept: application/json
+
+###
+
+
+POST http://localhost:8080/question/add_question
+Content-Type: application/json
+
+{
+  "name": "1. Question",
+  "text": "Geben Sie alle Personen sortiert nach dem Nachnamen aus.",
+  "sql": "Select p from Person p order by p.lastName",
+  "points": 2,
+  "localDate": "08-01-2020",
+  "exercisePackage": {
+    "name": "Datamodel 1",
+    "datamodel": {
+      "name": "Hundeschule1",
+      "person": {
+        "firstName": "Sarah",
+        "lastName": "Feichtinger",
+        "role": "ADMIN"
+      },
+      "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
+    }
+  }
+}
+
+###
+
+
+GET http://localhost:8080/question/getbyid/1
+
+###
+
+
+GET http://localhost:8080/question/get_all
+Accept: application/json
+
+###
+
+
+POST http://localhost:8080/evaluation/add_evaluation
+Content-Type: application/json
+
+{
+  "reachedPoints": 10,
+  "student": {
+    "firstName": "Sabrina",
+    "lastName": "Haus",
+    "password": "ADMIN",
+    "classname": "test"
+  },
+  "question": {
+    "name": "1. Question",
+    "text": "Geben Sie alle Personen sortiert nach dem Nachnamen aus.",
+    "sql": "Select p from Person p order by p.lastName",
+    "points": 2,
+    "localDate": "08-01-2020",
+    "exercisePackage": {
+      "name": "Datamodel 1",
+      "datamodel": {
+        "name": "Hundeschule1",
+        "person": {
+          "firstName": "Sarah",
+          "lastName": "Feichtinger",
+          "role": "ADMIN"
+        },
+        "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
+      }
+    }
+  }
+}
+
+###
+
+
+POST http://localhost:8080/assignment/add_assignment
+Content-Type: application/json
+
+{
+  "student": {
+    "firstName": "Sabrina",
+    "lastName": "Haus",
+    "password": "ADMIN",
+    "classname": "test"
+  },
+  "exPackage": {
+    "name": "Datamodel 1",
+    "datamodel": {
+      "name": "Hundeschule1",
+      "person": {
+        "firstName": "Sarah",
+        "lastName": "Feichtinger",
+        "role": "ADMIN"
+      },
+      "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
+    }
+  }
+}
+
+###
+
+GET http://localhost:8080/assignment/get_all
+Accept: application/json
+
+###
+

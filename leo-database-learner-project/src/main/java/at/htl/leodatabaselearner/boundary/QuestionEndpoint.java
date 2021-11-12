@@ -23,15 +23,14 @@ public class QuestionEndpoint {
     @POST
     @Path("add_question")
     @Transactional
-    public void addDataModel(Question question) {
+    public void addQuestion(Question question) {
         questionRepository.addQuestion(question);
     }
 
     @GET
     @Path("get_all")
     public List<Question> getAllQuestions() {
-        final List<Question> result = questionRepository.findAllQuestions();
-        return result;
+        return questionRepository.findAllQuestions();
     }
 
     @GET

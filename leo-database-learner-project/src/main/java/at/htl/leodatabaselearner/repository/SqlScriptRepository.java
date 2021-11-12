@@ -13,24 +13,19 @@ import java.util.List;
 @ApplicationScoped
 public class SqlScriptRepository implements PanacheRepository<SqlScript> {
 
-    // test
-
-    @Inject
+    // @Inject
     //@PersistenceUnit(name = "prod")
-    EntityManager em;
 
     public void addSqlScript(SqlScript entity){
-        em.persist(entity);
+        getEntityManager().merge(entity);
     }
 
     public SqlScript findById(Long id){
-        var query = em.createQuery("select ss from SqlScript ss where ss.id = :id", SqlScript.class);
-        query.setParameter("id", id);
-        return query.getResultStream().findFirst().orElse(null);
+        return find("id", id).firstResult();
     }
 
     public List<SqlScript> findAllSqlScripts(){
-        var query = em.createQuery("select ss from SqlScript ss", SqlScript.class);
+        var query = getEntityManager().createQuery("select ss from SqlScript ss", SqlScript.class);
         return query.getResultList();
     }
 }

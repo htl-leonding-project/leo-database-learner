@@ -27,12 +27,16 @@
 // Kürzen des Videos
 // ffmpeg -ss 00:00:00 -i orchestra.mp4 -to 00:00:05 -c copy orchestra-short.mp4
 
+== Video
+
+video::promotion.mp4[Promitionvideo]
 
 == Agenda
 [%step]
 * Übersicht Leodatabase Learner
 * Ergebnis des 1. Sprints
 * Ergebnis des 2. Sprints
+* Ergebnis des 3. Sprints
 
 [.lightbg,background-video="",background-video-loop="true",background-opacity="0.7"]
 == Übersicht Leodatabase Learner
@@ -119,6 +123,9 @@ t --> UC4
 
 == Ergebnis des 1. Sprints
 == Ergebnis des 2. Sprints
+== Ergebnis des 3. Sprints
+
+* https://primetzvan.github.io/hugo-project/[Hugo page]
 
 
 == Links

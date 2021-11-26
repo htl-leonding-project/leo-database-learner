@@ -14,10 +14,10 @@ const routes: Routes = [
   { path: 'tasks', component: TasksComponent },
   { path: 'tasks/:id', component: TaskDetailComponent},
   {path: 'about', component: AboutComponent},
-  {path: "impressum", component: ImpressumComponent},
-  {path: "profile", component: ProfilComponent},
-  {path: "login", component: LoginComponent},
-  {path: "**", component: TasksComponent}
+  {path: 'impressum', component: ImpressumComponent},
+  {path: 'profile', component: ProfilComponent},
+  {path: 'login', component: LoginComponent},
+  {path: '**', component: TasksComponent}
 ];
 
 @NgModule({

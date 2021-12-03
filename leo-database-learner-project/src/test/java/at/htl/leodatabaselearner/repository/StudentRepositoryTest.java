@@ -43,4 +43,16 @@ class StudentRepositoryTest {
         assertThat(foundStudents).contains(student);
     }
 
+    @Test
+    @Transactional
+    void findAllStudents() {
+        Student student = new Student("Manuel","Maier","pass345","3AHITM");
+        student = studentRepository.addStudent(student);
+
+
+        List<Student> foundStudents = studentRepository.findAllStudents();
+
+        assertThat(foundStudents).isNotNull();
+    }
+
 }

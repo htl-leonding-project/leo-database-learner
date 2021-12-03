@@ -32,4 +32,16 @@ class TeacherRepositoryTest {
 
 
     }
+
+    @Test
+    @Transactional
+    void findAllTeachers() {
+        Teacher teacher = new Teacher("Fritz", "Hauser", "pass1234");
+        teacherRepository.addTeacher(teacher);
+
+        List<Teacher> foundTeachers = teacherRepository.findAllTeachers();
+
+        assertThat(foundTeachers).isNotNull();
+    }
+
 }

@@ -3,5 +3,9 @@ Feature: Student Management Endpoint
 
   Background:
     * url baseUrl
+
     Scenario: Get all Students
-      Given path ""
+      Given path "student/get_all"
+      When method GET
+      * print response
+

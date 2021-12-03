@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class StudentEndpointTest {
 
     @Karate.Test
-    Karate testStundentEndpoint(){
+    Karate testStudentEndpoint(){
         return Karate.run("student").relativeTo(getClass());
     }
 

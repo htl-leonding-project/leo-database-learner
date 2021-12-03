@@ -31,5 +31,16 @@ class StudentRepositoryTest {
         assertThat(studentRepository.listAll()).contains(student);
     }
 
+    @Test
+    @Transactional
+    void findAllStudentsByClassname() {
+
+        Student student = new Student("Susi","Snow","test123","5AHITM");
+        student = studentRepository.addStudent(student);
+
+        List<Student> foundStudents = studentRepository.findAllStudentsByClassname(student.classname);
+
+        assertThat(foundStudents).contains(student);
+    }
 
 }

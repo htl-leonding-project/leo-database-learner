@@ -5,7 +5,7 @@ function fn() {
         env = 'dev'; // a custom 'intelligent' default
     }
     var config = { // base config JSON
-        baseUrl: 'http://localhost:8081'
+        baseUrl: 'http://localhost:8081/'
     };
     // don't waste time waiting for a connection or if servers don't respond within 5 seconds
     karate.configure('connectTimeout', 5000);

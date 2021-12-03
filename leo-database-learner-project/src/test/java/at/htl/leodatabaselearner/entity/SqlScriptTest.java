@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SqlScriptTest {
+    /*
     @Test
     void testToString() {
         Person owner = new Person("Max", "Muster", Role.INSTRUCTOR);
@@ -21,4 +22,5 @@ class SqlScriptTest {
 
         assertThat(testString).isEqualTo(rightString);
     }
+     */
 }

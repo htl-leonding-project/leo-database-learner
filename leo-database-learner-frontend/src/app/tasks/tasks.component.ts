@@ -21,7 +21,7 @@ export class TasksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questionService.getAllQuestion().subscribe(q => this.tasks = q);
+    this.questionService.getAllQuestion().subscribe(data => {this.tasks = data});
     this.personService.getAllPerson().subscribe(p => this.person = p);
 
   }

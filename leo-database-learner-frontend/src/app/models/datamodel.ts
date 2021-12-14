@@ -1,12 +1,12 @@
-import {Person} from './person';
+import {Teacher} from './teacher';
 
 export class Datamodel {
 
   name: string;
   comment: string;
-  owner: Person;
+  owner: Teacher;
 
-  constructor(name: string, comment: string, owner: Person) {
+  constructor(name: string, comment: string, owner: Teacher) {
     this.name = name;
     this.comment = comment;
     this.owner = owner;

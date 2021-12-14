@@ -2,6 +2,7 @@
 
  class Question {
    + id: Long
+   + name: String
    + text: String
    + sql: String
    + points: int
@@ -37,6 +38,7 @@
    + id : Long
    + firstName: String
    + lastName: String
+   + password: String
  }
 
  class ExercisePackage{
@@ -45,7 +47,7 @@
    + dataModel : DataModel
  }
 
- class Assignement{
+ class Assignment{
     + id : Long
     + student : Student
     + package : ExercisePackage
@@ -61,8 +63,8 @@
  Person <|-- Student
  Person <|-- Teacher
  Teacher "1" *--> "*" DataModel :owns
- Student "*" *--> "1" Assignement
- Assignement "1" <--* "*" ExercisePackage
+ Student "*" *--> "1" Assignment
+ Assignment "1" <--* "*" ExercisePackage
  DataModel "1" *--> "*" ExercisePackage : contains
  ExercisePackage "1" *--> "*" Question :contains
  SqlScript "1" --> "1" DataModel :creating

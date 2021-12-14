@@ -23,15 +23,14 @@ public class SqlScriptEndpoint {
     @POST
     @Path("add_sqlscript")
     @Transactional
-    public void addDataModel(SqlScript sqlScript) {
+    public void addSqlScript(SqlScript sqlScript) {
         sqlScriptRepository.addSqlScript(sqlScript);
     }
 
     @GET
     @Path("get_all")
     public List<SqlScript> getAllSqlScripts() {
-        final List<SqlScript> result = sqlScriptRepository.findAllSqlScripts();
-        return result;
+        return sqlScriptRepository.findAllSqlScripts();
     }
 
     @GET

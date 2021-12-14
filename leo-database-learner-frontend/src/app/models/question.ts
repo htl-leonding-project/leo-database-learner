@@ -1,5 +1,6 @@
 import {Person} from './person';
 import {Datamodel} from './datamodel';
+import {ExercisePackage} from "./exercisePackage";
 
 export class Question {
 

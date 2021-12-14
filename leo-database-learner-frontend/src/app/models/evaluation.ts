@@ -1,4 +1,5 @@
 import {Question} from "./question";
+import {Student} from "./student";
 
 export class Evaluation {
   reachedPoints: number;

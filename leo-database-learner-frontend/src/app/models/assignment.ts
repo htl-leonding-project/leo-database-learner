@@ -1,3 +1,6 @@
+import { Student } from "./student";
+import {ExercisePackage} from "./exercisePackage";
+
 export class Assignment {
   student: Student;
   exPackage: ExercisePackage;

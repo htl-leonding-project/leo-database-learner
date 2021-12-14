@@ -1,3 +1,5 @@
+import {DataModel} from "./datamodel";
+
 export class ExercisePackage {
   name: string;
   dataModel: DataModel;

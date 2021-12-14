@@ -1,6 +1,6 @@
-import {Teacher} from './teacher';
+import {Teacher} from "./teacher";
 
-export class Datamodel {
+export class DataModel {
 
   name: string;
   comment: string;

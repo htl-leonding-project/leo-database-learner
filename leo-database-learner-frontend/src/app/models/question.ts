@@ -3,22 +3,20 @@ import {Datamodel} from './datamodel';
 
 export class Question {
 
-  id: number;
+  name: string;
   text: string;
   sql: string;
   points: number;
   localdate: number;
-  datamodel: Datamodel;
-  owner: Person;
+  exercisePackage: ExercisePackage;
 
 
-  constructor(id: number, text: string, sql: string, points: number, localdate: number, datamodel: Datamodel, owner: Person) {
-    this.id = id;
+  constructor(name: string, text: string, sql: string, points: number, localdate: number, exercisePackage: ExercisePackage) {
+    this.name = name;
     this.text = text;
     this.sql = sql;
     this.points = points;
     this.localdate = localdate;
-    this.datamodel = datamodel;
-    this.owner = owner;
+    this.exercisePackage = exercisePackage;
   }
 }

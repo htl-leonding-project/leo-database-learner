@@ -1,25 +1,40 @@
-<p>
-  <mat-toolbar style="margin-top: -1%;" color="primary">
-    <span style="margin-left: 85%">LeoDataBaseLearner</span>
-  </mat-toolbar>
-  <mat-toolbar color="primary">
-    <a style="float: left; margin-right: 20%; margin-left: 25%; text-decoration: underline;"><span
-      [style.cursor]="'pointer'" routerLink="/">Tasks</span></a>
-    <a style="float: left; margin-right: 20%;"><span [style.cursor]="'pointer'" routerLink="/">Exams</span></a>
-    <a style="float: left;"><span [style.cursor]="'pointer'" routerLink="/">Knowledge</span></a>
-  </mat-toolbar>
-</p>
+<mat-toolbar color="primary">
+  <div id="menu">
+    <mat-icon (click)="drawer.toggle();">menu</mat-icon>
+  </div>
+  <a routerLink="/tasks" style="color: white;"><span>Tasks</span></a>
+  <a routerLink="" style="color: white;"><span>Exams</span></a>
+  <a routerLink="" style="color: white;"><span>Knowledge</span></a>
+  <div id="logo"></div>
+</mat-toolbar>
 
-<br><br><br>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <div>
+      <a routerLink="/about">About</a>
+      <a routerLink="/impressum">Impressum</a>
+      <a routerLink="/profile">Profil</a>
+      <a (click)="openLogin()">Log</a>
+    </div>
+  </mat-drawer>
 
-<div style="text-align: center;">
-  <h1>This is Task Number {{ id }}</h1>
+  <br><br><br>
+
+  <div style="float: left; margin-left: 20%; margin-top: 2%;">
+    <h1 style="font-size: 40pt; color: royalblue; ">Angabe</h1><br>
+    <p>Angabe Angabe Angabe Angabe</p>
+  </div>
 
   <form class="example-form">
-    <input matInput placeholder="Input" value="">
+    <input matInput placeholder="Geben Sie das Statement ein" value="" size="50"
+           style="float: left; height: 150px; margin-left: 25%; margin-top: 2%;">
   </form>
-  <br>
-  <button mat-button (click)="click()" style="background-color: darkgray;">Send</button>
-</div>
+    <mat-button-toggle style="margin-top: 1.8%;" (click)="sendButton()">Send</mat-button-toggle>
+
+  <div style="text-align: center; color: royalblue; margin-top: 20%">
+    <h1 style="font-size: 30pt;">Lösung</h1>
+    <mat-icon style="font-size: 100px; margin-right: 5%;">keyboard_arrow_up</mat-icon>
+  </div>
 
 
+</mat-drawer-container>

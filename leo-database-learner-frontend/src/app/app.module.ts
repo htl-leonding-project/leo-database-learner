@@ -14,12 +14,28 @@ import {MatButton, MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { AboutComponent } from './about/about.component';
+import { ProfilComponent } from './profil/profil.component';
+import { ImpressumComponent } from './impressum/impressum.component';
+import { LoginComponent } from './login/login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { HomeComponent } from './home/home.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    AboutComponent,
+    ProfilComponent,
+    ImpressumComponent,
+    LoginComponent,
+    HomeComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +50,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule,
+    MatDialogModule,
+    MatRadioModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

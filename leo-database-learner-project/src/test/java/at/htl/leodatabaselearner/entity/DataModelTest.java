@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataModelTest {
-
+/*
     @Test
     void testToString() {
         Person owner = new Person("Max", "Muster", Role.INSTRUCTOR);
@@ -25,4 +25,6 @@ class DataModelTest {
 
         assertThat(testString).isEqualTo(rightString);
     }
+
+ */
 }

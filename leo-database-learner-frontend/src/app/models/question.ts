@@ -6,11 +6,11 @@ export class Question {
   text: string;
   sql: string;
   points: number;
-  localdate: number;
+  localdate: Date;
   exercisePackage: ExercisePackage;
 
 
-  constructor(name: string, text: string, sql: string, points: number, localdate: number, exercisePackage: ExercisePackage) {
+  constructor(name: string, text: string, sql: string, points: number, localdate: Date, exercisePackage: ExercisePackage) {
     this.name = name;
     this.text = text;
     this.sql = sql;

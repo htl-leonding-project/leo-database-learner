@@ -1,10 +1,20 @@
-div{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+
+h1{
+  display: grid;
+  align-items: center;
+  text-align: center;
+  margin-top: 20%;
+  font-size: 50px;
 }
+
+p{
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 2%;
+}
+
 a{
   color: white;
   text-decoration: none;

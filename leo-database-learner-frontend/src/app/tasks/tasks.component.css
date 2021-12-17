@@ -1,4 +1,14 @@
-a {
+a{
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  color: white;
+  text-decoration: underline;
+}
+
+a:visited{
   color: white;
   text-decoration: none;
 }

@@ -1,1 +1,1 @@
-docker-compose -f docker-compose-volume.yml up --build -d
+docker-compose -f docker-compose-production.yml up --build -d

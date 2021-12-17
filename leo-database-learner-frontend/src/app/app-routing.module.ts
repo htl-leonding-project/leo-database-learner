@@ -7,6 +7,7 @@ import { ImpressumComponent } from './impressum/impressum.component';
 import { ProfilComponent } from './profil/profil.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import {ResultComponent} from "./result/result.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: "impressum", component: ImpressumComponent},
   {path: "profile", component: ProfilComponent},
   {path: "login", component: LoginComponent},
+  {path: "result", component: ResultComponent},
   {path: "**", component: TasksComponent}
 ];
 

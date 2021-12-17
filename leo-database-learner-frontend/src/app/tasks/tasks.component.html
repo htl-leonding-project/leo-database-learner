@@ -2,9 +2,9 @@
     <div id="menu">
       <mat-icon (click)="drawer.toggle();">menu</mat-icon>
     </div>
-    <a><span>Tasks</span></a>
-    <a><span>Exams</span></a>
-    <a><span>Knowledge</span></a>
+    <a routerLink="/tasks"><span>Tasks</span></a>
+    <a routerLink="/exam"><span>Exams</span></a>
+    <a routerLink="/knowledge"><span>Knowledge</span></a>
     <div id="logo"></div>
 </mat-toolbar>
 
@@ -20,7 +20,7 @@
 
   <ul>
     <li *ngFor="let t of tasks">
-      <a style="color: black; text-decoration: none;" [routerLink]="t.id.toString()">{{ t.name }}</a>
+      <a style="color: black; text-decoration: none;" [routerLink]="t.id.toString()">{{ tasks }}</a>
     </li>
   </ul>
 </mat-drawer-container>

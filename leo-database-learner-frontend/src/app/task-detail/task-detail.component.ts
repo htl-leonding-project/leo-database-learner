@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {LoginComponent} from "../login/login.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-task-detail',
@@ -11,8 +13,8 @@ export class TaskDetailComponent implements OnInit {
   id = '';
 
   constructor(
-    private route: ActivatedRoute
-  ) {  }
+    private route: ActivatedRoute, public login: MatDialog, private router: Router) {
+  }
 
   ngOnInit(): void {
 
@@ -23,7 +25,17 @@ export class TaskDetailComponent implements OnInit {
     //   this.id = params.get('id');
     // });
   }
+
   click(): void {
     alert('Data successfully sent');
+  }
+
+  openLogin() {
+    const dialogRef = this.login.open(LoginComponent, {width: "40%"});
+  }
+
+  sendButton() {
+    alert('Data successfully sent');
+    this.router.navigateByUrl('result');
   }
 }

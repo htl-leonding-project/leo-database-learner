@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginComponent} from "../login/login.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-about',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(public login:MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  openLogin() {
+    const dialogRef = this.login.open(LoginComponent, {width: "40%"});
+  }
 }

@@ -8,7 +8,7 @@ services:
     environment:
       POSTGRES_PASSWORD: app
     volumes:
-      - proddata:/var/lib/postgresql/data
+      - ./proddata:/var/lib/postgresql/data
   studentdb:
     build: studentdb
     ports:
@@ -17,7 +17,7 @@ services:
     environment:
       POSTGRES_PASSWORD: app
     volumes:
-      - studentdata:/var/lib/postgresql/data
+      - ./studentdata:/var/lib/postgresql/data
 volumes:
   proddata:
   studentdata:

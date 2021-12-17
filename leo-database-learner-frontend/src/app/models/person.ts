@@ -6,8 +6,8 @@ export class Person {
   password: string
 
 
-  constructor(id: number, firstName: string, lastName: string, password: string) {
-    this.id = id;
+  constructor(firstName: string, lastName: string, password: string) {
+    this.id = this.id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.password = password;

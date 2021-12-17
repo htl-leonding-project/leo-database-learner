@@ -9,8 +9,8 @@ import java.util.List;
 @ApplicationScoped
 public class StudentRepository implements PanacheRepository<Student> {
 
-    public void addStudent(Student entity) {
-        getEntityManager().merge(entity);
+    public Student addStudent(Student entity) {
+        return getEntityManager().merge(entity);
     }
 
     public List<Student> findAllStudents(){

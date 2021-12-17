@@ -24,6 +24,8 @@ import { HomeComponent } from './home/home.component';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { ResultComponent } from './result/result.component';
+import { ExamsComponent } from './exams/exams.component';
+import { KnowledgeComponent } from './knowledge/knowledge.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ResultComponent } from './result/result.component';
     ImpressumComponent,
     LoginComponent,
     HomeComponent,
-    ResultComponent
+    ResultComponent,
+    ExamsComponent,
+    KnowledgeComponent
   ],
   imports: [
     BrowserModule,

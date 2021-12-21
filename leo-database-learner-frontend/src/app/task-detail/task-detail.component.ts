@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {LoginComponent} from "../login/login.component";
 import {MatDialog} from "@angular/material/dialog";
+import { LinkmenuService } from '../service/linkmenu.service';
 
 @Component({
   selector: 'app-task-detail',
@@ -13,7 +14,8 @@ export class TaskDetailComponent implements OnInit {
   id = '';
 
   constructor(
-    private route: ActivatedRoute, public login: MatDialog, private router: Router) {
+    private route: ActivatedRoute, public login: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
+      linkmenu.setMenu(true, true, true, true);
   }
 
   ngOnInit(): void {

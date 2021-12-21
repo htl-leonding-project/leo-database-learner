@@ -1,0 +1,64 @@
+@startuml
+    class Teacher {
+      t_id : Long
+      t_firstname : String
+      t_lastname : String
+      t_students : List<Student>
+    }
+    class Student {
+      s_id : Long
+      s_firstname : String
+      s_lastname : String
+      s_exam : List<Exam>
+      's_knowledge:
+    }
+    class Exercise {
+      exc_id : Long
+      exc_name : String
+      exc_question : Long
+      exc_datamodel : Long
+      exc_statement : Long
+    }
+    class Question {
+      q_id : Long
+      q_name : String
+      q_text : String
+    }
+    class Statement {
+      stmt_id : Long
+      stmt_statement : String
+    }
+    class Exam {
+      e_id : Long
+      e_name : String
+      e_description : String
+      e_date : Date
+      e_owner : Long
+      e_exercise : List<Exercise>
+    }
+    class ExercisePackage{
+      excp_id : Long
+      excp_name : String
+      excp_description : String
+      excp_date : Date
+      excp_owner : Long
+      excp_exercise : List<Exercise>
+    }
+    class Datamodel {
+      d_id : Long
+      d_name : String
+      d_owner : Long
+    }
+
+Exam "*" -right-> "1" Teacher
+Exam "*" -left-> "*" Exercise
+ExercisePackage "*" --> "1" Teacher
+ExercisePackage "*" --> "*" Exercise
+Exercise "*" --> "0..*" Datamodel
+Exercise "*" --> "*" Question
+Exercise "*" --> "1" Statement
+Teacher "*" --> "*" Student
+Student "*" --> "*" Exam
+
+
+@enduml

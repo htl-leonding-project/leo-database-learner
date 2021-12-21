@@ -1,3 +1,4 @@
+/*
 package at.htl.leodatabaselearner;
 
 import io.agroal.api.AgroalDataSource;
@@ -187,3 +188,4 @@ public class SqlStudentInsertTest {
   }
 }
 
+*/

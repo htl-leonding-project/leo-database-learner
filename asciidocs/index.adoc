@@ -18,11 +18,10 @@ Practice tool to learn database commands and to check your level of knowledge.
 Short promotion video of our project.
 
 video::videos/promotion.mp4[width=640]
-//poster=
 
 == Systemarchitecture
 
-image::Systemarchitektur.png[]
+image::Systemarchitektur.PNG[]
 
 == Documents
 

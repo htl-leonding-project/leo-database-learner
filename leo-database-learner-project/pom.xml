@@ -112,9 +112,6 @@
     </testResources>
     <plugins>
       <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-      </plugin>
-      <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
         <version>${quarkus-plugin.version}</version>
@@ -141,9 +138,6 @@
             <maven.home>${maven.home}</maven.home>
           </systemPropertyVariables>
         </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

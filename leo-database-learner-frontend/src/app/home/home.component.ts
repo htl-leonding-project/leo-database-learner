@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   }
 
   openLogin(){
-    const dialogRef = this.login.open(LoginComponent,{width:"40%"});
-    
+    const dialogRef = this.login.open(LoginComponent, {width: '40%'});
+
     /*
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

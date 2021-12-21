@@ -17,23 +17,22 @@ export class TasksComponent implements OnInit {
 
   public person: Person[] = [];
 
-  constructor(private personService: PersonService, private questionService: QuestionService, public login: MatDialog) {
+  constructor(private personService: PersonService, public questionService: QuestionService, public login: MatDialog) {
   }
 
   ngOnInit(): void {
-    //this.questionService.getAllQuestion().subscribe(q => this.tasks = q);
-    //this.personService.getAllPerson().subscribe(p => this.person = p);
-    
+    this.questionService.getAllQuestion().subscribe(data => {this.tasks = data});
+    this.personService.getAllPerson().subscribe(p => this.person = p);
+
   }
 
   openLogin(){
     const dialogRef = this.login.open(LoginComponent,{width:"40%"});
-    
-    /*
+
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-    */
+
   }
 
 }

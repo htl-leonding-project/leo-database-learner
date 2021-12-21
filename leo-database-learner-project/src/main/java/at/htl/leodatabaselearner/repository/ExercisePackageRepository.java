@@ -10,8 +10,8 @@ import java.util.List;
 @ApplicationScoped
 public class ExercisePackageRepository implements PanacheRepository<ExercisePackage> {
 
-    public void addExercisePackage(ExercisePackage entity){
-        getEntityManager().merge(entity);
+    public ExercisePackage addExercisePackage(ExercisePackage entity){
+        return getEntityManager().merge(entity);
     }
 
     public List<ExercisePackage> findAllExercisePackages(){

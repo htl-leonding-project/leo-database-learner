@@ -224,7 +224,7 @@ a|
 
 === Use-Case 6: Prüfung freigeben
 
-===== Charakterisierende Informationen Use-Case 6
+==== Charakterisierende Informationen Use-Case 6
 
 [cols=2]
 |===
@@ -243,7 +243,7 @@ Sie müssen extra freigegeben werden.
 
 === Use-Case 7: Wissensstand der Schüler einsehen
 
-===== Charakterisierende Informationen Use-Case 7
+==== Charakterisierende Informationen Use-Case 7
 
 [cols=2]
 |===

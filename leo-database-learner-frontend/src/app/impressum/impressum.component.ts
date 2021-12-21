@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {LoginComponent} from "../login/login.component";
+import { LinkmenuService } from '../service/linkmenu.service';
 
 @Component({
   selector: 'app-impressum',
@@ -9,7 +10,9 @@ import {LoginComponent} from "../login/login.component";
 })
 export class ImpressumComponent implements OnInit {
 
-  constructor(public login: MatDialog) { }
+  constructor(public login: MatDialog, public linkmenu : LinkmenuService) {
+    linkmenu.setMenu(true, true, false, true);
+  }
 
   ngOnInit(): void {
   }

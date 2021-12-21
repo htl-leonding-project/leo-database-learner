@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginComponent} from "../login/login.component";
 import {MatDialog} from "@angular/material/dialog";
+import { LinkmenuService } from '../service/linkmenu.service';
 
 @Component({
   selector: 'app-about',
@@ -9,7 +10,9 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class AboutComponent implements OnInit {
 
-  constructor(public login:MatDialog) { }
+  constructor(public login:MatDialog,public linkmenu : LinkmenuService) {
+    linkmenu.setMenu(true, false, true, true);
+  }
 
   ngOnInit(): void {
   }

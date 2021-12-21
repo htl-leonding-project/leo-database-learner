@@ -31,6 +31,11 @@
   </dependencyManagement>
   <dependencies>
     <dependency>
+      <groupId>io.quarkus.security</groupId>
+      <artifactId>quarkus-security</artifactId>
+      <version>1.1.4.Final</version>
+    </dependency>
+    <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-jsonb</artifactId>
     </dependency>
@@ -45,6 +50,10 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-arc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-security-jpa</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -91,7 +100,6 @@
       <version>1.1.0</version>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
   <build>
     <testResources>

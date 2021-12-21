@@ -10,8 +10,8 @@ import java.util.List;
 @ApplicationScoped
 public class TeacherRepository implements PanacheRepository<Teacher> {
 
-    public void addTeacher(Teacher entity) {
-        getEntityManager().merge(entity);
+    public Teacher addTeacher(Teacher entity) {
+        return getEntityManager().merge(entity);
     }
 
     public List<Teacher> findAllTeachers(){

@@ -21,6 +21,12 @@ import { ImpressumComponent } from './impressum/impressum.component';
 import { LoginComponent } from './login/login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { ResultComponent } from './result/result.component';
+import { ExamsComponent } from './exams/exams.component';
+import { KnowledgeComponent } from './knowledge/knowledge.component';
+import { LinkmenuService } from './service/linkmenu.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,10 @@ import { HomeComponent } from './home/home.component';
     ProfilComponent,
     ImpressumComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ResultComponent,
+    ExamsComponent,
+    KnowledgeComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +57,11 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     FormsModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule,
+    MatButtonToggleModule
   ],
-  providers: [],
+  providers: [LinkmenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

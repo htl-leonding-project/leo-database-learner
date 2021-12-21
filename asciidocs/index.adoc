@@ -2,6 +2,7 @@
 19SM, 22TI, 15PV
 1.0.0, 2020-10-09:
 ifndef::imagesdir[:imagesdir: images]
+
 //:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
 :sourcedir: ../src/main/java
 :icons: font
@@ -13,15 +14,22 @@ ifndef::imagesdir[:imagesdir: images]
 // Short Desciption of your Project
 Practice tool to learn database commands and to check your level of knowledge.
 
+== Our Project
+Short promotion video of our project.
+
+video::videos/promotion.mp4[width=640]
+
 == Systemarchitecture
 
-image::07012021.png[]
+image::Systemarchitektur.PNG[]
 
 == Documents
 
 https://htl-leonding-project.github.io/leo-database-learner/howToStart.html[*How to get started*,role=black] +
 
-https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*Systemarchitecture*,role=black] +
+https://htl-leonding-project.github.io/leo-database-learner/system-architecture_5AHITM_2021[*Systemarchitecture*,role=black] +
+
+https://htl-leonding-project.github.io/leo-database-learner/system-architecture.html[*(Deprecated)Systemarchitecture*,role=black] +
 
 https://htl-leonding-project.github.io/leo-database-learner/designKonzept.html[*Design concept*,role=black] +
 
@@ -50,5 +58,4 @@ https://htl-leonding-project.github.io/leo-database-learner/howtooracledatabase.
 https://github.com/Primetzvan/LeoDatabaseLearner
 
 * Githubpage:
-
-https://primetzvan.github.io/LeoDatabaseLearner/[*Index*,role=black]
+https://primetzvan.github.io/LeoDatabaseLearner

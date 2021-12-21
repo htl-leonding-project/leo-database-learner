@@ -1,0 +1,482 @@
+= Leodatabase Learner
+:customcss: css/presentation.css
+:revealjs_customtheme: css/sky.css
+:revealjs_width: 1408
+:revealjs_height: 792
+:source-highlighter: highlightjs
+:revealjs_parallaxBackgroundImage: images/background-landscape-light-orange.jpg
+:revealjs_parallaxBackgroundSize: 4936px 2092px
+:highlightjs-theme: css/atom-one-light.css
+// we want local served font-awesome fonts
+:iconfont-remote!:
+:iconfont-name: fonts/fontawesome/css/all
+:author: Primetzhofer, Raffeiner, Steigersdorfer, Turner
+:revnumber: 1.0
+:revdate: {docdate}
+:revremark: Leodatabase Learner
+:encoding: utf-8
+:lang: de
+:imagesdir: images
+:doctype: article
+:icons: font
+//:revealjs_parallaxBackgroundImage: background-landscape-light-orange.jpg
+//:revealjs_parallaxBackgroundSize: 4936px 2092px
+
+//:numbered:
+
+// Kürzen des Videos
+// ffmpeg -ss 00:00:00 -i orchestra.mp4 -to 00:00:05 -c copy orchestra-short.mp4
+
+== Video
+
+video::promotion.mp4[Promitionvideo]
+
+== Agenda
+[%step]
+* Übersicht Leodatabase Learner
+* Ergebnis des 1. Sprints
+* Ergebnis des 2. Sprints
+* Ergebnis des 3. Sprints
+
+[.lightbg,background-video="",background-video-loop="true",background-opacity="0.7"]
+== Übersicht Leodatabase Learner
+
+//[%step]
+//* hhg
+
+
+[.lightbg,background-opacity="0.7"]
+=== Altes CLD
+
+[plantuml,cld_old,png]
+----
+include::plantuml/cld.puml[]
+----
+
+=== Geändertes CLD?
+
+[plantuml,cld_new,png]
+----
+include::plantuml/cld_update.puml[]
+----
+
+=== Systemarchitektur
+
+image:Systemarchitektur.PNG[]
+
+
+
+=== Altes Use Case Diagram
+
+[plantuml]
+----
+@startuml
+left to right direction
+actor Student as s
+actor Teacher as t
+
+package LeoDatabaseLearner {
+  usecase "Aufgaben üben" as UC1
+  usecase "simulierte Prüfung absolvieren" as UC2
+  usecase "Wissensstand einsehen" as UC3
+  usecase "Prüfung freigeben" as UC4
+  usecase "Prüfung absolvieren" as UC5
+  usecase "Übungen / Tests hochladen" as UC6
+  usecase "Wissensstand der Schüler einsehen" as UC7
+}
+s --> UC1
+s --> UC2
+s --> UC3
+s --> UC5
+
+t --> UC4
+t --> UC6
+t --> UC7
+@enduml
+----
+
+=== Neues Use Case Diagram
+
+[plantuml]
+----
+@startuml
+left to right direction
+actor Student as s
+actor Teacher as t
+
+package LeoDatabaseLearner {
+usecase "Aufgaben üben" as UC1
+usecase "Wissensstand einsehen" as UC2
+usecase "Übungen hochladen" as UC3
+usecase "Wissensstand der Schüler einsehen" as UC4
+}
+s --> UC1
+s --> UC2
+
+
+t --> UC3
+t --> UC4
+@enduml
+----
+
+//[%notitle]
+
+== Ergebnis des 1. Sprints
+== Ergebnis des 2. Sprints
+== Ergebnis des 3. Sprints
+
+* https://primetzvan.github.io/hugo-project/[Hugo page Primetzhofer]
+* https://chrissyraffeiner.github.io/hugo-project/[Hugo page Raffeiner]
+
+== Links
+
+* https://github.com/htl-leonding-project/leo-database-learner[github-repo, window="_blank"]
+* https://htl-leonding-project.github.io/leo-database-learner/[github-pages]
+
+
+////
+
+[.decentlightbg,background-video="videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.6"]
+[.columns]
+== Zur Person
+
+[.text-smaller]
+[.column]
+* Gegenstände
+** Datenbanken
+** Programmieren
+** Projektentwicklung
+* Projekte
+** https://cloud.htl-leonding.ac.at/[LeoCloud, window="_blank"]
+** https://htblaleonie.github.io[3D-Avatar Leonie, window="_blank"]
+** https://vm81.htl-leonding.ac.at[YouTrack-Instanz, window="_blank"]
+** https://franklyn.htl-leonding.ac.at/[Franklyn-Server, window="_blank"]
+
+[.text-smaller]
+[.column]
+* Technologien
+** Java / JakartaEE / Quarkus
+** Android (Kotlin)
+** Docker, k8s
+** git / github
+** doc-as-code (Asciidoctor)
+** IoT
+
+[.decentlightbg,background-video="videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.6"]
+== Gründe für VCS
+
+* VCS ... https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control[Version Control Systems, window="_blank"]
+* Keine Daten gehen verloren, auch ältere Programmversionen stets verfügbar
+* Zentralisiertes Code-Repository für Programmier-Teams
+* Geordnetes Erstellen von Programmvarianten (Branches)
+* u.v.m.
+
+=== Microbenchmark Suite [jep]#https://openjdk.java.net/jeps/230[JEP 230]# [version]#12#
+
+[.col3-lc]
+--
+[.small.source,java]
+----
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
+@State(Scope.Thread)
+public class BenchmarkIntegers {
+    @Param("500")
+    private int size;
+    private String[] strings;
+
+    @Setup
+    public void setup() {
+        Random r = new Random(0);
+        strings = new String[size];
+        for (int i = 0; i < size; i++) {
+            strings[i] = "" + (r.nextInt(10000) - 5000);
+        }
+    }
+
+    @Benchmark
+    public void parseInt(Blackhole bh) {
+        for (String s : strings) {
+            bh.consume(Integer.parseInt(s));
+        }
+    }
+}
+----
+--
+
+[.col3-r.small]
+--
+* Based on `jmh`
+* Avoids JIT Falltrips
+* Start via Maven Archteype
+--
+
+
+== Git for Schools
+
+
+* https://education.github.com/[GitHub Education, window="_blank"]
+** https://education.github.com/pack[GitHub for Students, window="_blank"]
+** https://education.github.com/toolbox[GitHub for Teachers, window="_blank"]
+** https://classroom.github.com/classrooms[GitHub Classroom, window="_blank"]
+** https://education.github.com/schools[GitHub Campus Partner Schools, window="_blank"]
+* https://support.atlassian.com/bitbucket-cloud/docs/what-are-the-guidelines-for-academic-licenses/[Bitbucket Academic License, window="_blank"]
+* https://about.gitlab.com/solutions/education/[GitLab for Education, window="_blank"]
+
+[%notitle]
+[.columns.is-vcentered]
+=== GitHub Pro
+
+[.column, height=600]
+image::github-profile.png[]
+
+[.column]
+* Benefits
+** GitHub Pro
+** swag
+
+[%notitle]
+=== gh-pages in Private Repos
+
+image::github-ghpages-in-private-repos.png[background, size="contain"]
+
+[.notes]
+--
+* Im eigenen Repo (ohne Organization) funktioniert es
+* Eine Organization gilt als eigener User, daher gibt es keine education Rabatte
+--
+
+
+
+
+[%notitle]
+=== GitHub Campus Program
+
+image::github-partner-map-title.png[background, size="cover"]
+
+
+[.columns]
+== Git vs GitHub
+
+[.column]
+* Technology
+** https://git-scm.com/[git, window="_blank"]
+
+[.column]
+* Provider / Hoster
+** https://github.com/[github, window="_blank"]
+** https://bitbucket.org[bitbucket, window="_blank"]
+** https://about.gitlab.com/[gitlab, window="_blank"]
+** self-hosted (ie gitlab)
+** ...
+
+=== Centralized VCS
+
+[plantuml, centralized-vcs, png, width=300]
+----
+include::plantuml/centralized-vcs.puml[]
+----
+
+=== Distributed VCS
+
+[plantuml, distributed-vcs, png, width=600]
+----
+include::plantuml/distributed-vcs.puml[]
+----
+
+
+
+== git Workflow
+
+image::git-workflow.png[]
+
+
+
+
+=== Create a Local Repo
+
+[source,bash,highlight=3]
+----
+mkdir my-first-repo
+cd my-first-repo
+git init
+ls -a
+tree -f .git # für Finder: open .git
+rm -rf .git  # -> beim prompt verschwindet die git info
+git init
+----
+
+[.notes]
+--
+* Verwendung von oh-my-zsh für Anzeige der git-info
+--
+
+
+=== Add Files to Local Repo
+
+https://htl-leonding-college.github.io/git-lecture-notes/#_a_first_commit[Demo - A first commit, window="_blank"]
+
+=== Create Remote Repo
+
+[%step]
+* Config github authentification
+* Create repo in github
+* Connect your local folder to the github-repo
+
+
+
+
+=== Authenticate to Remote Repo
+
+* https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token[Access Token, window="_blank"]
+* ssh (https://www.heise.de/tipps-tricks/SSH-Key-fuer-GitHub-Repositories-einrichten-4627459.html[SSH-Key für GitHub-Repositories einrichten, window="_blank"])
+
+
+
+
+[%notitle]
+=== Create Remote Repo
+
+image::github-create-repo.png[background, size="cover"]
+
+
+
+[%notitle]
+=== Push to Remote Repo
+
+image::github-my-first-repo.png[background, size="cover"]
+
+
+
+
+[%notitle]
+=== my-first-repo
+
+image::github-my-first-repo-2.png[background, size="cover"]
+
+
+
+== Pull Requests
+
+* Wofür?
+** für Teams mit Senior- und Junior-Developers
+** bei open-source-Projekten
+* Wie?
+** Projekt clonen
+** Änderungen vornehmen
+** Pull Request beantragen
+** Pull Request annehmen oder ablehnen
+
+
+== Links
+
+[.font-smaller]
+* gh-pages: https://htl-leonding-college.github.io/git-intro-slides[window="_blank"]
+* github-repo: https://github.com/htl-leonding-college/git-intro-slides[window="_blank"]
+* https://bit.ly/htl-leonding[der stützpunkt, window="_blank"]
+* https://git-scm.com/book/de/v2[Online Git-Buch, window="_blank"]
+* https://htl-leonding-college.github.io/git-lecture-notes/
+* https://codewithmosh.com/[Code with Mosh (Aktion abwarten), window="_blank"]
+* https://www.udemy.com/[Udemy (Aktion abwarten), window="_blank"]
+
+////
+////
+
+
+== Distributed VCS
+
+image::distributed-vcs.png[background, size=contain]
+
+== My first slide
+
+* Topic 1
+* Topic 2
+
+[%notitle]
+== Third Slide
+
+[.stretch]
+image:https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[VW]
+
+== 4th Slide
+
+[.stretch]
+image:https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[VW]
+
+[%notitle]
+== 5th Slide
+
+image:https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[VW]
+
+[%notitle]
+== 5th Slide
+
+image::https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[background, VW]
+
+[%notitle]
+== maxed_image
+
+[.maxed-image]
+image::https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[VW]
+
+[%notitle]
+== 5th Slide
+
+image::https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[background, size=cover, opacity=0.5]
+
+== Image Role Right [alt syntax]
+
+[.right]
+image::https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[alt text,width=400px]
+
+* Yup
+* That
+* Too
+
+
+
+
+// https://raw.githubusercontent.com/asciidoctor/asciidoctor-reveal.js/master/examples/images.adoc
+
+// https://zenika.github.io/adoc-presentation-model/reveal/reveal-my-asciidoc.html
+
+
+// https://asciidoctor-revealjs-examples.netlify.app/
+
+
+Thomas W. Stütz
+1.0, 2020-08-22
+ifndef::sourcedir[:sourcedir: ../src/main/java]
+ifndef::imagesdir[:imagesdir: images]
+ifndef::backend[:backend: html5]
+:icons: font
+
+== First Slide
+
+* aaa
+* bbb
+* ccc [red]#red text#
+
+=== Second Slide
+
+[plantuml,cld,png]
+----
+@startuml
+class Person {
+brand: String
+type: String
+}
+@enduml
+----
+
+[%notitle]
+== Third Slide
+
+image:https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940[VW]
+
+== Fourth Slide
+
+IMPORTANT: Something very important
+
+
+////

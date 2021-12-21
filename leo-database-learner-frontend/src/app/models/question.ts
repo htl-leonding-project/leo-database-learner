@@ -1,24 +1,21 @@
-import {Person} from './person';
-import {Datamodel} from './datamodel';
+import {ExercisePackage} from "./exercisePackage";
 
 export class Question {
 
-  id: number;
+  name: string;
   text: string;
   sql: string;
   points: number;
-  localdate: number;
-  datamodel: Datamodel;
-  owner: Person;
+  localdate: Date;
+  exercisePackage: ExercisePackage;
 
 
-  constructor(id: number, text: string, sql: string, points: number, localdate: number, datamodel: Datamodel, owner: Person) {
-    this.id = id;
+  constructor(name: string, text: string, sql: string, points: number, localdate: Date, exercisePackage: ExercisePackage) {
+    this.name = name;
     this.text = text;
     this.sql = sql;
     this.points = points;
     this.localdate = localdate;
-    this.datamodel = datamodel;
-    this.owner = owner;
+    this.exercisePackage = exercisePackage;
   }
 }

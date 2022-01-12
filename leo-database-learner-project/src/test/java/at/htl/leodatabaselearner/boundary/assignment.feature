@@ -1,5 +1,5 @@
-Feature: Student Management Endpoint
-  An user of the Endpoint is able to create a Student, get all Students, get a special Student by his Id and get all Students per Class.
+Feature: Assignment Management Endpoint
+  An user of the Endpoint is able to get all Assignments and to add an Assignment.
 
   Background:
     * url baseUrl

@@ -1,5 +1,5 @@
-Feature: Student Management Endpoint
-  An user of the Endpoint is able to create a Student, get all Students, get a special Student by his Id and get all Students per Class.
+Feature: ExercisePackage Management Endpoint
+  An user of the Endpoint is able to get all ExercisePackages and to add an exercisePackage.
 
   Background:
     * url baseUrl

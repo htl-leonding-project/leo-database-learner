@@ -11,5 +11,4 @@ class StudentEndpointTest {
     Karate testStudentEndpoint(){
         return Karate.run("student").relativeTo(getClass());
     }
-
 }

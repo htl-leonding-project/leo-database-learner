@@ -9,3 +9,12 @@ Feature: Student Management Endpoint
       When method GET
       * print response
 
+    Scenario: Get student by id
+      Given path "student/getbyid/{id}"
+      When method GET
+      * print response
+
+      Scenario: Add student
+        Given path "student/add_student"
+        When method POST
+        * print response

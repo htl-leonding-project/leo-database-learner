@@ -11,3 +11,16 @@ a:visited{
   color: white;
   text-decoration: none;
 }
+
+.container {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 45%;
+  right: 45%;
+  color: white;
+
+}

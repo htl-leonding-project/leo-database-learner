@@ -230,3 +230,11 @@ Accept: application/json
 
 ###
 
+POST http://localhost:8080/exercise_sql/result
+Content-Type: text/plain
+
+select * from emp
+
+
+###
+

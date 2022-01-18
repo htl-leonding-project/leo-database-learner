@@ -16,16 +16,12 @@ export class TasksComponent implements OnInit {
 
   public tasks: Question[] = [];
 
-  public person: Person[] = [];
-
-  constructor(private personService: PersonService, public questionService: QuestionService, public login: MatDialog, public linkmenu : LinkmenuService) {
+  constructor(public questionService: QuestionService, public login: MatDialog, public linkmenu : LinkmenuService) {
     linkmenu.setMenu(true, true, true, true);
   }
 
   ngOnInit(): void {
     this.questionService.getAllQuestion().subscribe(data => {this.tasks = data});
-    this.personService.getAllPerson().subscribe(p => this.person = p);
-
   }
 
   openLogin(){

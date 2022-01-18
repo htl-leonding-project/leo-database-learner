@@ -3,6 +3,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {LoginComponent} from "../login/login.component";
 import {MatDialog} from "@angular/material/dialog";
 import { LinkmenuService } from '../service/linkmenu.service';
+import { ResultComponent } from '../result/result.component';
+
+export interface DialogData{
+  result: String[];
+}
 
 @Component({
   selector: 'app-task-detail',
@@ -11,33 +16,33 @@ import { LinkmenuService } from '../service/linkmenu.service';
 })
 export class TaskDetailComponent implements OnInit {
 
-  id = '';
+  public input : string;
+  public result : String[];
 
   constructor(
-    private route: ActivatedRoute, public login: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
+    private route: ActivatedRoute, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
       linkmenu.setMenu(true, true, true, true);
   }
 
   ngOnInit(): void {
-
-    this.id = this.route.snapshot.paramMap.get('id') || '';
-
-    // this.route.paramMap.subscribe(params => {
-    //   console.log(params.get('id'));
-    //   this.id = params.get('id');
-    // });
   }
 
-  click(): void {
-    alert('Data successfully sent');
+  evaluate() {
+    //ev result
+    const dialogRef = this.showresult.open(ResultComponent, {width: "40%",
+    data: {
+      result: this.result
+    },});
   }
 
   openLogin() {
     const dialogRef = this.login.open(LoginComponent, {width: "40%"});
   }
 
-  sendButton() {
-    alert('Data successfully sent');
-    this.router.navigateByUrl('result');
+  showResult() {
+    const dialogRef = this.showresult.open(ResultComponent, {width: "40%",
+    data: {
+      result: this.result
+    },});
   }
 }

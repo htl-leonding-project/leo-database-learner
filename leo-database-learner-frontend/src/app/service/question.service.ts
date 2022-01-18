@@ -14,4 +14,8 @@ export class QuestionService {
   getAllQuestion(): Observable<Question[]>{
     return this.http.get<Question[]>('http://localhost:8080/question/get_all');  }
 
+  getQuestionsFormPackage(): Observable<Question[]>{
+    return this.http.get<Question[]>('http://localhost:8080/question/get_all');  
+  }
+
 }

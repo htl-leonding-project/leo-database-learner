@@ -23,10 +23,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
-import { ResultComponent } from './result/result.component';
 import { ExamsComponent } from './exams/exams.component';
 import { KnowledgeComponent } from './knowledge/knowledge.component';
 import { LinkmenuService } from './service/linkmenu.service';
+import { ExcerciseComponent } from './excercise/excercise.component';
+import { ExcerciseService } from './service/excercise.service';
+import {MatDividerModule} from '@angular/material/divider';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +41,10 @@ import { LinkmenuService } from './service/linkmenu.service';
     ImpressumComponent,
     LoginComponent,
     HomeComponent,
-    ResultComponent,
     ExamsComponent,
-    KnowledgeComponent
+    KnowledgeComponent,
+    ExcerciseComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -59,9 +63,10 @@ import { LinkmenuService } from './service/linkmenu.service';
     MatSidenavModule,
     MatDialogModule,
     MatRadioModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatDividerModule
   ],
-  providers: [LinkmenuService],
+  providers: [LinkmenuService, ExcerciseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

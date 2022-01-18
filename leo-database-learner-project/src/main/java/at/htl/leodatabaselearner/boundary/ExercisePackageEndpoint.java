@@ -29,6 +29,7 @@ public class ExercisePackageEndpoint {
     }
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("get_all")
     public List<ExercisePackage> getAllExercisePackage() {
         return exercisePackageRepository.findAllExercisePackages();

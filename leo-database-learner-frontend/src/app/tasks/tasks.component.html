@@ -1,6 +1,16 @@
-<ul>
-    <li *ngFor="let t of tasks">
-      <a style="color: black; text-decoration: none;" [routerLink]="t.id.toString()">{{ tasks }}</a>
-    </li>
-</ul>
-
+<div id="icon" routerLink="/excercises"><mat-icon>arrow_back_ios</mat-icon></div>
+<div id="content">
+  <div id="label"><p><span>test</span></p><p>Done</p></div>
+  <mat-list>
+      <div *ngFor="let t of tasks; index as i">
+          <mat-list-item [routerLink]="t.id.toString()">
+              <div id="inline">
+                  <p>{{t.name}}</p>
+                  <p>-</p>
+              </div>   
+              </mat-list-item>
+          <mat-divider *ngIf="i < tasks.length -1 "></mat-divider>
+          <div id="clear"></div>
+      </div>
+  </mat-list>
+</div>

@@ -17,9 +17,9 @@ public class DataModel extends PanacheEntity {
     public String comment;
 
     //TODO: Blob
-    //@Lob
+    @Lob
     //private byte[] erd;
-    //private Blob erd;
+    private Blob erd;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "person_id")

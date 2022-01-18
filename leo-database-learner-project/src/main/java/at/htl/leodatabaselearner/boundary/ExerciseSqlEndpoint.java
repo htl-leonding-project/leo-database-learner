@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.sql.SQLException;
 import java.util.List;
 
 @Path("/exercise_sql")
@@ -19,14 +20,16 @@ public class ExerciseSqlEndpoint {
     @Inject
     ExerciseSqlRepository exerciseSqlRepository;
 
-    @GET
-    @Path("result/{sql}")
-    public Response getResultset(@PathParam("sql") String sql) {
+    @POST
+    @Path("result")
+    @Consumes(MediaType.TEXT_PLAIN)
+    public Response getResultset(String sql) throws SQLException {
 
-        //final List result = exerciseSqlRepository.getSqlResultsFromDB(sql);
+      System.out.println(sql);
 
-        return Response.ok().build();
+      List result = exerciseSqlRepository.getSqlResultsFromDB(sql);
 
+      return Response.ok(result).build();
     }
 
     @GET

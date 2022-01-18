@@ -57,8 +57,11 @@ public class AutoStart {
         ExercisePackage exercisePackage = new ExercisePackage("Datamodel 1",dataModel);
 
         Question question = new Question("1. Question","text01", "Select d from IT160205.DEPT d", 2,exercisePackage);
+      Question question1 = new Question("2. Question","text01", "Select d from IT160205.DEPT d", 2,exercisePackage);
+      Question question2 = new Question("3. Question","text01", "Select d from IT160205.DEPT d", 2,exercisePackage);
 
-        Evaluation evaluation = new Evaluation(10,s1,question);
+
+      Evaluation evaluation = new Evaluation(10,s1,question);
 
         Assignment assignment = new Assignment(s1,exercisePackage);
 
@@ -69,6 +72,8 @@ public class AutoStart {
         sqlScriptRepository.addSqlScript(sqlScript);
         exercisePackageRepository.addExercisePackage(exercisePackage);
         questionRepository.addQuestion(question);
+        questionRepository.addQuestion(question1);
+        questionRepository.addQuestion(question2);
         evaluationRepository.addEvaluation(evaluation);
         assignmentRepository.addAssignment(assignment);
 

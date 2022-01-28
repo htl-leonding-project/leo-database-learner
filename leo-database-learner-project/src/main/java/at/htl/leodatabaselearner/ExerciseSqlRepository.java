@@ -59,7 +59,9 @@ public class ExerciseSqlRepository {
         list.add(sbStudent.toString());
       }
     } catch (SQLException exception) {
-      return List.of(exception.getMessage());
+      list.add("ERROR");
+      list.add(exception.getMessage());
+      return list;
     }
 
     return list;

@@ -11,6 +11,7 @@ export class ResultComponent implements OnInit {
 
   public header : String[];
   public tabledata : String[][] = [];
+  public errormessage : String;
   public error : Boolean = false;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
@@ -29,6 +30,7 @@ export class ResultComponent implements OnInit {
       }
     }else{
       this.error = true;
+      this.errormessage = this.data.result[1];
     }
   }
 

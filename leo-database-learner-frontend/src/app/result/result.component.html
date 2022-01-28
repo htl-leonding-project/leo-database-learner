@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="!this.error">
     <tr>
         <th *ngFor="let h of this.header">{{h}}</th>
     </tr>
@@ -9,3 +9,7 @@
         </td>
     </tr>
 </table>
+
+<div *ngIf="this.error">
+    <p>{{this.errormessage}}</p>
+</div>

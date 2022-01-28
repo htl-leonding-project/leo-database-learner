@@ -30,6 +30,7 @@ import { ExcerciseComponent } from './excercise/excercise.component';
 import { ExcerciseService } from './service/excercise.service';
 import {MatDividerModule} from '@angular/material/divider';
 import { ResultComponent } from './result/result.component';
+import { ResultService } from './service/result.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { ResultComponent } from './result/result.component';
     MatButtonToggleModule,
     MatDividerModule
   ],
-  providers: [LinkmenuService, ExcerciseService],
+  providers: [LinkmenuService, ExcerciseService, ResultService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

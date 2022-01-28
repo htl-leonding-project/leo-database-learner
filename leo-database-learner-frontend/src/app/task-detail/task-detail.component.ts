@@ -4,6 +4,7 @@ import {LoginComponent} from "../login/login.component";
 import {MatDialog} from "@angular/material/dialog";
 import { LinkmenuService } from '../service/linkmenu.service';
 import { ResultComponent } from '../result/result.component';
+import { ResultService } from '../service/result.service';
 
 export interface DialogData{
   result: String[];
@@ -19,8 +20,7 @@ export class TaskDetailComponent implements OnInit {
   public input : string;
   public result : String[];
 
-  constructor(
-    private route: ActivatedRoute, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
+  constructor(private route: ActivatedRoute, public resultService: ResultService, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
       linkmenu.setMenu(true, true, true, true);
   }
 
@@ -28,11 +28,15 @@ export class TaskDetailComponent implements OnInit {
   }
 
   evaluate() {
-    //ev result
-    const dialogRef = this.showresult.open(ResultComponent, {width: "40%",
-    data: {
-      result: this.result
-    },});
+    console.log(this.input);
+    this.resultService.getResult(this.input).subscribe((data : String[]) => {
+      this.result = data
+      const dialogRef = this.showresult.open(ResultComponent, {width: "40%",
+      data: {
+        result: this.result
+      },});
+    });
+    
   }
 
   openLogin() {

@@ -1,1 +1,11 @@
-<p>result works!</p>
+<table>
+    <tr>
+        <th *ngFor="let h of this.header">{{h}}</th>
+    </tr>
+
+    <tr *ngFor="let r of this.tabledata; index as i1">
+        <td *ngFor="let c of this.header; index as i2">
+            {{tabledata[i1][i2]}}
+        </td>
+    </tr>
+</table>

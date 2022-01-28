@@ -25,8 +25,6 @@ public class ExerciseSqlEndpoint {
     @Consumes(MediaType.TEXT_PLAIN)
     public Response getResultset(String sql) throws SQLException {
 
-      System.out.println(sql);
-
       List result = exerciseSqlRepository.getSqlResultsFromDB(sql);
 
       return Response.ok(result).build();

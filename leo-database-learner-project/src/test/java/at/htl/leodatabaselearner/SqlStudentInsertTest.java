@@ -1,5 +1,7 @@
+/*
 package at.htl.leodatabaselearner;
 
+import at.htl.leodatabaselearner.boundary.ExerciseSqlEndpoint;
 import io.agroal.api.AgroalDataSource;
 import io.quarkus.agroal.DataSource;
 import io.quarkus.test.junit.QuarkusTest;
@@ -22,6 +24,17 @@ public class SqlStudentInsertTest {
   @Inject
   @DataSource("student")
   AgroalDataSource studentDataSource;
+
+  @Inject
+  ExerciseSqlEndpoint exerciseSqlEndpoint;
+
+  @Test
+  @Order(1)
+  void t010_test() throws SQLException {
+
+    exerciseSqlEndpoint.getResultset("select * from emp");
+
+  }
 
 
   @Test
@@ -187,3 +200,4 @@ public class SqlStudentInsertTest {
   }
 }
 
+*/

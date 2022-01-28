@@ -249,3 +249,19 @@ select * from emp
 
 ###
 
+POST http://localhost:8080/exercise_sql/result
+Content-Type: text/plain
+
+sel from emp
+
+
+###
+
+POST http://localhost:8080/exercise_sql/validation
+Content-Type: text/plain
+
+select * from emp
+
+
+###
+

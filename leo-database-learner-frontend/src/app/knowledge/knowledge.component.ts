@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LinkmenuService } from '../service/linkmenu.service';
 
 @Component({
   selector: 'app-knowledge',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KnowledgeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public linkmenu : LinkmenuService) {
+    linkmenu.setMenu(true, true, true, true);
+  }
 
   ngOnInit(): void {
   }

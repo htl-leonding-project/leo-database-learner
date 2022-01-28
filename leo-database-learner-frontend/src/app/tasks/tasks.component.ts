@@ -5,6 +5,7 @@ import {QuestionService} from '../service/question.service';
 import {Question} from '../models/question';
 import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
+import { LinkmenuService } from '../service/linkmenu.service';
 
 @Component({
   selector: 'app-tasks',
@@ -17,7 +18,8 @@ export class TasksComponent implements OnInit {
 
   public person: Person[] = [];
 
-  constructor(private personService: PersonService, public questionService: QuestionService, public login: MatDialog) {
+  constructor(private personService: PersonService, public questionService: QuestionService, public login: MatDialog, public linkmenu : LinkmenuService) {
+    linkmenu.setMenu(true, true, true, true);
   }
 
   ngOnInit(): void {

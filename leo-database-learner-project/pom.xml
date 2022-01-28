@@ -100,6 +100,11 @@
       <version>1.1.0</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>io.quarkus</groupId>
+          <artifactId>quarkus-security-jpa</artifactId>
+          <version>2.5.1.Final</version>
+      </dependency>
   </dependencies>
   <build>
     <testResources>
@@ -111,9 +116,6 @@
       </testResource>
     </testResources>
     <plugins>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-      </plugin>
       <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
@@ -142,17 +144,6 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-      </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>16</source>
-                <target>16</target>
-            </configuration>
-        </plugin>
     </plugins>
   </build>
   <profiles>

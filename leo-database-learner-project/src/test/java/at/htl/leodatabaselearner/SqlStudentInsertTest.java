@@ -1,3 +1,4 @@
+/*
 package at.htl.leodatabaselearner;
 
 import at.htl.leodatabaselearner.boundary.ExerciseSqlEndpoint;
@@ -199,3 +200,4 @@ public class SqlStudentInsertTest {
   }
 }
 
+*/

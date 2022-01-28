@@ -1,1 +1,22 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+    <div id="menu">
+      <mat-icon (click)="drawer.toggle();">menu</mat-icon>
+    </div>
+    <a routerLink="/tasks"><span>Tasks</span></a>
+    <a routerLink="/exams"><span>Exams</span></a>
+    <a routerLink="/knowledge"><span>Knowledge</span></a>
+    <div id="logo"></div>
+  </mat-toolbar>
+  
+  <mat-drawer-container autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+      <div>
+        <a routerLink="/home" *ngIf="menu[0]">Home</a>
+        <a routerLink="/about" *ngIf="menu[1]">About</a>
+        <a routerLink="/impressum" *ngIf="menu[2]">Impressum</a>
+        <a routerLink="/profile" *ngIf="menu[3]">Profil</a>
+        <a>Log</a>
+      </div>
+    </mat-drawer>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>

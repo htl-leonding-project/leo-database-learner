@@ -10,8 +10,9 @@ Feature: Student Management Endpoint
       * print response
 
     Scenario: Get student by id
-      Given path "student/getbyid/{id}"
+      Given path "student/getbyid"
       When method GET
+      When response matches = { "id": 3, firstName": "Bernd", "lastName": "test", "password": "$2a$10$uJFbfgm366e3Iprgl5HFNeb6NRds3VxHJ7luCSdUvqxKcOQSMohse", "classname": "test"}
       * print response
 
       Scenario: Add student

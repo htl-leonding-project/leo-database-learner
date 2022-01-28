@@ -4,18 +4,29 @@ Feature: Student Management Endpoint
   Background:
     * url baseUrl
 
-    Scenario: Get all Students
-      Given path "student/get_all"
-      When method GET
-      * print response
+  Scenario: Get all Students
+    Given path "student/get_all"
+    When method GET
+    * print response
 
-    Scenario: Get student by id
-      Given path "student/getbyid"
-      When method GET
-      When response matches = { "id": 3, firstName": "Bernd", "lastName": "test", "password": "$2a$10$uJFbfgm366e3Iprgl5HFNeb6NRds3VxHJ7luCSdUvqxKcOQSMohse", "classname": "test"}
-      * print response
+  Scenario: Get student by id 3
+    Given path "student/getbyid"
+      #ID 3
+    And path 3
+    When method GET
+    Then match response contains {"firstName": "Bernd","id": 3,"lastName": "test","password": "#notnull","classname": "test"}
+    * print response
 
-      Scenario: Add student
-        Given path "student/add_student"
-        When method POST
-        * print response
+  Scenario: Add student
+    Given path "student/add_student"
+    And request
+        """
+        {
+          "firstName": "Sabrina",
+          "lastName": "Haus",
+          "password": "ADMIN",
+          "classname": "test"
+        }
+        """
+    When method POST
+    * print response

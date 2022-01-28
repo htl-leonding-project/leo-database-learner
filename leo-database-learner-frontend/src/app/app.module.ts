@@ -26,6 +26,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { ResultComponent } from './result/result.component';
 import { ExamsComponent } from './exams/exams.component';
 import { KnowledgeComponent } from './knowledge/knowledge.component';
+import { LinkmenuService } from './service/linkmenu.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { KnowledgeComponent } from './knowledge/knowledge.component';
     MatRadioModule,
     MatButtonToggleModule
   ],
-  providers: [],
+  providers: [LinkmenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -33,7 +33,6 @@ public class ExerciseSqlRepository {
     StringBuilder sbStudent = new StringBuilder();
     Statement stStudent = cStudent.createStatement();
     ResultSet rsStudent = stStudent.executeQuery(sql);
-    cStudent.close();
 
       for (int i = 1; i < rsStudent.getMetaData().getColumnCount(); i++) {
         if (i < rsStudent.getMetaData().getColumnCount() - 1) {
@@ -49,8 +48,8 @@ public class ExerciseSqlRepository {
 
       while (rsStudent.next()) {
         sbStudent = new StringBuilder();
-        for (int i = 0; i < head.size() - 1; i++) {
-          if (i < head.size() - 2) {
+        for (int i = 0; i < head.size(); i++) {
+          if (i < head.size() - 1) {
             sbStudent.append(rsStudent.getString(head.get(i).toString())).append(" ");
           } else {
             sbStudent.append(rsStudent.getString(head.get(i).toString()));
@@ -74,9 +73,6 @@ public class ExerciseSqlRepository {
       //StringBuilder sbStudent = new StringBuilder();
       Statement statement = connection.createStatement();
       ResultSet rsStudent = statement.executeQuery(sql);
-      connection.close();
-      statement.close();
-      rsStudent.close();
 
       connection = prodDataSource.getConnection();
       // StringBuilder sbSolution = new StringBuilder();

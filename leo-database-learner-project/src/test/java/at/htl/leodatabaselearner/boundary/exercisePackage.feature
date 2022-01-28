@@ -11,5 +11,20 @@ Feature: ExercisePackage Management Endpoint
 
       Scenario: Add exercisePackage
         Given path "exercisePackage/add_exercisePackage"
+        And request
+        """
+        {
+  "name": "Datamodel 1",
+  "datamodel": {
+    "name": "Hundeschule1",
+    "person": {
+      "firstName": "Sarah",
+      "lastName": "Feichtinger",
+      "role": "ADMIN"
+    },
+    "comment": "Das Modell zeigt eine Hundeschule mit den jeweiligen Attributen."
+  }
+}
+        """
         When method POST
         * print response

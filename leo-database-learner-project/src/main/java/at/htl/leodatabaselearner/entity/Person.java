@@ -18,7 +18,7 @@ public abstract class Person extends PanacheEntityBase {
   @Id
   @GeneratedValue(strategy = GenerationType.TABLE)
   private Long id;
-  ;
+
 
   public String firstName;
   public String lastName;

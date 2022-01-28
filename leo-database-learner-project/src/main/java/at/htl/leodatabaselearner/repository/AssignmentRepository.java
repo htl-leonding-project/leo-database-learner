@@ -10,8 +10,8 @@ import java.util.List;
 @ApplicationScoped
 public class AssignmentRepository implements PanacheRepository<Assignment> {
 
-    public void addAssignment(Assignment entity) {
-        getEntityManager().merge(entity);
+    public Assignment addAssignment(Assignment entity) {
+        return getEntityManager().merge(entity);
     }
 
     public List<Assignment> findAllAssignments(){

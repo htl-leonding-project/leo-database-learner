@@ -5,7 +5,7 @@ Feature: SolutionSql Management Endpoint
     * url baseUrl
 
     Scenario: Get solutionSql resultset
-      Given path "result/{id}"
+      Given path "result"
       When method GET
       * print response
 

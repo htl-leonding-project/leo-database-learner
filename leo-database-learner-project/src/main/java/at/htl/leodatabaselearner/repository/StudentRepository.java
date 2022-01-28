@@ -20,7 +20,7 @@ public class StudentRepository implements PanacheRepository<Student> {
 
     public List<Student> findAllStudentsByClassname(String classname){
         var query = getEntityManager().createQuery("Select st from Student st " +
-                "where st.classname = :classname", Student.class);
+                "where st.classname =:classname", Student.class);
         query.setParameter("classname", classname);
         return query.getResultList();
     }

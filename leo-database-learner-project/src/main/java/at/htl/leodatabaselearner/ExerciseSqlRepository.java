@@ -65,22 +65,31 @@ public class ExerciseSqlRepository {
   }
 
   public String compareSqlResults(String sql) throws SQLException {
+    Connection connection;
+    Statement statement;
+    ResultSet rsStudent;
+    Connection connProd;
+    Statement statProd;
+    ResultSet rsSolution;
 
     // Zwei Datenbank verbindungen gehen nicht
-
     try {
-      Connection connection = studentDataSource.getConnection();
-      //StringBuilder sbStudent = new StringBuilder();
-      Statement statement = connection.createStatement();
-      ResultSet rsStudent = statement.executeQuery(sql);
-
-      connection = prodDataSource.getConnection();
-      // StringBuilder sbSolution = new StringBuilder();
+      connection = studentDataSource.getConnection();
       statement = connection.createStatement();
-      ResultSet rsSolution = statement.executeQuery(sql);
-      connection.close();
+      rsStudent = statement.executeQuery(sql);
+    } catch (SQLException exception) {
+      return exception.getMessage();
+    }
 
-      return rsStudent.toString();
+      try{
+        connProd = prodDataSource.getConnection();
+        statProd = connProd.createStatement();
+        rsSolution = statProd.executeQuery(sql);
+      }catch (SQLException exception){
+        return exception.getMessage();
+      }
+
+      return rsSolution.toString();
      // return rsSolution.getMetaData().toString();
 
 /*      var allMyErrors = new ArrayList<ErrorResult>();
@@ -104,9 +113,6 @@ public class ExerciseSqlRepository {
         System.out.println("Incorrect number of rows in result set");
       }*/
       //return allMyErrors;
-    } catch (SQLException exception) {
-      return null;
-    }
 
   }
 

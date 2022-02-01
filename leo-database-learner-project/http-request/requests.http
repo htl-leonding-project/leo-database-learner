@@ -163,9 +163,13 @@ GET http://localhost:8080/question/getbyid/1
 
 ###
 
+GET http://localhost:8080/question/getsqlbyquestionid/4
+
+###
 
 GET http://localhost:8080/question/get_all
 Accept: application/json
+
 
 ###
 

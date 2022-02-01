@@ -53,4 +53,14 @@ public class QuestionRepository implements PanacheRepository<Question> {
     return query.getSingleResult();
   }
 
+
+  public String getMusterSqlByQuestionId(Long id){
+
+    var query = getEntityManager()
+            .createQuery("Select q from Question q where q.id =:id", Question.class);
+    query.setParameter("id", id);
+
+    return query.getSingleResult().sql;
+
+  }
 }

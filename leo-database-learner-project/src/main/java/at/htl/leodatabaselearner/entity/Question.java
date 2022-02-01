@@ -36,6 +36,11 @@ public class Question extends PanacheEntity {
   public Question() {
   }
 
+  public Long getId() {
+    return id;
+  }
+
+
   @Override
   public String toString() {
     return "Question{" +

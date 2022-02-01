@@ -36,7 +36,7 @@ public class ExerciseSqlEndpoint {
   @Consumes(MediaType.TEXT_PLAIN)
   public Response getValidation(String sql) throws SQLException {
 
-    String result = exerciseSqlRepository.compareSqlResults(sql);
+    List<String> result = exerciseSqlRepository.compareSqlResults(sql);
 
     return Response.ok(result).build();
   }

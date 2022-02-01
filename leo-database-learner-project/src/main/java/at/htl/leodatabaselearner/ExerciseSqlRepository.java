@@ -58,55 +58,76 @@ public class ExerciseSqlRepository {
         list.add(sbStudent.toString());
       }
     } catch (SQLException exception) {
-      return List.of(exception.getMessage());
+      list.add("ERROR");
+      list.add(exception.getMessage());
+      return list;
     }
 
     return list;
   }
 
-  public String compareSqlResults(String sql) throws SQLException {
+  public List<String> compareSqlResults(String sql) throws SQLException {
+    Connection connection;
+    Statement statement;
+    ResultSet rsStudent = null;
+    Connection connProd;
+    Statement statProd;
+    ResultSet rsSolution = null;
+    List<String> allMyErrors = new ArrayList<String>();
+
+    allMyErrors.add("VALIDATION");
 
     // Zwei Datenbank verbindungen gehen nicht
-
     try {
-      Connection connection = studentDataSource.getConnection();
-      //StringBuilder sbStudent = new StringBuilder();
-      Statement statement = connection.createStatement();
-      ResultSet rsStudent = statement.executeQuery(sql);
-
-      connection = prodDataSource.getConnection();
-      // StringBuilder sbSolution = new StringBuilder();
+      connection = studentDataSource.getConnection();
       statement = connection.createStatement();
-      ResultSet rsSolution = statement.executeQuery(sql);
-      connection.close();
+      rsStudent = statement.executeQuery(sql);
+    } catch (SQLException exception) {
+      allMyErrors.add(new ErrorResult("Can't connect to database!",null).toString());
+    }
 
-      return rsStudent.toString();
-     // return rsSolution.getMetaData().toString();
+      try{
+        connProd = prodDataSource.getConnection();
+        statProd = connProd.createStatement();
+        // Musterlösung von proddb holen und musterlösungsSQL auf schüler db abrufen
+        // Endpoint umschreiben so dass ich weiß welche Übung ich gerade brauche
+        // Frontend übergibt welche id
+        //rsSolution = statProd.executeQuery(sql);
+        //rsSolution.next();
+        //String musterSQL = rsStudent.getString(rsStudent.getMetaData().getColumnLabel(0));
+        // statement = connection.createStatement();
+        // rsStudent = statement.executeQuery(musterSQL);
 
-/*      var allMyErrors = new ArrayList<ErrorResult>();
-      while (rsStudent.next() && rsSolution.next()){
+      }catch (SQLException exception){
+        allMyErrors.add(new ErrorResult("Can't connect to database!",null).toString());
+      }
+      //return rsSolution.getMetaData().toString();
+
+    if (rsStudent != null && rsSolution != null ) {
+      while (rsStudent.next() && rsSolution.next()) {
         int count = rsStudent.getMetaData().getColumnCount();
         for (int i = 0; i < count; i++) {
           var row1 = rsStudent.getString(rsStudent.getMetaData().getColumnLabel(i));
           var row2 = rsSolution.getString(rsStudent.getMetaData().getColumnLabel(i));
           var save = compareRow(row1, row2);
           for (int j = 0; j < save.size(); j++) {
-            allMyErrors.add(save.get(i));
+            allMyErrors.add(save.get(i).toString());
           }
-*//*          if (compareRow(row1, row2).size() > 0){
-            allMyErrors.add(new ErrorResult("Values not correct",row1));
+          if (compareRow(row1, row2).size() > 0) {
+            allMyErrors.add(new ErrorResult("Values not correct", row1).toString());
             break;
-          }*//*
+          }
         }
       }
+    }else {
+      allMyErrors.add(new ErrorResult("Warning: No rows selected", null).toString());
+    }
       if (rsStudent.next() && !rsSolution.next()
         || !rsStudent.next() && rsSolution.next()){
         System.out.println("Incorrect number of rows in result set");
-      }*/
-      //return allMyErrors;
-    } catch (SQLException exception) {
-      return null;
-    }
+      }
+
+      return allMyErrors;
 
   }
 

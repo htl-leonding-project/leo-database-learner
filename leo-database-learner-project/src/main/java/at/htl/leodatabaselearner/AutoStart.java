@@ -65,7 +65,7 @@ public class AutoStart {
         sqlScript = sqlScriptRepository.addSqlScript(sqlScript);
 
 
-        Question question = new Question("1. Question","text01", "Select d from IT160205.DEPT d", 2,exercisePackage);
+        Question question = new Question("1. Question","text01", "select * from dept", 2,exercisePackage);
         question = questionRepository.addQuestion(question);
 
 

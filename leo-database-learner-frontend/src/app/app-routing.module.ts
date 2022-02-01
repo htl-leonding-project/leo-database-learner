@@ -11,6 +11,7 @@ import {ResultComponent} from "./result/result.component";
 import {ExamsComponent} from "./exams/exams.component";
 import {KnowledgeComponent} from "./knowledge/knowledge.component";
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   {path: 'home', component: HomeComponent},

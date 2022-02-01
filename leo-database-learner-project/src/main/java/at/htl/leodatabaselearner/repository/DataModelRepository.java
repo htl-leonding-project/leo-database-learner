@@ -11,8 +11,8 @@ import java.util.List;
 @ApplicationScoped
 public class DataModelRepository implements PanacheRepository<DataModel> {
 
-    public void addDataModel(DataModel entity){
-        getEntityManager().merge(entity);
+    public DataModel addDataModel(DataModel entity){
+        return getEntityManager().merge(entity);
     }
 
     public List<DataModel> findAllModels(){

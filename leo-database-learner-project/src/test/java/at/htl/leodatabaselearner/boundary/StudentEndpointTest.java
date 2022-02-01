@@ -5,7 +5,8 @@ import io.quarkus.test.junit.QuarkusTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
-class StudentEndpointTest {
+class
+StudentEndpointTest {
 
     @Karate.Test
     Karate testStudentEndpoint(){

@@ -25,7 +25,8 @@ public class ExercisePackageEndpoint {
     @POST
     @Path("add_exercisePackage")
     @Transactional
-    public void addExercisePackage(ExercisePackage exercisePackage) { exercisePackageRepository.addExercisePackage(exercisePackage);
+    public void addExercisePackage(ExercisePackage exercisePackage) {
+        exercisePackageRepository.addExercisePackage(exercisePackage);
     }
 
     @GET
@@ -33,5 +34,13 @@ public class ExercisePackageEndpoint {
     public List<ExercisePackage> getAllExercisePackage() {
         return exercisePackageRepository.findAllExercisePackages();
     }
+
+    @GET
+    @Path("getbypackagename/{name}")
+    public ExercisePackage getExercisePackageByName(@PathParam("name") String name) {
+        return exercisePackageRepository.findExercisePackageByName(name);
+    }
+
+
 
 }

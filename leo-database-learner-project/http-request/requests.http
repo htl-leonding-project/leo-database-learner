@@ -126,6 +126,12 @@ Accept: application/json
 
 ###
 
+GET http://localhost:8080/exercisePackage/getbypackagename/Datamodel1
+Accept: application/json
+
+###
+
+
 
 POST http://localhost:8080/question/add_question
 Content-Type: application/json
@@ -159,6 +165,11 @@ GET http://localhost:8080/question/getbyid/1
 
 
 GET http://localhost:8080/question/get_all
+Accept: application/json
+
+###
+
+GET http://localhost:8080/question/getbypackagename/Datamodel1
 Accept: application/json
 
 ###
@@ -227,6 +238,30 @@ Content-Type: application/json
 
 GET http://localhost:8080/assignment/get_all
 Accept: application/json
+
+###
+
+POST http://localhost:8080/exercise_sql/result
+Content-Type: text/plain
+
+select * from emp
+
+
+###
+
+POST http://localhost:8080/exercise_sql/result
+Content-Type: text/plain
+
+sel from emp
+
+
+###
+
+POST http://localhost:8080/exercise_sql/validation
+Content-Type: text/plain
+
+select * from emp
+
 
 ###
 

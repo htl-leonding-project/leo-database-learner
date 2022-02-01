@@ -16,8 +16,8 @@ public class SqlScriptRepository implements PanacheRepository<SqlScript> {
     // @Inject
     //@PersistenceUnit(name = "prod")
 
-    public void addSqlScript(SqlScript entity){
-        getEntityManager().merge(entity);
+    public SqlScript addSqlScript(SqlScript entity){
+        return getEntityManager().merge(entity);
     }
 
     public SqlScript findById(Long id){

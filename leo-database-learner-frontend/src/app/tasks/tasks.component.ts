@@ -23,16 +23,8 @@ export class TasksComponent implements OnInit {
 
   ngOnInit(): void {
     var urls = this.router.url.split("/");
-    this.questionService.getByPackageName(urls[urls.length-1]).subscribe(data => {this.tasks = data});
-  }
-
-  openLogin(){
-    const dialogRef = this.login.open(LoginComponent,{width:"40%"});
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-
+    //this.questionService.getByPackageName(urls[urls.length-1]).subscribe(data => {this.tasks = data});
+    this.questionService.getAllQuestion().subscribe(data => {this.tasks = data});
   }
 
 }

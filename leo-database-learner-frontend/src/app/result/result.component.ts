@@ -23,14 +23,14 @@ export class ResultComponent implements OnInit {
       for (let index = 1; index < this.data.result.length; index++) {
         var store : String[] = this.data.result[index].split(" ");
         this.tabledata[index-1] = [];
-        for (let index2 = 0; index2 < this.header.length-1; index2++) {
+        for (let index2 = 0; index2 < this.header.length; index2++) {
           //alert("R:" + (index -1) + " / C: " + index2 + ": " + store[index2]);
           this.tabledata[(index - 1)][index2] = store[index2];
         }
       }
     }else{
       this.error = true;
-      this.errormessage = this.data.result[1];
+      this.errormessage = this.data.result.toString();
     }
   }
 

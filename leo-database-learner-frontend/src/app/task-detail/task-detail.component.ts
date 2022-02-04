@@ -38,11 +38,7 @@ export class TaskDetailComponent implements OnInit {
     });
     
   }
-
-  openLogin() {
-    const dialogRef = this.login.open(LoginComponent, {width: "40%"});
-  }
-
+  
   showResult() {
     const dialogRef = this.showresult.open(ResultComponent, {width: "40%",
     data: {

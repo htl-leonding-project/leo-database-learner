@@ -95,7 +95,6 @@ public class ExerciseSqlRepository {
         rsStudent = stat.executeQuery(sql);
       }catch (SQLException exception){
         allMyErrors.add(new ErrorResult("Can't execute query", null).toString());
-        allMyErrors.add(exception.getMessage());
         return allMyErrors;
       }
     } catch (SQLException exception) {

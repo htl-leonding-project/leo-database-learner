@@ -1,7 +1,8 @@
 version: "3.3"
 services:
   proddb:
-    build: proddb
+    container_name: proddb
+    build: database/proddb
     ports:
       - "5432:5432"
     restart: always
@@ -10,7 +11,8 @@ services:
     volumes:
       - proddata:/var/lib/postgresql/data
   studentdb:
-    build: studentdb
+    container_name: studentdb
+    build: database/studentdb
     ports:
       - "5433:5432"
     restart: always
@@ -18,6 +20,18 @@ services:
       POSTGRES_PASSWORD: app
     volumes:
       - studentdata:/var/lib/postgresql/data
+  backend:
+    container_name: backend
+    build: leo-database-learner-project
+    ports:
+      - "8080:8080"
+    restart: always
+  frontend:
+    container_name: backend
+    build: leo-database-learner-frontend
+    ports:
+      - "80:80"
+    restart: always
 volumes:
   proddata:
   studentdata:

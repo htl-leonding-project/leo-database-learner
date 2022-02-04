@@ -47,6 +47,12 @@ public class QuestionEndpoint {
         return this.questionRepository.getAllQuestionsFromExercisePackage(name);
     }
 
+    @GET
+    @Path("getsqlbyquestionid/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getMusterSqlByQuestionId(@PathParam("id") Long id) {
+        return this.questionRepository.getMusterSqlByQuestionId(id);
+    }
 
 
 }

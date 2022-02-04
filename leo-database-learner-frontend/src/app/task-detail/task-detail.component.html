@@ -1,17 +1,20 @@
-<br><br><br>
 
-  <div style="float: left; margin-left: 20%; margin-top: 2%;">
-    <h1 style="font-size: 40pt; color: royalblue; ">Angabe</h1><br>
+<div id="content">
+  <div>
+    <h1>Angabe</h1><br>
     <p>Angabe Angabe Angabe Angabe</p>
   </div>
 
-  <form class="example-form">
-    <input matInput placeholder="Geben Sie das Statement ein" value="" size="50"
-           style="float: left; height: 150px; margin-left: 25%; margin-top: 2%;">
-  </form>
-    <mat-button-toggle style="margin-top: 1.8%;" (click)="sendButton()">Send</mat-button-toggle>
+  <div id="pic"></div>
+</div>
 
-  <div style="text-align: center; color: royalblue; margin-top: 20%">
-    <h1 style="font-size: 30pt;">Lösung</h1>
-    <mat-icon style="font-size: 100px; margin-right: 5%;">keyboard_arrow_up</mat-icon>
-  </div>
+<div id="eingabe">
+  <form>
+    <input matInput (keydown.enter)="evaluate()" placeholder="Geben Sie das Statement ein" value="" [(ngModel)]="input">
+  </form> 
+</div>
+
+<div id="result" (click)="showResult()">
+  <h1>Lösung</h1>
+  <mat-icon>keyboard_arrow_up</mat-icon>
+</div>

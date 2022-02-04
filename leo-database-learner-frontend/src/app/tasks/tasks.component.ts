@@ -6,6 +6,7 @@ import {Question} from '../models/question';
 import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { LinkmenuService } from '../service/linkmenu.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -16,12 +17,13 @@ export class TasksComponent implements OnInit {
 
   public tasks: Question[] = [];
 
-  constructor(public questionService: QuestionService, public login: MatDialog, public linkmenu : LinkmenuService) {
+  constructor(public questionService: QuestionService, public login: MatDialog, public linkmenu : LinkmenuService, public router : Router) {
     linkmenu.setMenu(true, true, true, true);
   }
 
   ngOnInit(): void {
-    this.questionService.getAllQuestion().subscribe(data => {this.tasks = data});
+    var urls = this.router.url.split("/");
+    this.questionService.getByPackageName(urls[urls.length-1]).subscribe(data => {this.tasks = data});
   }
 
   openLogin(){

@@ -18,4 +18,8 @@ export class QuestionService {
     return this.http.get<Question[]>('http://localhost:8080/question/get_all');  
   }
 
+  getByPackageName(name : string) : any{
+    return this.http.get<String>('http://localhost:8080/question/get_all/getbypackagename/' + name)
+  }
+
 }

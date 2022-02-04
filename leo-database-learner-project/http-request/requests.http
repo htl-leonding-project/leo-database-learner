@@ -163,7 +163,7 @@ GET http://localhost:8080/question/getbyid/1
 
 ###
 
-GET http://localhost:8080/question/getsqlbyquestionid/4
+GET http://localhost:8080/question/getsqlbyquestionid/8
 
 ###
 
@@ -258,12 +258,40 @@ Content-Type: text/plain
 
 sel from emp
 
+###
+
+POST http://localhost:8080/exercise_sql/result
+Content-Type: text/plain
+
+select * from dept
+
 
 ###
 
 POST http://localhost:8080/exercise_sql/validation
-Content-Type: text/plain
+Content-Type: application/json
 
-select * from emp
+{
+  "sql": "select * from emp",
+  "id": 445
+}
 
+###
 
+POST http://localhost:8080/exercise_sql/validation
+Content-Type: application/json
+
+{
+  "sql": "select * from emp where ",
+  "id": 445
+}
+
+###
+
+POST http://localhost:8080/exercise_sql/validation
+Content-Type: application/json
+
+{
+"sql": "select from dept ",
+"id": 445
+}

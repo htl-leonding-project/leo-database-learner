@@ -31,12 +31,6 @@
 
 video::promotion.mp4[Promitionvideo]
 
-== Agenda
-[%step]
-* Übersicht Leodatabase Learner
-* Ergebnis des 1. Sprints
-* Ergebnis des 2. Sprints
-* Ergebnis des 3. Sprints
 
 [.lightbg,background-video="",background-video-loop="true",background-opacity="0.7"]
 == Übersicht Leodatabase Learner
@@ -44,94 +38,19 @@ video::promotion.mp4[Promitionvideo]
 //[%step]
 //* hhg
 
-
 [.lightbg,background-opacity="0.7"]
-=== Altes CLD
-
-[plantuml,cld_old,png]
-----
-include::plantuml/cld.puml[]
-----
-
-=== Geändertes CLD?
-
-[plantuml,cld_new,png]
-----
-include::plantuml/cld_update.puml[]
-----
-
 === Systemarchitektur
 
 image:Systemarchitektur.PNG[]
 
 
+=== Altes CLD
 
-=== Altes Use Case Diagram
-
-[plantuml]
+[plantuml,cld_old,png,]
 ----
-@startuml
-left to right direction
-actor Student as s
-actor Teacher as t
-
-package LeoDatabaseLearner {
-  usecase "Aufgaben üben" as UC1
-  usecase "simulierte Prüfung absolvieren" as UC2
-  usecase "Wissensstand einsehen" as UC3
-  usecase "Prüfung freigeben" as UC4
-  usecase "Prüfung absolvieren" as UC5
-  usecase "Übungen / Tests hochladen" as UC6
-  usecase "Wissensstand der Schüler einsehen" as UC7
-}
-s --> UC1
-s --> UC2
-s --> UC3
-s --> UC5
-
-t --> UC4
-t --> UC6
-t --> UC7
-@enduml
+include::plantuml/cld.puml[]
 ----
 
-=== Neues Use Case Diagram
-
-[plantuml]
-----
-@startuml
-left to right direction
-actor Student as s
-actor Teacher as t
-
-package LeoDatabaseLearner {
-usecase "Aufgaben üben" as UC1
-usecase "Wissensstand einsehen" as UC2
-usecase "Übungen hochladen" as UC3
-usecase "Wissensstand der Schüler einsehen" as UC4
-}
-s --> UC1
-s --> UC2
-
-
-t --> UC3
-t --> UC4
-@enduml
-----
-
-//[%notitle]
-
-== Ergebnis des 1. Sprints
-== Ergebnis des 2. Sprints
-== Ergebnis des 3. Sprints
-
-* https://primetzvan.github.io/hugo-project/[Hugo page Primetzhofer]
-* https://chrissyraffeiner.github.io/hugo-project/[Hugo page Raffeiner]
-
-== Links
-
-* https://github.com/htl-leonding-project/leo-database-learner[github-repo, window="_blank"]
-* https://htl-leonding-project.github.io/leo-database-learner/[github-pages]
 
 
 ////

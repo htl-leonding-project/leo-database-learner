@@ -1,4 +1,5 @@
 <div id="content">
+  <div>
     <div id="label">Points</div>
     <mat-list>
         <div *ngFor="let e of excercises; index as i">
@@ -6,10 +7,11 @@
                 <div id="inline">
                     <p>{{e.name}}</p>
                     <p>-</p>
-                </div>   
+                </div>
                 </mat-list-item>
             <mat-divider *ngIf="i < excercises.length -1 "></mat-divider>
             <div id="clear"></div>
         </div>
     </mat-list>
+  </div>
 </div>

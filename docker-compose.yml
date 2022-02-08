@@ -22,15 +22,19 @@ services:
       - studentdata:/var/lib/postgresql/data
   backend:
     container_name: backend
-    build: leo-database-learner-project
+    build:
+      context: leo-database-learner-project
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     restart: always
   frontend:
-    container_name: backend
-    build: leo-database-learner-frontend
+    container_name: frontend
+    build:
+      context: leo-database-learner-frontend
+      dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "8000:80"
     restart: always
 volumes:
   proddata:

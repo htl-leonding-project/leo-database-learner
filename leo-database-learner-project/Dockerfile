@@ -1,17 +1,11 @@
-FROM maven:3.8.3-openjdk-16-slim as build
+FROM adoptopenjdk:jdk
 
-WORKDIR /app/
+RUN apt update && apt install -y netcat && apt clean
+RUN mkdir /opt/leo-database-learner
+COPY ./target/*.jar /opt/leo-database-learner/
+COPY scripts/* /opt/leo-database-learner/
+RUN sed -e 's/\r$//' -i /opt/leo-database-learner/*.sh && chmod +x /opt/leo-database-learner/*.sh
 
-COPY pom.xml ./
-
-RUN mvn clean install
-
-COPY . .
-
-RUN mvn -Dquarkus.package.type=uber-jar -DskipTests verify
-
-FROM openjdk:11.0.13-jre-slim
-
-COPY --from=build /app/target/*-runner.jar application.jar
-
-ENTRYPOINT ["java", "-jar", "application.jar"]
+EXPOSE 8080
+WORKDIR /opt/leo-database-learner
+ENTRYPOINT ["./run.sh"]

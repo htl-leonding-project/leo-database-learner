@@ -7,8 +7,8 @@ while ! nc -z proddb 5432; do
     sleep 1
 done
 
-while ! nc -z studentdb 5433; do
-    echo "waiting for studentdb..."
+while ! nc -z studentdb 5432; do
+    echo "waiting for studentdb 5432..."
     sleep 1
 done
 

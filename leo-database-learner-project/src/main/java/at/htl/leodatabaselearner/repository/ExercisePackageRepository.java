@@ -19,4 +19,12 @@ public class ExercisePackageRepository implements PanacheRepository<ExercisePack
         return query.getResultList();
     }
 
+    public ExercisePackage findExercisePackageByName(String name){
+        var query = getEntityManager()
+                .createQuery("Select ep from ExercisePackage ep where ep.name =:name", ExercisePackage.class);
+        query.setParameter("name", name);
+        return query.getSingleResult();
+    }
+
+
 }

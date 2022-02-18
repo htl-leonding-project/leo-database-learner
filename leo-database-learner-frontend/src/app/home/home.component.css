@@ -1,22 +1,18 @@
 div{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+  width: 100%;
+  height: calc(85% - 1px);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-a{
-  color: white;
-  text-decoration: none;
+h1{
+font-size: 5em;
+margin-bottom: 1em;
 }
 
-a:hover{
-  color: white;
-  text-decoration: underline;
-}
-
-a:visited{
-  color: white;
-  text-decoration: none;
+p{
+font-size: 1.5em;
 }

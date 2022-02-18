@@ -25,13 +25,23 @@ public class ExercisePackageEndpoint {
     @POST
     @Path("add_exercisePackage")
     @Transactional
-    public void addExercisePackage(ExercisePackage exercisePackage) { exercisePackageRepository.addExercisePackage(exercisePackage);
+    public void addExercisePackage(ExercisePackage exercisePackage) {
+        exercisePackageRepository.addExercisePackage(exercisePackage);
     }
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("get_all")
     public List<ExercisePackage> getAllExercisePackage() {
         return exercisePackageRepository.findAllExercisePackages();
     }
+
+    @GET
+    @Path("getbypackagename/{name}")
+    public ExercisePackage getExercisePackageByName(@PathParam("name") String name) {
+        return exercisePackageRepository.findExercisePackageByName(name);
+    }
+
+
 
 }

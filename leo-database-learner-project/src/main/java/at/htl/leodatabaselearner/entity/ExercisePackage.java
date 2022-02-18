@@ -1,11 +1,9 @@
 package at.htl.leodatabaselearner.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class ExercisePackage extends PanacheEntity {
@@ -23,6 +21,12 @@ public class ExercisePackage extends PanacheEntity {
 
   public ExercisePackage() {
   }
+
+
+  public Long getId() {
+    return id;
+  }
+
 
   @Override
   public String toString() {

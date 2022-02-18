@@ -1,13 +1,12 @@
-a{
-  color: white;
-  text-decoration: none;
+.container {
+  position: relative;
+  font-family: Arial;
 }
 
-a:hover{
+.text-block {
+  position: absolute;
+  bottom: 45%;
+  right: 45%;
   color: white;
-  text-decoration: underline;
-}
-a:visited{
-  color: white;
-  text-decoration: none;
+
 }

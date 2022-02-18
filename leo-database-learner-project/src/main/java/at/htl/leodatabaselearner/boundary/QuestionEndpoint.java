@@ -39,4 +39,20 @@ public class QuestionEndpoint {
     public Question getById(@PathParam("id") Long id) {
         return this.questionRepository.findById(id);
     }
+
+    @GET
+    @Path("getbypackagename/{name}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<Question> getByPackageName(@PathParam("name") String name) {
+        return this.questionRepository.getAllQuestionsFromExercisePackage(name);
+    }
+
+    @GET
+    @Path("getsqlbyquestionid/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getMusterSqlByQuestionId(@PathParam("id") Long id) {
+        return this.questionRepository.getMusterSqlByQuestionId(id);
+    }
+
+
 }

@@ -20,6 +20,11 @@ export class TaskDetailComponent implements OnInit {
   public input : string;
   public result : String[];
 
+  public header : String[];
+  public tabledata : String[][] = [];
+  public errormessage : String;
+  public error : Boolean = false;
+
   constructor(private route: ActivatedRoute, public resultService: ResultService, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
       linkmenu.setMenu(true, true, true, true);
   }
@@ -28,21 +33,25 @@ export class TaskDetailComponent implements OnInit {
   }
 
   evaluate() {
-    console.log(this.input);
     this.resultService.getResult(this.input).subscribe((data : String[]) => {
-      this.result = data
-      const dialogRef = this.showresult.open(ResultComponent, {width: "40%",
-      data: {
-        result: this.result
-      },});
+      this.result = data;
+
+      if(this.result[0] != "ERROR"){
+        this.header = this.result[0].split(" ");
+  
+        for (let index = 1; index < this.result.length; index++) {
+          var store : String[] = this.result[index].split(" ");
+          this.tabledata[index-1] = [];
+          for (let index2 = 0; index2 < this.header.length; index2++) {
+      
+            this.tabledata[(index - 1)][index2] = store[index2];
+          }
+        }
+      }else{
+        this.error = true;
+        this.errormessage = this.result.toString();
+      }
     });
     
-  }
-  
-  showResult() {
-    const dialogRef = this.showresult.open(ResultComponent, {width: "40%",
-    data: {
-      result: this.result
-    },});
   }
 }

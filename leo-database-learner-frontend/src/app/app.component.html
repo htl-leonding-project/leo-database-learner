@@ -2,7 +2,7 @@
     <div id="menu">
       <mat-icon (click)="drawer.toggle();">menu</mat-icon>
     </div>
-    <a routerLink="/tasks"><span>Tasks</span></a>
+    <a routerLink="/excercises"><span>Tasks</span></a>
     <a routerLink="/exams"><span>Exams</span></a>
     <a routerLink="/knowledge"><span>Knowledge</span></a>
     <div id="logo"></div>
@@ -15,7 +15,7 @@
         <a routerLink="/about" *ngIf="menu[1]">About</a>
         <a routerLink="/impressum" *ngIf="menu[2]">Impressum</a>
         <a routerLink="/profile" *ngIf="menu[3]">Profil</a>
-        <a>Log</a>
+        <a (click)="openLogin()">Login</a>
       </div>
     </mat-drawer>
     <router-outlet></router-outlet>

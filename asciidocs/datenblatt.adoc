@@ -1,0 +1,16 @@
+= Datenblatt
+
+== Video
+
+https://youtu.be/3kXnpHYm_NU
+
+== VM
+
+VM: vm134.htl-leonding.ac.at
+User: primeadmin
+
+== Beschreibung
+
+Übungstool zum Erlernen von Datenbankbefehlen und zur Überprüfung des eigenen Wissensstandes.
+
+

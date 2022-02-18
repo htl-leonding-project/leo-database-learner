@@ -1,14 +1,65 @@
-a{
-  color: white;
-  text-decoration: none;
+#content{
+  width: 100%;
+  height: 84%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-a:hover{
-  color: white;
-  text-decoration: underline;
+#label{
+  width: 60%;
+  margin: 0px auto 0px auto;
+  font-size: large;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
 }
 
-a:visited{
-  color: white;
-  text-decoration: none;
+#icon{
+  cursor: pointer;
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  color: royalblue;
+}
+
+
+mat-list{
+  width: 60%;
+  margin: 0px auto 0px auto;
+}
+
+mat-divider{
+  margin-bottom: 1.5em;
+}
+
+mat-list-item{
+  cursor: pointer;
+  width: 60%;
+  display: inline;
+}
+
+mat-list-item span{
+  display: inline;
+  float: right;
+}
+
+#clear{
+  clear: both;
+}
+
+#inline{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p{
+  font-size: 1.3em;
+}
+
+p span{
+  color: royalblue;
+  font-size: 1.5em;
 }

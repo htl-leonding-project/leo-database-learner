@@ -41,10 +41,10 @@ public class QuestionEndpoint {
     }
 
     @GET
-    @Path("getbypackagename/{name}")
+    @Path("getbypackageid/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public List<Question> getByPackageName(@PathParam("name") String name) {
-        return this.questionRepository.getAllQuestionsFromExercisePackage(name);
+    public List<Question> getByPackageId(@PathParam("id") Long id) {
+        return this.questionRepository.getAllQuestionsFromExercisePackage(id);
     }
 
     @GET
@@ -53,6 +53,4 @@ public class QuestionEndpoint {
     public String getMusterSqlByQuestionId(@PathParam("id") Long id) {
         return this.questionRepository.getMusterSqlByQuestionId(id);
     }
-
-
 }

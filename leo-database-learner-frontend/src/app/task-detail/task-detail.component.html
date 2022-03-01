@@ -25,11 +25,13 @@
             </td>
         </tr>
     </table>
-
-    <div id="val"></div>
     
     <div *ngIf="this.error">
         <p class="error">{{this.errormessage}}</p>
     </div>
+  </div>
+  <div id="val" *ngIf="this.val.length >= 2">
+    <h1>Validations</h1>
+    <p>{{this.val[1]}}</p>
   </div>
 </div>

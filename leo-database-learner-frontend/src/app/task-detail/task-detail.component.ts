@@ -21,6 +21,7 @@ export class TaskDetailComponent implements OnInit {
   public result : String[];
 
   public header : String[];
+  public val : String[] = [];
   public tabledata : String[][] = [];
   public errormessage : String;
   public error : Boolean = false;
@@ -33,6 +34,7 @@ export class TaskDetailComponent implements OnInit {
   }
 
   evaluate() {
+    this.error = false;
     this.resultService.getResult(this.input).subscribe((data : String[]) => {
       this.result = data;
 
@@ -47,11 +49,20 @@ export class TaskDetailComponent implements OnInit {
             this.tabledata[(index - 1)][index2] = store[index2];
           }
         }
+        this.showValidations();
       }else{
         this.error = true;
         this.errormessage = this.result.toString();
+        this.showValidations();
       }
     });
     
+  }
+
+  showValidations(){
+    var urls = this.router.url.split("/");
+      this.resultService.getValidation(this.input, Number(urls[urls.length-1])).subscribe((data: String[]) =>{
+        this.val = data;
+      });
   }
 }

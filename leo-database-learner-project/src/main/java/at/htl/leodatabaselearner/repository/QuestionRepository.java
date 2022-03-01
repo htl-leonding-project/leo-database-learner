@@ -35,9 +35,8 @@ public class QuestionRepository implements PanacheRepository<Question> {
     return query.getResultList();
   }
 
-  public List<Question>getAllQuestionsFromExercisePackage(String name) {
-    ExercisePackage exercisePackage = findExercisePackageByName(name);
-    var id = exercisePackage.getId();
+  public List<Question>getAllQuestionsFromExercisePackage(Long id) {
+    ExercisePackage exercisePackage = findExercisePackageById(id);
 
     var query = getEntityManager()
             .createQuery("Select q from Question q where q.exercisePackage.id =:id", Question.class);
@@ -46,10 +45,10 @@ public class QuestionRepository implements PanacheRepository<Question> {
     return query.getResultList();
   }
 
-  public ExercisePackage findExercisePackageByName(String name){
+  public ExercisePackage findExercisePackageById(Long id){
     var query = getEntityManager()
-            .createQuery("Select ep from ExercisePackage ep where ep.name =:name", ExercisePackage.class);
-    query.setParameter("name", name);
+            .createQuery("Select ep from ExercisePackage ep where ep.id =:id", ExercisePackage.class);
+    query.setParameter("id", id);
     return query.getSingleResult();
   }
 

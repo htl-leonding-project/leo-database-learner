@@ -1,10 +1,13 @@
 package at.htl.leodatabaselearner;
 
+import at.htl.leodatabaselearner.repository.QuestionRepository;
 import io.agroal.api.AgroalDataSource;
 import io.quarkus.agroal.DataSource;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.json.Json;
+import javax.json.JsonObject;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,17 +25,20 @@ public class ExerciseSqlRepository {
   @DataSource("student")
   AgroalDataSource studentDataSource;
 
+  @Inject
+  QuestionRepository questionRepository;
+
   public List<String> getSqlResultsFromDB(String sql) {
 
     List<String> list = new ArrayList<String>();
     List<String> head = new ArrayList<String>();
 
     try {
-    Connection cStudent = studentDataSource.getConnection();
+      Connection cStudent = studentDataSource.getConnection();
 
-    StringBuilder sbStudent = new StringBuilder();
-    Statement stStudent = cStudent.createStatement();
-    ResultSet rsStudent = stStudent.executeQuery(sql);
+      StringBuilder sbStudent = new StringBuilder();
+      Statement stStudent = cStudent.createStatement();
+      ResultSet rsStudent = stStudent.executeQuery(sql);
 
       for (int i = 1; i < rsStudent.getMetaData().getColumnCount(); i++) {
         if (i < rsStudent.getMetaData().getColumnCount() - 1) {
@@ -66,51 +72,69 @@ public class ExerciseSqlRepository {
     return list;
   }
 
-  public List<String> compareSqlResults(String sql) throws SQLException {
-    Connection connection;
-    Statement statement;
-    ResultSet rsStudent = null;
+  public List<String> compareSqlResults(JsonObject json) throws SQLException {
+    Long id = Long.valueOf(json.get("id").toString());
+    String sql = json.get("sql").toString().replace("\"", "");
+    Connection conn;
+    Statement stat;
+    ResultSet rsStudent;
     Connection connProd;
     Statement statProd;
-    ResultSet rsSolution = null;
+    ResultSet rsSolution;
     List<String> allMyErrors = new ArrayList<String>();
+    String result;
+    int countStudent = 0;
+    int countResult = 0;
 
     allMyErrors.add("VALIDATION");
 
-    // Zwei Datenbank verbindungen gehen nicht
     try {
-      connection = studentDataSource.getConnection();
-      statement = connection.createStatement();
-      rsStudent = statement.executeQuery(sql);
+      conn = studentDataSource.getConnection();
+      stat = conn.createStatement();
+      try {
+        rsStudent = stat.executeQuery(sql);
+      }catch (SQLException exception){
+        allMyErrors.add(new ErrorResult("Can't execute query", null).toString());
+        return allMyErrors;
+      }
     } catch (SQLException exception) {
-      allMyErrors.add(new ErrorResult("Can't connect to database!",null).toString());
+      allMyErrors.add(new ErrorResult("Can't connect to database!", null).toString());
+      return allMyErrors;
     }
 
-      try{
-        connProd = prodDataSource.getConnection();
-        statProd = connProd.createStatement();
-        // Musterlösung von proddb holen und musterlösungsSQL auf schüler db abrufen
-        // Endpoint umschreiben so dass ich weiß welche Übung ich gerade brauche
-        // Frontend übergibt welche id
-        //rsSolution = statProd.executeQuery(sql);
-        //rsSolution.next();
+    try {
+      // Musterlösung von proddb holen und musterlösungsSQL auf schüler db abrufen
+      // Endpoint umschreiben so dass ich weiß welche Übung ich gerade brauche
+      // Frontend übergibt welche id
+      connProd = studentDataSource.getConnection();
+      statProd = connProd.createStatement();
+      result = questionRepository.getMusterSqlByQuestionId(id);
+      if (result != null) {
+        rsSolution = statProd.executeQuery(result);
+        // rsSolution.next();
         //String musterSQL = rsStudent.getString(rsStudent.getMetaData().getColumnLabel(0));
         // statement = connection.createStatement();
         // rsStudent = statement.executeQuery(musterSQL);
-
-      }catch (SQLException exception){
-        allMyErrors.add(new ErrorResult("Can't connect to database!",null).toString());
+      } else {
+        allMyErrors.add(new ErrorResult("No exercise with this id", null).toString());
+        return allMyErrors;
       }
-      //return rsSolution.getMetaData().toString();
+    } catch (SQLException exception) {
+      allMyErrors.add(new ErrorResult("Can't connect to database!", null).toString());
+      return allMyErrors;
+    }
 
-    if (rsStudent != null && rsSolution != null ) {
+    countStudent = rsStudent.getMetaData().getColumnCount();
+    countResult = rsSolution.getMetaData().getColumnCount();
+
+    if (countStudent > 0) {
       while (rsStudent.next() && rsSolution.next()) {
-        int count = rsStudent.getMetaData().getColumnCount();
-        for (int i = 0; i < count; i++) {
+
+        for (int i = 1; i < Math.min(countResult, countStudent) - 2; i++) {
           var row1 = rsStudent.getString(rsStudent.getMetaData().getColumnLabel(i));
-          var row2 = rsSolution.getString(rsStudent.getMetaData().getColumnLabel(i));
+          var row2 = rsSolution.getString(rsSolution.getMetaData().getColumnLabel(i));
           var save = compareRow(row1, row2);
-          for (int j = 0; j < save.size(); j++) {
+          for (int j = 1; j < save.size(); j++) {
             allMyErrors.add(save.get(i).toString());
           }
           if (compareRow(row1, row2).size() > 0) {
@@ -119,15 +143,15 @@ public class ExerciseSqlRepository {
           }
         }
       }
-    }else {
+    } else {
       allMyErrors.add(new ErrorResult("Warning: No rows selected", null).toString());
     }
-      if (rsStudent.next() && !rsSolution.next()
-        || !rsStudent.next() && rsSolution.next()){
-        System.out.println("Incorrect number of rows in result set");
-      }
 
-      return allMyErrors;
+    if (rsStudent.getMetaData().getColumnCount() != rsSolution.getMetaData().getColumnCount()){
+      allMyErrors.add(new ErrorResult("Incorrect number of rows in result set", countResult).toString());
+    }
+
+    return allMyErrors;
 
   }
 
@@ -135,7 +159,7 @@ public class ExerciseSqlRepository {
 
     ArrayList<ErrorResult> allMyErrors = new ArrayList<>();
 
-    System.out.println(row1);
+    //System.out.println(row1);
 /*    for (var kv : row1.split("")){
       var key = kv.getKey();
       if (!row2.containsKey(key)){
@@ -153,6 +177,7 @@ public class ExerciseSqlRepository {
 
   }
 
-  record ErrorResult<T>(String columnAffected, T valueExpected){}
+  record ErrorResult<T>(String columnAffected, T valueExpected) {
+  }
 
 }

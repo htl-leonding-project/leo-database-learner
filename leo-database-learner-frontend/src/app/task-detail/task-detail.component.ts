@@ -5,6 +5,8 @@ import {MatDialog} from "@angular/material/dialog";
 import { LinkmenuService } from '../service/linkmenu.service';
 import { ResultComponent } from '../result/result.component';
 import { ResultService } from '../service/result.service';
+import { Question } from '../models/question';
+import { QuestionService } from '../service/question.service';
 
 export interface DialogData{
   result: String[];
@@ -19,6 +21,7 @@ export class TaskDetailComponent implements OnInit {
 
   public input : string;
   public result : String[];
+  public question : Question;
 
   public header : String[];
   public val : String[] = [];
@@ -26,11 +29,13 @@ export class TaskDetailComponent implements OnInit {
   public errormessage : String;
   public error : Boolean = false;
 
-  constructor(private route: ActivatedRoute, public resultService: ResultService, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
+  constructor(public questionService: QuestionService, private route: ActivatedRoute, public resultService: ResultService, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
       linkmenu.setMenu(true, true, true, true);
   }
 
   ngOnInit(): void {
+    var urls = this.router.url.split("/");
+    this.questionService.getQuestionById(Number(urls[urls.length-1])).subscribe(data => {this.question = data});
   }
 
   evaluate() {
@@ -64,5 +69,9 @@ export class TaskDetailComponent implements OnInit {
       this.resultService.getValidation(this.input, Number(urls[urls.length-1])).subscribe((data: String[]) =>{
         this.val = data;
       });
+  }
+
+  openDialog(){
+    const dialogRef = this.showresult.open(ResultComponent, {width: "40%"});
   }
 }

@@ -22,4 +22,8 @@ export class QuestionService {
     return this.http.get<Question[]>('http://localhost:8080/question/getbypackageid/' + id)
   }
 
+  getQuestionById(id : number) : any{
+    return this.http.get<Question>('http://localhost:8080/question/getbyid/' + id)
+  }
+
 }

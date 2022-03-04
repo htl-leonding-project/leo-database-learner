@@ -1,3 +1,11 @@
+mat-toolbar, .mat-drawer{
+  background-color: #452860 !important;
+}
+
+mat-icon{
+  color: white;
+}
+
 a{
   color: white;
   text-decoration: none;

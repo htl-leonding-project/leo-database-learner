@@ -74,7 +74,7 @@ public class ExerciseSqlRepository {
 
   public List<String> compareSqlResults(JsonObject json) throws SQLException {
     Long id = Long.valueOf(json.get("id").toString());
-    String sql = json.get("sql").toString().replace("\"", "");
+    String sql = json.get("sql").toString().replace("\"", "").replace("\\n", "");
     Connection conn;
     Statement stat;
     ResultSet rsStudent;
@@ -109,6 +109,7 @@ public class ExerciseSqlRepository {
       connProd = studentDataSource.getConnection();
       statProd = connProd.createStatement();
       result = questionRepository.getMusterSqlByQuestionId(id);
+      System.out.println(result);
       if (result != null) {
         rsSolution = statProd.executeQuery(result);
         // rsSolution.next();

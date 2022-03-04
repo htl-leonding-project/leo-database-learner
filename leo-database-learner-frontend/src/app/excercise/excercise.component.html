@@ -1,9 +1,9 @@
 <div id="content">
-  <div>
+    <div>
     <div id="label">Points</div>
     <mat-list>
         <div *ngFor="let e of excercises; index as i">
-            <mat-list-item [routerLink]="e.name.toString()">
+            <mat-list-item (click)="navigateTo(e)">
                 <div id="inline">
                     <p>{{e.name}}</p>
                     <p>-</p>
@@ -13,5 +13,5 @@
             <div id="clear"></div>
         </div>
     </mat-list>
-  </div>
+</div>
 </div>

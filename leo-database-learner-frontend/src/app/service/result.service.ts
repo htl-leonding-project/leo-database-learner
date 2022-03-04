@@ -11,4 +11,9 @@ export class ResultService {
   getResult(result : String): any {
     return this.http.post<String[]>('http://localhost:8080/exercise_sql/result', result);
   }
+
+  getValidation(sql : string, id : number): any{
+    return this.http.post<String[]>('http://localhost:8080/exercise_sql/validation', {sql: sql, id: id});
+  }
+
 }

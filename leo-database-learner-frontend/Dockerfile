@@ -1,7 +1,7 @@
 #stage 1
 FROM node:16 as node
 WORKDIR /app
-COPY app/* /app
+COPY . .
 RUN npm install
 RUN npm run build --prod #stage 2
 FROM nginx:alpine

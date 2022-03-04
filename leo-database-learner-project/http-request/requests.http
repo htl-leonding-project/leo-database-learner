@@ -173,7 +173,7 @@ Accept: application/json
 
 ###
 
-GET http://localhost:8080/question/getbypackageid/2
+GET http://localhost:8080/question/getbypackageid/7
 Accept: application/json
 
 ###

@@ -1,13 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
     <div id="menu">
       <mat-icon (click)="drawer.toggle();">menu</mat-icon>
     </div>
     <a routerLink="/excercises"><span>Tasks</span></a>
     <a routerLink="/exams"><span>Exams</span></a>
     <a routerLink="/knowledge"><span>Knowledge</span></a>
-    <div id="logo"></div>
+    <div id="logo"><img src="../assets/LogoFuerPlakat.png"></div>
   </mat-toolbar>
-  
+
   <mat-drawer-container autosize>
     <mat-drawer #drawer class="sidenav" mode="side">
       <div>

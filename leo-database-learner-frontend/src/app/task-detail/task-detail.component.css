@@ -1,15 +1,21 @@
 #content{
   margin-top: 8em;
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }
 
 h1{
   font-size: 40pt;
   color: royalblue;
   text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+#datamodel{
+  cursor: pointer;
+  color: royalblue;
 }
 
 #eingabe{
@@ -21,38 +27,69 @@ h1{
 }
 
 form{
-  width: 70%;
+  width: 80%;
 }
 
-input{
+textarea{
   display: block;
   margin: auto;
   padding: 2em;
   min-width: 70%;
+  max-width: 90%;
+  max-height: 20vh;
   color: royalblue;
 }
 
 #result{
   position: absolute;
+  bottom: 0px;
+  left: 0px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column-reverse;
-  bottom: 10px;
-  left: 0em;
-  cursor: pointer;
+  min-height: 35vh;
+  max-height: 35vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: rgb(236, 236, 236);
 }
 
 #result h1{
+  display: block;
   font-size: 2.5em;
-  margin-bottom: 0px;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
-mat-icon{
-  font-size: 50px;
-  display: block;
-  margin:0em auto 0.4em auto;
-  color: royalblue;
+#tablebox{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+tr:first-child{
+  background-color: #452860 !important;
+}
+
+th{
+  padding: 0.5em;
+  border: 1px solid #452860;
   text-align: center;
-  width: auto !important;
+  color: white;
+}
+
+td{
+  padding: 0.4em;
+  border: 1px solid #dddddd;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(237, 215, 255);
+}
+
+.error, h3{
+  color: red;
 }

@@ -15,8 +15,8 @@ import { ExcerciseComponent } from './excercise/excercise.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   {path: 'home', component: HomeComponent},
-  { path: 'excercises/:name/:id', component: TaskDetailComponent},
-  { path: 'excercises/:name', component: TasksComponent},
+  { path: 'excercises/:id/:id', component: TaskDetailComponent},
+  { path: 'excercises/:id', component: TasksComponent},
   { path: 'exams', component: ExamsComponent },
   { path: 'knowledge', component: KnowledgeComponent },
   {path: 'about', component: AboutComponent},

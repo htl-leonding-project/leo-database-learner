@@ -1,0 +1,55 @@
+#content{
+    width: 100%;
+    height: 84vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#content div{
+    max-height: 40vh;
+}
+
+#label{
+    width: 60%;
+    margin: 0px auto 0px auto;
+    text-align: right;
+    font-size: large;
+    margin-bottom: 1em;
+}
+
+
+mat-list{
+    width: 60%;
+    margin: 0px auto 0px auto;
+}
+
+mat-divider{
+    margin-bottom: 1.5em;
+}
+
+mat-list-item{
+    cursor: pointer;
+    width: 60%;
+    display: inline;
+}
+
+mat-list-item span{
+    display: inline;
+    float: right;
+}
+
+#clear{
+    clear: both;
+}
+
+#inline{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p{
+    font-size: 1.3em;
+}

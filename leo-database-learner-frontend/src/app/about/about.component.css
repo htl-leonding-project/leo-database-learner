@@ -1,13 +1,32 @@
-a{
-  color: white;
-  text-decoration: none;
+.container {
+  position: relative;
+  font-family: Arial;
 }
 
-a:hover{
+.text-block {
+  position: absolute;
+  bottom: 45%;
+  right: 45%;
   color: white;
-  text-decoration: underline;
+
 }
-a:visited{
-  color: white;
-  text-decoration: none;
+
+
+.contentbox{
+  margin: 2em auto 2em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text{
+  width: 50%; padding: 5%;
+}
+
+.pic{
+  width: 20%; padding: 2% 2% 2% 2%;
+}
+
+.pic img{
+  width: 100%;
 }

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {LoginComponent} from "../login/login.component";
-import {MatDialog} from "@angular/material/dialog";
-import {Router} from "@angular/router";
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogData } from '../task-detail/task-detail.component';
 
 @Component({
   selector: 'app-result',
@@ -10,17 +9,9 @@ import {Router} from "@angular/router";
 })
 export class ResultComponent implements OnInit {
 
-  constructor(public login: MatDialog, private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  openLogin() {
-    const dialogRef = this.login.open(LoginComponent, {width: "40%"});
-  }
-
-  backButton(){
-    this.router.navigateByUrl('tasks');
   }
 
 }

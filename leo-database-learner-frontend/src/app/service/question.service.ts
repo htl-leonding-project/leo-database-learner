@@ -14,4 +14,16 @@ export class QuestionService {
   getAllQuestion(): Observable<Question[]>{
     return this.http.get<Question[]>('http://localhost:8080/question/get_all');  }
 
+  getQuestionsFormPackage(): Observable<Question[]>{
+    return this.http.get<Question[]>('http://localhost:8080/question/get_all');  
+  }
+
+  getById(id : number) : any{
+    return this.http.get<Question[]>('http://localhost:8080/question/getbypackageid/' + id)
+  }
+
+  getQuestionById(id : number) : any{
+    return this.http.get<Question>('http://localhost:8080/question/getbyid/' + id)
+  }
+
 }

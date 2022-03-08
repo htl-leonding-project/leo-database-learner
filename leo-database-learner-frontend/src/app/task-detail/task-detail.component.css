@@ -1,8 +1,95 @@
-a:hover {
-  color: darkgray;
+#content{
+  margin-top: 8em;
+  width: 100%;
 }
 
-a {
+h1{
+  font-size: 40pt;
+  color: royalblue;
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+#datamodel{
+  cursor: pointer;
+  color: royalblue;
+}
+
+#eingabe{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5em 0em 0em 0em;
+}
+
+form{
+  width: 80%;
+}
+
+textarea{
+  display: block;
+  margin: auto;
+  padding: 2em;
+  min-width: 70%;
+  max-width: 90%;
+  max-height: 20vh;
+  color: royalblue;
+}
+
+#result{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  min-height: 35vh;
+  max-height: 35vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: rgb(236, 236, 236);
+}
+
+#result h1{
+  display: block;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+#tablebox{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+tr:first-child{
+  background-color: #452860 !important;
+}
+
+th{
+  padding: 0.5em;
+  border: 1px solid #452860;
+  text-align: center;
   color: white;
-  text-decoration: none;
+}
+
+td{
+  padding: 0.4em;
+  border: 1px solid #dddddd;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(237, 215, 255);
+}
+
+.error, h3{
+  color: red;
 }

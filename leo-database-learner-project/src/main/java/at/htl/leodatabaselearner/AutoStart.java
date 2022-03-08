@@ -63,6 +63,7 @@ public class AutoStart {
         SqlScript dogSchoolSqlScript = new SqlScript(dataModel,"CREATE TABLE DOGSCHOOL(id number not null, name varchar2(255), location varchar2(255), zip number ",
         "DROP TABLE DOGSCHOOL;",
         "INSERT INTO DOGSCHOOL(id, name, location, zip) VALUES (1, 'Hundeschule Mayr', 'Leonding', 4060)");
+
         dogSchoolSqlScript = sqlScriptRepository.addSqlScript(dogSchoolSqlScript);
 
         Question dogSchoolQuestion1 = new Question("1. Übung - Select - Easy","Geben Sie alle Daten der Tabelle Dogschool aus", "Select * from Dogschool", 1,dogSchoolPackage);

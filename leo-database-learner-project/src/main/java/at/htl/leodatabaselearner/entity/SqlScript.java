@@ -11,8 +11,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class SqlScript extends PanacheEntity {
 
+  @Column(length = 600)
   public String createScript;
   public String dropScript;
+  @Column(length = 600)
   public String insertScript;
 
   @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})

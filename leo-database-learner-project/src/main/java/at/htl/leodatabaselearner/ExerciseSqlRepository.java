@@ -32,45 +32,69 @@ public class ExerciseSqlRepository {
 
     List<String> list = new ArrayList<String>();
     List<String> head = new ArrayList<String>();
+    boolean valid = false;
 
-    try {
-      Connection cStudent = studentDataSource.getConnection();
-
-      StringBuilder sbStudent = new StringBuilder();
-      Statement stStudent = cStudent.createStatement();
-      ResultSet rsStudent = stStudent.executeQuery(sql);
-
-      for (int i = 1; i < rsStudent.getMetaData().getColumnCount(); i++) {
-        if (i < rsStudent.getMetaData().getColumnCount() - 1) {
-          sbStudent.append(rsStudent.getMetaData().getColumnName(i)).append(" ");
-          head.add(rsStudent.getMetaData().getColumnName(i));
-        } else {
-          sbStudent.append(rsStudent.getMetaData().getColumnName(i));
-          head.add(rsStudent.getMetaData().getColumnName(i));
-        }
+    var elm = sql.split(" ");
+    for (String s : elm) {
+      if (s.equalsIgnoreCase("select")) {
+        valid = true;
       }
+      if (s.equalsIgnoreCase("insert") || s.equalsIgnoreCase("delete")
+        || s.equalsIgnoreCase("update") || s.equalsIgnoreCase("grant")
+        || s.equalsIgnoreCase("drop") || s.equalsIgnoreCase("create")
+        || s.equalsIgnoreCase("alter"))  {
+        list.add("ERROR");
+        list.add("Wrong statement. " + s + " not allowed.");
+        return list;
+      }
+    }
 
-      list.add(sbStudent.toString());
+    if (valid) {
+      try {
+        Connection cStudent = studentDataSource.getConnection();
 
-      while (rsStudent.next()) {
-        sbStudent = new StringBuilder();
-        for (int i = 0; i < head.size(); i++) {
-          if (i < head.size() - 1) {
-            sbStudent.append(rsStudent.getString(head.get(i).toString())).append(" ");
+        StringBuilder sbStudent = new StringBuilder();
+        Statement stStudent = cStudent.createStatement();
+        ResultSet rsStudent = stStudent.executeQuery(sql);
+
+        for (int i = 1; i < rsStudent.getMetaData().getColumnCount(); i++) {
+          if (i < rsStudent.getMetaData().getColumnCount() - 1) {
+            sbStudent.append(rsStudent.getMetaData().getColumnName(i)).append(" ");
+            head.add(rsStudent.getMetaData().getColumnName(i));
           } else {
-            sbStudent.append(rsStudent.getString(head.get(i).toString()));
+            sbStudent.append(rsStudent.getMetaData().getColumnName(i));
+            head.add(rsStudent.getMetaData().getColumnName(i));
           }
         }
+
         list.add(sbStudent.toString());
+
+        while (rsStudent.next()) {
+          sbStudent = new StringBuilder();
+          for (int i = 0; i < head.size(); i++) {
+            if (i < head.size() - 1) {
+              sbStudent.append(rsStudent.getString(head.get(i).toString())).append(" ");
+            } else {
+              sbStudent.append(rsStudent.getString(head.get(i).toString()));
+            }
+          }
+          list.add(sbStudent.toString());
+        }
+      } catch (SQLException exception) {
+        list.add("ERROR");
+        list.add(exception.getMessage());
+        return list;
       }
-    } catch (SQLException exception) {
-      list.add("ERROR");
-      list.add(exception.getMessage());
+
       return list;
     }
 
+    list.add("ERROR");
+    list.add("Wrong statement.");
     return list;
+
   }
+
 
   public List<String> compareSqlResults(JsonObject json) throws SQLException {
     Long id = Long.valueOf(json.get("id").toString());
@@ -87,6 +111,23 @@ public class ExerciseSqlRepository {
     int countResult = 0;
 
     allMyErrors.add("VALIDATION");
+
+    boolean valid = false;
+
+    var elm = sql.split(" ");
+    for (String s : elm) {
+      if (s.equalsIgnoreCase("select")) {
+        valid = true;
+      }
+      if (s.equalsIgnoreCase("insert") || s.equalsIgnoreCase("delete")
+        || s.equalsIgnoreCase("update") || s.equalsIgnoreCase("grant")
+        || s.equalsIgnoreCase("drop") || s.equalsIgnoreCase("create")
+        || s.equalsIgnoreCase("alter"))  {
+        return allMyErrors;
+      }
+    }
+
+    if (valid) {
 
     try {
       conn = studentDataSource.getConnection();
@@ -150,6 +191,8 @@ public class ExerciseSqlRepository {
 
     if (rsStudent.getMetaData().getColumnCount() != rsSolution.getMetaData().getColumnCount()){
       allMyErrors.add(new ErrorResult("Incorrect number of rows in result set", countResult).toString());
+    }
+
     }
 
     return allMyErrors;

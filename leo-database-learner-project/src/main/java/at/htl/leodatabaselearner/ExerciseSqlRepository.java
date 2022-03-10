@@ -18,11 +18,11 @@ import java.util.List;
 @ApplicationScoped
 public class ExerciseSqlRepository {
 
-  @Inject
-  AgroalDataSource prodDataSource;
+//  @Inject
+//  AgroalDataSource prodDataSource;
 
   @Inject
-  @DataSource("student")
+  @DataSource("studentdb")
   AgroalDataSource studentDataSource;
 
   @Inject

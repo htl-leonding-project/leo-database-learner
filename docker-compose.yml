@@ -1,15 +1,5 @@
 version: "3.3"
 services:
-  proddb:
-    container_name: proddb
-    build: database/proddb
-    ports:
-      - "5432:5432"
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: app
-    volumes:
-      - proddata:/var/lib/postgresql/data
   studentdb:
     container_name: studentdb
     build: database/studentdb
@@ -17,9 +7,21 @@ services:
       - "5433:5432"
     restart: always
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: app
     volumes:
       - studentdata:/var/lib/postgresql/data
+  proddb:
+    container_name: proddb
+    build: database/proddb
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: app
+    volumes:
+      - proddata:/var/lib/postgresql/data
   backend:
     container_name: backend
     build:

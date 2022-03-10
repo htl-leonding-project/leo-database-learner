@@ -6,8 +6,6 @@ Vanessa Primetzhofer
 :revealjs_width: 1408
 :revealjs_height: 792
 :source-highlighter: highlightjs
-:revealjs_parallaxBackgroundImage: images/background-landscape-light-orange.jpg
-:revealjs_parallaxBackgroundSize: 4936px 2092px
 :highlightjs-theme: css/atom-one-light.css
 :iconfont-remote!:
 :iconfont-name: fonts/fontawesome/css/all
@@ -23,6 +21,21 @@ Vanessa Primetzhofer
 
 == Die Idee
 
+//[cloud,fragment]
+//....
+//Grundausbildung,
+//Übungstool,
+//SQL-Befehle,
+//Eigenständiges Lernen,
+//Kostenlos,
+//Erleichterung,
+//Wissenstandscheck,
+//Select-Statements,
+//Klauseln,
+//Datenmodel,
+//Tests
+//....
+
 == Livedemo
 
 == Systemarchitektur
@@ -33,15 +46,25 @@ image:Systemarchitektur.PNG[Systemarchitektur,width=70%]
 
 image:altesCLD.png[]
 
-== Design Entwurf
+== Design Entwurf Übersicht
 
 image:deasignExercises.JPG[]
 
+=== Design Entwurf Übungsseite
+
+image:designExam.JPG[width=70%]
+
 == Github Todos
 
-image:githubTodos.png[]
+image:githubTodos.png[width=70%]
 
 == Schwierigkeiten beim Projekt
+
+=== Danke für Ihre Aufmerksamkeit!
+
+== Klassendiagramm
+
+image:cld-ist.png[width=35%]
 
 
 

@@ -1,0 +1,42 @@
+version: '3.3'
+services:
+  proddb:
+    image: ghcr.io/primetzvan/leo-database-learner_proddb
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: app
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    volumes:
+      - proddata:/var/lib/postgresql/data
+  studentdb:
+    image: ghcr.io/primetzvan/leo-database-learner_studentdb
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: app
+    ports:
+      - "5433:5432"
+    expose:
+      - 5433
+    volumes:
+      - studentdata:/var/lib/postgresql/data
+  backend:
+    image: ghcr.io/primetzvan/leo-database-learner_backend
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+    depends_on:
+      - proddb
+      - studentdb
+  frontend:
+    image: ghcr.io/primetzvan/leo-database-learner_frontend
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+volumes:
+  proddata:
+  studentdata:

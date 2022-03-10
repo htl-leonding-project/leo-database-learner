@@ -1,7 +1,7 @@
 /*
-   Colors: 
+   Colors:
    - base bg: #ffcea3    - border:  #745d48    - bglight: #fff8f1c0
-   - bgdark: #745d4840   - vdark: #33291f  
+   - bgdark: #745d4840   - vdark: #33291f
  */
 
 
@@ -12,17 +12,24 @@
 
 /* ex: e7b68b */
 body {
-  background: #ffcea3;
-  background: -moz-radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #fff), color-stop(100%, #ffcea3));
-  background: -webkit-radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%);
-  background: -o-radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%);
-  background: -ms-radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%);
-  background: radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%); 
-  background-color: #ffcea3;
+  /*background: #ffcea3;*/
+  /*background: -moz-radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%);*/
+  /*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #fff), color-stop(100%, #ffcea3));*/
+  /*background: -webkit-radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%);*/
+  /*background: -o-radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%);*/
+  /*background: -ms-radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%);*/
+  /*background: radial-gradient(center, circle cover, #fff 0%, #ffcea3 100%); */
+  /*background-color: #ffcea3;*/
 }
-/* .backgrounds {  opacity: 0.6; } */
+.backgrounds {
+  background-image: url("../images/background.jpeg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.4; }
 
+section{
+  background-color: rgba(255,255,255,0.5);
+}
 
 section.red.background {
   background-color: red;
@@ -47,9 +54,9 @@ SECTION.bonuscontent H2::before {
 
 SECTION .title {
   font-family: "Quicksand", sans-serif;
-  font-weight: bold; 
+  font-weight: bold;
   text-decoration: underline;
-  line-height: 1em; 
+  line-height: 1em;
   margin-bottom: -.4rem;
   margin-top: 1.2rem;
   color: #33291fe0
@@ -64,7 +71,7 @@ SECTION .title {
   margin: 0 auto;
 }
 .reveal .colist table td {
-    padding: 0.15em 0.5em; 
+    padding: 0.15em 0.5em;
 }
 
 /* .reveal h1 {  font-size: 3.77em; }
@@ -78,7 +85,7 @@ SECTION .title {
 /* Decent regular text, emphasize strongs .*/
 .reveal {
     /* color: #ccc; */
-    /* font-family: 'Rajdhani', sans-serif; 
+    /* font-family: 'Rajdhani', sans-serif;
     font-size: 42x; */
 }
 
@@ -223,7 +230,7 @@ SECTION .title {
   text-align: left; }*/
 /* Listen: Größerer linker Einzug. */
 /* .reveal ol, .reveal dl, .reveal ul {
-  margin: 0 0 0 1.6em; 
+  margin: 0 0 0 1.6em;
 }  */
 
 
@@ -283,7 +290,7 @@ SECTION .title {
 
 
 .reveal .clear {
-  clear: both; 
+  clear: both;
 }
 
 /* Keine Einengung der width*/
@@ -322,7 +329,7 @@ A.c-ref > code {
 }
 .jep {
     border: 2px solid #745d4880;
-    background-color: #745d48a0;  
+    background-color: #745d48a0;
 }
 .jep:hover {
     border: 2px solid #33291f;

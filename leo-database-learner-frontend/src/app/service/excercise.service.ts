@@ -10,7 +10,7 @@ export class ExcerciseService {
   constructor(private http: HttpClient) { }
 
   getExcercises(): any {
-    return this.http.get<ExercisePackage[]>('http://localhost:8080/exercisePackage/get_all');
+    return this.http.get<ExercisePackage[]>('http://vm134.htl-leonding.ac.at:8080/exercisePackage/get_all');
   }
-  
+
 }

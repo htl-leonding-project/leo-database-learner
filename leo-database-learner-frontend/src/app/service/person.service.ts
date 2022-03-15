@@ -11,9 +11,9 @@ export class PersonService {
   constructor(private http: HttpClient) { }
 
   getPerson(): Observable<Person>{
-    return this.http.get<Person>('http://localhost:8080/exercisesql/person');  }
+    return this.http.get<Person>('http://vm134.htl-leonding.ac.at:8080/exercisesql/person');  }
 
   getAllPerson(): Observable<Person[]>{
-    return this.http.get<Person[]>('http://localhost:8080/person/get_all');  }
+    return this.http.get<Person[]>('http://vm134.htl-leonding.ac.at:8080/person/get_all');  }
 
 }

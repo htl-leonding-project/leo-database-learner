@@ -2,19 +2,19 @@
     <div id="menu">
       <mat-icon (click)="drawer.toggle();">menu</mat-icon>
     </div>
-    <a routerLink="/excercises"><span>Tasks</span></a>
-    <a routerLink="/exams"><span>Exams</span></a>
-    <a routerLink="/knowledge"><span>Knowledge</span></a>
+    <a routerLink="/excercises" routerLinkActive="active" ><span>Tasks</span></a>
+    <a routerLink="/exams" routerLinkActive="active"><span>Exams</span></a>
+    <a routerLink="/knowledge" routerLinkActive="active"><span>Knowledge</span></a>
     <div id="logo"><img src="../assets/LogoFuerPlakat.png"></div>
   </mat-toolbar>
 
   <mat-drawer-container autosize>
     <mat-drawer #drawer class="sidenav" mode="side">
       <div>
-        <a routerLink="/home" *ngIf="menu[0]">Home</a>
-        <a routerLink="/about" *ngIf="menu[1]">About</a>
-        <a routerLink="/impressum" *ngIf="menu[2]">Impressum</a>
-        <a routerLink="/profile" *ngIf="menu[3]">Profil</a>
+        <a routerLink="/home" routerLinkActive="active" *ngIf="menu[0]">Home</a>
+        <a routerLink="/about" routerLinkActive="active" *ngIf="menu[1]">About</a>
+        <a routerLink="/impressum" routerLinkActive="active" *ngIf="menu[2]">Impressum</a>
+        <a routerLink="/profile" routerLinkActive="active" *ngIf="menu[3]">Profil</a>
         <a (click)="openLogin()">Login</a>
       </div>
     </mat-drawer>

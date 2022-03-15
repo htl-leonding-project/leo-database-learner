@@ -1,55 +1,65 @@
 #content{
     width: 100%;
-    height: 84vh;
+    height: 84%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
-
-#content div{
-    max-height: 40vh;
-}
-
-#label{
+  }
+  
+  #label{
     width: 60%;
     margin: 0px auto 0px auto;
-    text-align: right;
     font-size: large;
     margin-bottom: 1em;
-}
-
-
-mat-list{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #icon{
+    cursor: pointer;
+    position: absolute;
+    top: 3em;
+    left: 3em;
+    color: royalblue;
+  }
+  
+  
+  mat-list{
     width: 60%;
     margin: 0px auto 0px auto;
-}
-
-mat-divider{
+  }
+  
+  mat-divider{
     margin-bottom: 1.5em;
-}
-
-mat-list-item{
+  }
+  
+  mat-list-item{
     cursor: pointer;
     width: 60%;
     display: inline;
-}
-
-mat-list-item span{
+  }
+  
+  mat-list-item span{
     display: inline;
     float: right;
-}
-
-#clear{
+  }
+  
+  #clear{
     clear: both;
-}
-
-#inline{
+  }
+  
+  #inline{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-p{
+  }
+  
+  p{
     font-size: 1.3em;
-}
+  }
+  
+  p span{
+    color: royalblue;
+    font-size: 1.5em;
+  }

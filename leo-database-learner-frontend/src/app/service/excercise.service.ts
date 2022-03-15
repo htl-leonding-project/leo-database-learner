@@ -12,5 +12,9 @@ export class ExcerciseService {
   getExcercises(): any {
     return this.http.get<ExercisePackage[]>('http://localhost:8080/exercisePackage/get_all');
   }
+ 
+  getExcercisesById(id: number) : any{
+    return this.http.get<ExercisePackage>('http://localhost:8080/exercisePackage/getbyid/' + id);
+  }
   
 }

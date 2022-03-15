@@ -49,6 +49,7 @@ export class TaskDetailComponent implements OnInit {
 
     this.resultService.getResult(this.input).subscribe((data : String[]) => {
       this.result = data;
+      //alert(data);
 
       if(this.result[0] != "ERROR"){
         this.header = this.result[0].split(" ");
@@ -75,7 +76,6 @@ export class TaskDetailComponent implements OnInit {
     var urls = this.router.url.split("/");
       this.resultService.getValidation(this.input, Number(urls[urls.length-1])).subscribe((data: String[]) =>{
         this.val = data;
-        alert(this.val.length);
         if(this.val.length <= 1){
           document.getElementById("input").style.borderColor = "#8FFF93";
           document.getElementById("input").style.pointerEvents = "none";

@@ -46,19 +46,29 @@ image:Systemarchitektur.PNG[Systemarchitektur,width=70%]
 
 image:altesCLD.png[]
 
-== Design Entwurf Übersicht
+== Design Entwurf Übersicht 20/21
 
 image:deasignExercises.JPG[]
 
-=== Design Entwurf Übungsseite
+=== Design Entwurf Übungsseite 20/21
 
 image:designExam.JPG[width=70%]
+
+=== Design Entwurf Übung 21/22
+
+image:design1.jpeg[width=70%]
+
+=== Design Entwurf Ergebnis 21/22
+
+image:design.jpeg[width=70%]
 
 == Github Todos
 
 image:githubTodos.png[width=70%]
 
 == Schwierigkeiten beim Projekt
+
+=== Nächste Schritte
 
 === Danke für Ihre Aufmerksamkeit!
 

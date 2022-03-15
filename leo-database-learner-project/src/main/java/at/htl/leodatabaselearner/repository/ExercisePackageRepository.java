@@ -26,5 +26,11 @@ public class ExercisePackageRepository implements PanacheRepository<ExercisePack
         return query.getSingleResult();
     }
 
+    public ExercisePackage findExercisePackageById(Long id){
+        var query = getEntityManager().createQuery("Select ep from ExercisePackage  ep where ep.id =:id", ExercisePackage.class);
+        query.setParameter("id", id);
+        return query.getSingleResult();
+    }
+
 
 }

@@ -1,435 +1,70 @@
-= LeoCloud
+= Leo-Database-Learner
+Vanessa Primetzhofer
+1.0, 2020-08-22
 :customcss: css/presentation.css
 :revealjs_customtheme: css/sky.css
 :revealjs_width: 1408
 :revealjs_height: 792
 :source-highlighter: highlightjs
-:revealjs_parallaxBackgroundImage: images/background-landscape-light-orange.jpg
-:revealjs_parallaxBackgroundSize: 4936px 2092px
 :highlightjs-theme: css/atom-one-light.css
-// we want local served font-awesome fonts
 :iconfont-remote!:
 :iconfont-name: fonts/fontawesome/css/all
-:author: C. Aberger, T. Stütz
-:email: t.stuetz@htl-leonding.ac.at
+:author: Primetzhofer, Raffeiner, Steigersdorfer, Turner
 :revnumber: 1.0
 :revdate: {docdate}
-:revremark: SCHILF @ HTL Leonding
+:revremark: Leodatabase Learner
 :encoding: utf-8
 :lang: de
 :imagesdir: images
 :doctype: article
 :icons: font
-//:revealjs_parallaxBackgroundImage: background-landscape-light-orange.jpg
-//:revealjs_parallaxBackgroundSize: 4936px 2092px
 
-//:numbered:
+== Die Idee
 
-// Kürzen des Videos
-// ffmpeg -ss 00:00:00 -i orchestra.mp4 -to 00:00:05 -c copy orchestra-short.mp4
+//[cloud,fragment]
+//....
+//Grundausbildung,
+//Übungstool,
+//SQL-Befehle,
+//Eigenständiges Lernen,
+//Kostenlos,
+//Erleichterung,
+//Wissenstandscheck,
+//Select-Statements,
+//Klauseln,
+//Datenmodel,
+//Tests
+//....
 
-[%notitle]
-== Teaser
+== Livedemo
 
+== Systemarchitektur
 
+image:Systemarchitektur.PNG[Systemarchitektur,width=70%]
 
-== Links
+=== Erste Version
 
-* https://github.com/htl-leonding-college/leocloud-intro-slides[github-repo, window="_blank"]
-* https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/[Continous Deployment w/ gh-actions]
+image:altesCLD.png[]
 
+== Design Entwurf Übersicht
 
-== Requirements
+image:deasignExercises.JPG[]
 
+=== Design Entwurf Übungsseite
 
-[.lightbg,background-video="../videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
-== Warum LeoCloud in der Ausbildung?
+image:designExam.JPG[width=70%]
 
-[%step]
-* Der Begriff Cloud ist heute allgegenwärtig.
-* Die Abolventen der HTL Leonding sind nicht nur User der Cloud ...
-* ... sondern Maker -> wir bauen die Cloud
+== Github Todos
 
+image:githubTodos.png[width=70%]
 
+== Schwierigkeiten beim Projekt
 
-[.lightbg,background-opacity="0.7"]
-=== Was ist die Leo-Cloud?
+=== Danke für Ihre Aufmerksamkeit!
 
+== Klassendiagramm
 
-* Ansammlung von Computern im Keller
-* BareMetal
-* Mit Software *Kubernetes* (k8s)
+image:cld-ist.png[width=35%]
 
-[.refs]
---
-* Photo by Brett Sayles from Pexels
 
---
 
-=== Was soll gelehrt werden?
-
-[%step]
-* Nicht nur der Aufbau der Cloud, sondern ...
-* .... insbesondere der Prozess vom Quellcode bis zur (automatisch) verfügbaren Anwendung in der Cloud
-
-=== Vorhandene Cloud Angebote
-
-* Google Cloud
-* Amazon AWS
-* Microsoft Azure
-* Oracle Cloud
-* RedHat OpenShift (IBM)
-* IBM Cloud
-* ...
-
-=== Warum nicht ein vorhandenes Angebot nutzen?
-
-[%step]
-* kostenpflichtig -> monetäres Risiko für Schüler
-* Verständnis des Funktionsweise (von kubernetes)
-* Abrundung der Ausbildung an der HTL Leonding
-* Know-How in Europa halten
-
-
-
-
-[%notitle]
-== Kanonische Architektur
-
-
-
-
-== Lauffähige Zwischenergebnisse am Produktionsserver
-
-
-[.notes]
---
-* Wie macht man ein Projekt?
---
-
-
-=== Docker
-
-
-
-=== Docker Network
-
-
-
-
-
-=== kubernetes (k8s)
-
-* to be continued ...
-
-
-* wo der Sourcecode "wohnt"
-* Speicher für meine Source-Files
-* ist kostenfrei (-> education)
-* ist Industriestandard
-* kostenfreie statische Webseiten
-
-=== gh-actions
-
-* Zum Automatisieren von Vorgängen
-** kompilieren
-** testen
-** paketieren der Einzeldateien zur Applikation
-** Ausbringen auf Produktionsserver (in der Cloud)
-
-
-
-== Zur Person
-
-[.text-smaller]
-[.column]
-* Gegenstände
-** Datenbanken
-** Programmieren
-** Projektentwicklung
-* Projekte
-** https://cloud.htl-leonding.ac.at/[LeoCloud, window="_blank"]
-** https://htblaleonie.github.io[3D-Avatar Leonie, window="_blank"]
-** https://vm81.htl-leonding.ac.at[YouTrack-Instanz, window="_blank"]
-** https://franklyn.htl-leonding.ac.at/[Franklyn-Server, window="_blank"]
-
-[.text-smaller]
-[.column]
-* Technologien
-** Java / JakartaEE / Quarkus
-** Android (Kotlin)
-** Docker, k8s
-** git / github
-** doc-as-code (Asciidoctor)
-** IoT
-
-[.decentlightbg,background-video="videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.6"]
-== Gründe für VCS
-
-* VCS ... https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control[Version Control Systems, window="_blank"]
-* Keine Daten gehen verloren, auch ältere Programmversionen stets verfügbar
-* Zentralisiertes Code-Repository für Programmier-Teams
-* Geordnetes Erstellen von Programmvarianten (Branches)
-* u.v.m.
-
-=== Microbenchmark Suite [jep]#https://openjdk.java.net/jeps/230[JEP 230]# [version]#12#
-
-[.col3-lc]
---
-[.small.source,java]
-----
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(TimeUnit.MICROSECONDS)
-@State(Scope.Thread)
-public class BenchmarkIntegers {
-    @Param("500")
-    private int size;
-    private String[] strings;
-
-    @Setup
-    public void setup() {
-        Random r = new Random(0);
-        strings = new String[size];
-        for (int i = 0; i < size; i++) {
-            strings[i] = "" + (r.nextInt(10000) - 5000);
-        }
-    }
-
-    @Benchmark
-    public void parseInt(Blackhole bh) {
-        for (String s : strings) {
-            bh.consume(Integer.parseInt(s));
-        }
-    }
-}
-----
---
-
-[.col3-r.small]
---
-* Based on `jmh`
-* Avoids JIT Falltrips
-* Start via Maven Archteype
---
-
-
-== Git for Schools
-
-
-* https://education.github.com/[GitHub Education, window="_blank"]
-** https://education.github.com/pack[GitHub for Students, window="_blank"]
-** https://education.github.com/toolbox[GitHub for Teachers, window="_blank"]
-** https://classroom.github.com/classrooms[GitHub Classroom, window="_blank"]
-** https://education.github.com/schools[GitHub Campus Partner Schools, window="_blank"]
-* https://support.atlassian.com/bitbucket-cloud/docs/what-are-the-guidelines-for-academic-licenses/[Bitbucket Academic License, window="_blank"]
-* https://about.gitlab.com/solutions/education/[GitLab for Education, window="_blank"]
-
-[%notitle]
-[.columns.is-vcentered]
-=== GitHub Pro
-
-[.column, height=600]
-
-
-[.column]
-* Benefits
-** GitHub Pro
-** swag
-
-[%notitle]
-=== gh-pages in Private Repos
-
-
-[.notes]
---
-* Im eigenen Repo (ohne Organization) funktioniert es
-* Eine Organization gilt als eigener User, daher gibt es keine education Rabatte
---
-
-
-
-
-[%notitle]
-=== GitHub Campus Program
-
-
-[.columns]
-== Git vs GitHub
-
-[.column]
-* Technology
-** https://git-scm.com/[git, window="_blank"]
-
-[.column]
-* Provider / Hoster
-** https://github.com/[github, window="_blank"]
-** https://bitbucket.org[bitbucket, window="_blank"]
-** https://about.gitlab.com/[gitlab, window="_blank"]
-** self-hosted (ie gitlab)
-** ...
-
-=== Centralized VCS
-
-
-
-
-
-=== Create a Local Repo
-
-[source,bash,highlight=3]
-----
-mkdir my-first-repo
-cd my-first-repo
-git init
-ls -a
-tree -f .git # für Finder: open .git
-rm -rf .git  # -> beim prompt verschwindet die git info
-git init
-----
-
-[.notes]
---
-* Verwendung von oh-my-zsh für Anzeige der git-info
---
-
-
-=== Add Files to Local Repo
-
-https://htl-leonding-college.github.io/git-lecture-notes/#_a_first_commit[Demo - A first commit, window="_blank"]
-
-=== Create Remote Repo
-
-[%step]
-* Config github authentification
-* Create repo in github
-* Connect your local folder to the github-repo
-
-
-
-
-=== Authenticate to Remote Repo
-
-* https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token[Access Token, window="_blank"]
-* ssh (https://www.heise.de/tipps-tricks/SSH-Key-fuer-GitHub-Repositories-einrichten-4627459.html[SSH-Key für GitHub-Repositories einrichten, window="_blank"])
-
-
-
-
-[%notitle]
-=== Create Remote Repo
-
-
-
-
-
-[%notitle]
-=== Push to Remote Repo
-
-
-
-
-
-
-[%notitle]
-=== my-first-repo
-
-
-
-
-
-== Pull Requests
-
-* Wofür?
-** für Teams mit Senior- und Junior-Developers
-** bei open-source-Projekten
-* Wie?
-** Projekt clonen
-** Änderungen vornehmen
-** Pull Request beantragen
-** Pull Request annehmen oder ablehnen
-
-
-== Links
-
-[.font-smaller]
-* gh-pages: https://htl-leonding-college.github.io/git-intro-slides[window="_blank"]
-* github-repo: https://github.com/htl-leonding-college/git-intro-slides[window="_blank"]
-* https://bit.ly/htl-leonding[der stützpunkt, window="_blank"]
-* https://git-scm.com/book/de/v2[Online Git-Buch, window="_blank"]
-* https://htl-leonding-college.github.io/git-lecture-notes/
-* https://codewithmosh.com/[Code with Mosh (Aktion abwarten), window="_blank"]
-* https://www.udemy.com/[Udemy (Aktion abwarten), window="_blank"]
-
-////
-////
-
-
-== Distributed VCS
-
-
-
-== My first slide
-
-* Topic 1
-* Topic 2
-
-[%notitle]
-== Third Slide
-
-
-[%notitle]
-== maxed_image
-
-[.maxed-image]
-image::https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[VW]
-
-[%notitle]
-== 5th Slide
-
-image::https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[background, size=cover, opacity=0.5]
-
-== Image Role Right [alt syntax]
-
-[.right]
-image::https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg[alt text,width=400px]
-
-* Yup
-* That
-* Too
-
-
-
-
-// https://raw.githubusercontent.com/asciidoctor/asciidoctor-reveal.js/master/examples/images.adoc
-
-// https://zenika.github.io/adoc-presentation-model/reveal/reveal-my-asciidoc.html
-
-
-// https://asciidoctor-revealjs-examples.netlify.app/
-
-
-Thomas W. Stütz
-1.0, 2020-08-22
-ifndef::sourcedir[:sourcedir: ../src/main/java]
-ifndef::imagesdir[:imagesdir: images]
-ifndef::backend[:backend: html5]
-:icons: font
-
-== First Slide
-
-* aaa
-* bbb
-* ccc [red]#red text#
-
-=== Second Slide
-
-
-
-[%notitle]
-== Third Slide
-
-image:https://images.pexels.com/photos/3966425/pexels-photo-3966425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940[VW]
-
-== Fourth Slide
-
-IMPORTANT: Something very important

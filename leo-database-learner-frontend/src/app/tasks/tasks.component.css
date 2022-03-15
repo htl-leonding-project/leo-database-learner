@@ -20,7 +20,7 @@
   position: absolute;
   top: 3em;
   left: 3em;
-  color: royalblue;
+  color: #452860 ;
 }
 
 
@@ -60,6 +60,6 @@ p{
 }
 
 p span{
-  color: royalblue;
+  color: #452860 ;
   font-size: 1.5em;
 }

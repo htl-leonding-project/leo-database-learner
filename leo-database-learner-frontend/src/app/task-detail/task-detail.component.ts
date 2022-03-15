@@ -7,6 +7,8 @@ import { ResultComponent } from '../result/result.component';
 import { ResultService } from '../service/result.service';
 import { Question } from '../models/question';
 import { QuestionService } from '../service/question.service';
+import { ExcerciseService } from '../service/excercise.service';
+import { ExercisePackage } from '../models/exercisePackage';
 
 export interface DialogData{
   result: String[];
@@ -22,6 +24,7 @@ export class TaskDetailComponent implements OnInit {
   public input : string;
   public result : String[];
   public question : Question;
+  public excercise : ExercisePackage;
 
   public header : String[];
   public val : String[] = [];
@@ -29,17 +32,21 @@ export class TaskDetailComponent implements OnInit {
   public errormessage : String;
   public error : Boolean = false;
 
-  constructor(public questionService: QuestionService, private route: ActivatedRoute, public resultService: ResultService, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
+  constructor(public eService : ExcerciseService,public questionService: QuestionService, private route: ActivatedRoute, public resultService: ResultService, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
       linkmenu.setMenu(true, true, true, true);
   }
 
   ngOnInit(): void {
     var urls = this.router.url.split("/");
+    this.eService.getExcercisesById(Number(urls[urls.length-2])).subscribe((data : ExercisePackage) => {this.excercise = data});
     this.questionService.getQuestionById(Number(urls[urls.length-1])).subscribe(data => {this.question = data});
   }
 
   evaluate() {
     this.error = false;
+    this.errormessage = "";
+    this.result = [];
+
     this.resultService.getResult(this.input).subscribe((data : String[]) => {
       this.result = data;
 
@@ -68,10 +75,19 @@ export class TaskDetailComponent implements OnInit {
     var urls = this.router.url.split("/");
       this.resultService.getValidation(this.input, Number(urls[urls.length-1])).subscribe((data: String[]) =>{
         this.val = data;
+        alert(this.val.length);
+        if(this.val.length <= 1){
+          document.getElementById("input").style.borderColor = "#8FFF93";
+          document.getElementById("input").style.pointerEvents = "none";
+        }
       });
   }
 
   openDialog(){
     const dialogRef = this.showresult.open(ResultComponent, {width: "40%"});
+  }
+
+  navigateTo(){
+    this.router.navigate(["excercises/" + this.excercise.id])
   }
 }

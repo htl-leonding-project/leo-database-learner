@@ -13,4 +13,8 @@ export class ExcerciseService {
     return this.http.get<ExercisePackage[]>('http://vm134.htl-leonding.ac.at:8080/exercisePackage/get_all');
   }
 
+  getExcercisesById(id: number) : any{
+    return this.http.get<ExercisePackage>('http://vm134.htl-leonding.ac.at:8080/exercisePackage/getbyid/' + id);
+  }
+
 }

@@ -7,6 +7,8 @@ import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { LinkmenuService } from '../service/linkmenu.service';
 import { Router } from '@angular/router';
+import { ExercisePackage } from '../models/exercisePackage';
+import { ExcerciseService } from '../service/excercise.service';
 
 @Component({
   selector: 'app-tasks',
@@ -16,16 +18,17 @@ import { Router } from '@angular/router';
 export class TasksComponent implements OnInit {
 
   public tasks: Question[] = [];
+  public excercise : ExercisePackage;
 
-  constructor(public questionService: QuestionService, public login: MatDialog, public linkmenu : LinkmenuService, public router : Router) {
+  constructor(public excerciseService : ExcerciseService ,public questionService: QuestionService, public login: MatDialog, public linkmenu : LinkmenuService, public router : Router) {
     linkmenu.setMenu(true, true, true, true);
   }
 
   ngOnInit(): void {
     var urls = this.router.url.split("/");
-    console.log(Number(urls[urls.length-1]));
+    this.excerciseService.getExcercisesById(Number(urls[urls.length-1])).subscribe((data : ExercisePackage) => {this.excercise = data})
     this.questionService.getById(Number(urls[urls.length-1])).subscribe(data => {this.tasks = data});
-    //this.questionService.getAllQuestion().subscribe(data => {this.tasks = data});
+    
   }
 
 }

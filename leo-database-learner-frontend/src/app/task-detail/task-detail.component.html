@@ -1,13 +1,14 @@
+<div id="icon" (click)="navigateTo()"><mat-icon>arrow_back_ios</mat-icon></div>
 <div id="content">
     <h1>Angabe</h1><br>
     <p>{{question.text}}</p>
 
-    <p id="datamodel" (click)="openDialog()">Show Datenmodel</p>
+    <p id="datamodel" (click)="openDialog()">Show Datenmodell</p>
 </div>
 
 <div id="eingabe">
   <form>
-    <textarea matInput (keydown.enter)="evaluate()" placeholder="Geben Sie das Statement ein" value="" [(ngModel)]="input"></textarea>
+    <textarea id="input" matInput (keydown.enter)="evaluate()" placeholder="Geben Sie das Statement ein" value="" [(ngModel)]="input"></textarea>
   </form> 
 </div>
 

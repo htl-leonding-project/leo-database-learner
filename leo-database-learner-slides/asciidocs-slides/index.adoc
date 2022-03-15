@@ -19,7 +19,17 @@ Vanessa Primetzhofer
 :doctype: article
 :icons: font
 
+== Team
+image:vanessa.jpeg[Vanessa,width=22%]
+image:chrissy.jpeg[Chrissy,width=22%]
+image:marah.jpeg[Marah,width=22%]
+image:isabel.jpeg[Isabel,width=22%]
+
 == Die Idee
+
+[%notitle, background-video="",options="loop,muted"]
+=== Vid
+
 
 //[cloud,fragment]
 //....
@@ -42,31 +52,10 @@ Vanessa Primetzhofer
 
 image:Systemarchitektur.PNG[Systemarchitektur,width=70%]
 
-=== Erste Version
-
-image:altesCLD.png[]
-
-== Design Entwurf Übersicht 20/21
-
-image:deasignExercises.JPG[]
-
-=== Design Entwurf Übungsseite 20/21
-
-image:designExam.JPG[width=70%]
-
-=== Design Entwurf Übung 21/22
-
-image:design1.jpeg[width=70%]
-
-=== Design Entwurf Ergebnis 21/22
-
-image:design.jpeg[width=70%]
-
 == Github Todos
 
 image:githubTodos.png[width=70%]
 
-== Schwierigkeiten beim Projekt
 
 === Nächste Schritte
 
@@ -75,6 +64,4 @@ image:githubTodos.png[width=70%]
 == Klassendiagramm
 
 image:cld-ist.png[width=35%]
-
-
 

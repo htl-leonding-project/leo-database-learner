@@ -5,8 +5,16 @@
 
 h1{
   font-size: 40pt;
-  color: royalblue;
+  color: #452860 ;
   text-align: center;
+}
+
+#icon{
+  cursor: pointer;
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  color: #452860 ;
 }
 
 p{
@@ -15,7 +23,7 @@ p{
 
 #datamodel{
   cursor: pointer;
-  color: royalblue;
+  color: #452860 ;
 }
 
 #eingabe{
@@ -37,7 +45,11 @@ textarea{
   min-width: 70%;
   max-width: 90%;
   max-height: 20vh;
-  color: royalblue;
+  color:rgb(41, 41, 41);
+}
+
+textarea:focus{
+  outline: 0;
 }
 
 #result{
@@ -49,7 +61,7 @@ textarea{
   max-height: 35vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(236, 236, 236) !important;
 }
 
 #result h1{

@@ -1,6 +1,6 @@
 <div id="icon" routerLink="/excercises"><mat-icon>arrow_back_ios</mat-icon></div>
 <div id="content">
-  <div id="label"><p><span>test</span></p><p>Done</p></div>
+  <div id="label"><p><span>{{this.excercise.name}}</span></p><p>Done</p></div>
   <mat-list>
       <div *ngFor="let t of tasks; index as i">
           <mat-list-item [routerLink]="t.id.toString()">

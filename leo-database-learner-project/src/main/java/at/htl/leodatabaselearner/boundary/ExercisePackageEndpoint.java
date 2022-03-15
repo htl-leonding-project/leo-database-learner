@@ -41,7 +41,10 @@ public class ExercisePackageEndpoint {
     public ExercisePackage getExercisePackageByName(@PathParam("name") String name) {
         return exercisePackageRepository.findExercisePackageByName(name);
     }
-
-
+    @GET
+    @Path("getbyid/{id}")
+    public ExercisePackage getExercisePackageById(@PathParam("id") Long id) {
+        return exercisePackageRepository.findExercisePackageById(id);
+    }
 
 }

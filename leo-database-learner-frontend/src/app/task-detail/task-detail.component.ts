@@ -52,12 +52,12 @@ export class TaskDetailComponent implements OnInit {
 
       if(this.result[0] != "ERROR"){
         this.header = this.result[0].split(" ");
-  
+
         for (let index = 1; index < this.result.length; index++) {
           var store : String[] = this.result[index].split(" ");
           this.tabledata[index-1] = [];
           for (let index2 = 0; index2 < this.header.length; index2++) {
-      
+
             this.tabledata[(index - 1)][index2] = store[index2];
           }
         }
@@ -68,14 +68,13 @@ export class TaskDetailComponent implements OnInit {
         this.showValidations();
       }
     });
-    
+
   }
 
   showValidations(){
     var urls = this.router.url.split("/");
       this.resultService.getValidation(this.input, Number(urls[urls.length-1])).subscribe((data: String[]) =>{
         this.val = data;
-        alert(this.val.length);
         if(this.val.length <= 1){
           document.getElementById("input").style.borderColor = "#8FFF93";
           document.getElementById("input").style.pointerEvents = "none";

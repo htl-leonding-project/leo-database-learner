@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ExercisePackage } from '../models/exercisePackage';
 
 @Injectable({
@@ -10,11 +11,11 @@ export class ExcerciseService {
   constructor(private http: HttpClient) { }
 
   getExcercises(): any {
-    return this.http.get<ExercisePackage[]>('http://vm134.htl-leonding.ac.at:8080/exercisePackage/get_all');
+    return this.http.get<ExercisePackage[]>(environment.apiUrl + 'exercisePackage/get_all');
   }
 
   getExcercisesById(id: number) : any{
-    return this.http.get<ExercisePackage>('http://vm134.htl-leonding.ac.at:8080/exercisePackage/getbyid/' + id);
+    return this.http.get<ExercisePackage>( environment.apiUrl + 'exercisePackage/getbyid/' + id);
   }
 
 }

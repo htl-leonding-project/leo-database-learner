@@ -57,8 +57,8 @@ public class ExerciseSqlRepository {
         Statement stStudent = cStudent.createStatement();
         ResultSet rsStudent = stStudent.executeQuery(sql);
 
-        for (int i = 1; i < rsStudent.getMetaData().getColumnCount(); i++) {
-          if (i < rsStudent.getMetaData().getColumnCount() - 1) {
+        for (int i = 1; i < rsStudent.getMetaData().getColumnCount()+1; i++) {
+          if (i < rsStudent.getMetaData().getColumnCount()) {
             sbStudent.append(rsStudent.getMetaData().getColumnName(i)).append(" ");
             head.add(rsStudent.getMetaData().getColumnName(i));
           } else {

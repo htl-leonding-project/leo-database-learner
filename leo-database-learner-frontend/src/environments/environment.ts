@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/'
+  apiUrl: 'http://vm134.htl-leonding.ac.at:8080/'
 };
 
 /*

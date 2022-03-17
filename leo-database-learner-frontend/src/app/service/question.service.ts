@@ -16,7 +16,7 @@ export class QuestionService {
     return this.http.get<Question[]>(environment.apiUrl + 'question/get_all');  }
 
   getQuestionsFormPackage(): Observable<Question[]>{
-    return this.http.get<Question[]>(environment.apiUrl + 'question/get_all');  
+    return this.http.get<Question[]>(environment.apiUrl + 'question/get_all');
   }
 
   getById(id : number) : any{

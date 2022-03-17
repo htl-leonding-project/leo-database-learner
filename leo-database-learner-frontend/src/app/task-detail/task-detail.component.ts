@@ -49,16 +49,15 @@ export class TaskDetailComponent implements OnInit {
 
     this.resultService.getResult(this.input).subscribe((data : String[]) => {
       this.result = data;
-      //alert(data);
 
       if(this.result[0] != "ERROR"){
         this.header = this.result[0].split(" ");
-  
+
         for (let index = 1; index < this.result.length; index++) {
           var store : String[] = this.result[index].split(" ");
           this.tabledata[index-1] = [];
           for (let index2 = 0; index2 < this.header.length; index2++) {
-      
+
             this.tabledata[(index - 1)][index2] = store[index2];
           }
         }
@@ -69,7 +68,7 @@ export class TaskDetailComponent implements OnInit {
         this.showValidations();
       }
     });
-    
+
   }
 
   showValidations(){
@@ -79,6 +78,8 @@ export class TaskDetailComponent implements OnInit {
         if(this.val.length <= 1){
           document.getElementById("input").style.borderColor = "#8FFF93";
           document.getElementById("input").style.pointerEvents = "none";
+        }else{
+          document.getElementById("input").style.borderColor = "red";
         }
       });
   }

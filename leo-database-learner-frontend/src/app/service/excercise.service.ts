@@ -13,9 +13,9 @@ export class ExcerciseService {
   getExcercises(): any {
     return this.http.get<ExercisePackage[]>(environment.apiUrl + 'exercisePackage/get_all');
   }
- 
+
   getExcercisesById(id: number) : any{
     return this.http.get<ExercisePackage>( environment.apiUrl + 'exercisePackage/getbyid/' + id);
   }
-  
+
 }

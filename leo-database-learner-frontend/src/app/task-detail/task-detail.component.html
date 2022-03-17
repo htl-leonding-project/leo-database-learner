@@ -1,7 +1,7 @@
 <div id="icon" (click)="navigateTo()"><mat-icon>arrow_back_ios</mat-icon></div>
 <div id="content">
     <h1>Angabe</h1><br>
-    <p>{{question.text}}</p>
+    <p class="angabe">{{question.text}}</p>
 
     <p id="datamodel" (click)="openDialog()">Show Datenmodell</p>
 </div>
@@ -9,7 +9,7 @@
 <div id="eingabe">
   <form>
     <textarea id="input" matInput (keydown.enter)="evaluate()" placeholder="Geben Sie das Statement ein" value="" [(ngModel)]="input"></textarea>
-  </form> 
+  </form>
 </div>
 
   <div id="result">
@@ -23,14 +23,14 @@
         <tr>
             <th *ngFor="let h of this.header">{{h}}</th>
         </tr>
-    
+
         <tr *ngFor="let r of this.tabledata; index as i1">
             <td *ngFor="let c of this.header; index as i2">
                 {{tabledata[i1][i2]}}
             </td>
         </tr>
     </table>
-    
+
     <div *ngIf="this.error">
         <p class="error">{{this.errormessage}}</p>
     </div>

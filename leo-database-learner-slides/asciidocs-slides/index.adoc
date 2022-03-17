@@ -27,10 +27,6 @@ image:isabel.jpeg[Isabel,width=22%]
 
 == Die Idee
 
-[%notitle, background-video="",options="loop,muted"]
-=== Vid
-
-
 //[cloud,fragment]
 //....
 //Grundausbildung,

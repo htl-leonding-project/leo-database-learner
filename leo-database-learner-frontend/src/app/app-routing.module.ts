@@ -14,7 +14,7 @@ import { ExcerciseComponent } from './excercise/excercise.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent, pathMatch: "full"},
   { path: 'excercises/:id/:id', component: TaskDetailComponent},
   { path: 'excercises/:id', component: TasksComponent},
   { path: 'exams', component: ExamsComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: "profile", component: ProfilComponent},
   {path: "login", component: LoginComponent},
   {path: "excercises", component: ExcerciseComponent},
-  {path: "**", component: TasksComponent}
+  {path: "**", component: HomeComponent, pathMatch: "full"}
 ];
 
 @NgModule({

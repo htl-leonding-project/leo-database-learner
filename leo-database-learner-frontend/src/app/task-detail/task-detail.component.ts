@@ -78,6 +78,8 @@ export class TaskDetailComponent implements OnInit {
         if(this.val.length <= 1){
           document.getElementById("input").style.borderColor = "#8FFF93";
           document.getElementById("input").style.pointerEvents = "none";
+        }else{
+          document.getElementById("input").style.borderColor = "red";
         }
       });
   }

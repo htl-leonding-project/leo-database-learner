@@ -31,6 +31,7 @@ import { ExcerciseService } from './service/excercise.service';
 import {MatDividerModule} from '@angular/material/divider';
 import { ResultComponent } from './result/result.component';
 import { ResultService } from './service/result.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ResultService } from './service/result.service';
     MatDialogModule,
     MatRadioModule,
     MatButtonToggleModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSnackBarModule
   ],
   providers: [LinkmenuService, ExcerciseService, ResultService],
   bootstrap: [AppComponent]

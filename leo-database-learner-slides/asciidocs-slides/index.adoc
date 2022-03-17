@@ -44,20 +44,28 @@ image:isabel.jpeg[Isabel,width=22%]
 
 == Livedemo
 
+[%notitle]
 == Systemarchitektur
 
-image:Systemarchitektur.PNG[Systemarchitektur,width=70%]
+image:SystemarchitekturNEUvonNEU.png[Systemarchitektur,width=70%]
+
+[%notitle]
+=== ablauf
+image:SystemarchitekturNEUvonNEU.png[Systemarchitektur,width=70%]
+
+=== Nächste Schritte
+
+
+=== Danke für Ihre Aufmerksamkeit!
+
+
+== Klassendiagramm
+
+image:cld-ist.png[width=35%]
+
 
 == Github Todos
 
 image:githubTodos.png[width=70%]
 
-
-=== Nächste Schritte
-
-=== Danke für Ihre Aufmerksamkeit!
-
-== Klassendiagramm
-
-image:cld-ist.png[width=35%]
 

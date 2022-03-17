@@ -1,5 +1,5 @@
 #content{
-  margin-top: 8em;
+  margin-top: 4em;
   width: 100%;
 }
 
@@ -41,6 +41,10 @@ p{
   justify-content: center;
   align-items: center;
   margin: 5em 0em 0em 0em;
+}
+
+#input{
+  font-size: 14pt;
 }
 
 form{

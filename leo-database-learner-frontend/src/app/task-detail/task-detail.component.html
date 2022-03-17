@@ -3,7 +3,7 @@
     <h1>Angabe</h1><br>
     <p class="angabe">{{question.text}}</p>
 
-    <p id="datamodel" (click)="openDialog()">Show Datenmodell</p>
+    <p id="datamodel" (click)="openDialog()">Datenmodell anzeigen</p>
 </div>
 
 <div id="eingabe">
@@ -14,10 +14,10 @@
 
   <div id="result">
    <div id="val" *ngIf="this.val.length >= 2">
-    <h1>Validations</h1>
+    <h1>Validationen</h1>
     <p>{{this.val[1]}}</p>
   </div>
-    <h1>Result</h1>
+    <h1>Ergebnis</h1>
     <div id="tablebox">
       <table *ngIf="!this.error">
         <tr>

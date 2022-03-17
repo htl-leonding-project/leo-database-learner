@@ -9,6 +9,7 @@ import { Question } from '../models/question';
 import { QuestionService } from '../service/question.service';
 import { ExcerciseService } from '../service/excercise.service';
 import { ExercisePackage } from '../models/exercisePackage';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export interface DialogData{
   result: String[];
@@ -32,7 +33,7 @@ export class TaskDetailComponent implements OnInit {
   public errormessage : String;
   public error : Boolean = false;
 
-  constructor(public eService : ExcerciseService,public questionService: QuestionService, private route: ActivatedRoute, public resultService: ResultService, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
+  constructor(private _snackBar: MatSnackBar, public eService : ExcerciseService,public questionService: QuestionService, private route: ActivatedRoute, public resultService: ResultService, public login: MatDialog, public showresult: MatDialog, private router: Router, public linkmenu: LinkmenuService) {
       linkmenu.setMenu(true, true, true, true);
   }
 
@@ -64,7 +65,7 @@ export class TaskDetailComponent implements OnInit {
         this.showValidations();
       }else{
         this.error = true;
-        this.errormessage = this.result.toString();
+        this.errormessage = this.result.toString().replace("ERROR,", "");
         this.showValidations();
       }
     });
@@ -75,9 +76,12 @@ export class TaskDetailComponent implements OnInit {
     var urls = this.router.url.split("/");
       this.resultService.getValidation(this.input, Number(urls[urls.length-1])).subscribe((data: String[]) =>{
         this.val = data;
+        this.val[1] = this.val[1].replace("ErrorResult[", "").replace("]", "")
         if(this.val.length <= 1){
           document.getElementById("input").style.borderColor = "#8FFF93";
+          document.getElementById("input").style.color = "#8FFF93";
           document.getElementById("input").style.pointerEvents = "none";
+          this._snackBar.open("Richte Lösu", "OK");
         }else{
           document.getElementById("input").style.borderColor = "red";
         }
